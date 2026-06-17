@@ -1,5 +1,3 @@
-import { CheckCircle2 } from "lucide-react";
-import React from "react";
 import HeroSlider from "./HeroSectionSlider";
 
 function HeroRight() {

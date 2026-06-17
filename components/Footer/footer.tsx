@@ -5,7 +5,7 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-import { handleWhatsappClick } from "@/app/function/handleWhatsapp";
+import { handleWhatsappClick } from "@/function/handleWhatsapp";
 
 export default function Footer() {
   return (
@@ -15,31 +15,30 @@ export default function Footer() {
           <div className="absolute right-0 bottom-0 rounded-full h-full w-full bg-red-700/5 blur-3xl" />
 
       <div className="mx-auto max-w-7xl px-6 ">
-        <div className="relative -translate-y-24 overflow-hidden rounded-xl border border-red-500/30 bg-red-950 p-8 shadow-2xl lg:p-14">
+        <div className="relative -translate-y-24 overflow-hidden rounded-xl border border-red-500/30 bg-red-950 p-8 shadow-2xl lg:p-14 flex ">
         
           <div className="absolute right-0 top-0  left-0 bottom-0  h-full w-full bg-black/50 -z-50 " />
           <div className="absolute right-0 bottom-2/4  h-full w-1/8 bg-red-500/50 rounded-full blur-3xl -z-50 " />
           <div className="relative z-10 flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl">
+            <div className="">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-600">
                 Start Your Journey Today  
               </p>
 
-              <h2 className="mt-4 text-4xl font-bold leading-tight lg:text-6xl text-blue-50">
+              <h2 className="mt-4 text-3xl font-bold leading-tight lg:text-5xl text-blue-50">
                 Secure Your US Visa
-                <span className="block text-red-600">
+                <span className=" text-red-600">
                   Approval Strategy Now
                 </span>
               </h2>
 
               <p className="mt-6 text-lg text-white/80">
-                Don't leave your American future to chance.
-                Apply now in just Rs 36,000 and let our experts
+                Don't leave your American future to chance. Apply now in just Rs 36,000 and let our experts
                 handle the paperwork, preparation and interview strategy.
               </p>
             </div>
 
-            <div className="w-full max-w-sm">
+            <div className="w-full  flex flex-col justify-end items-end ">
               <button
               onClick={handleWhatsappClick}
                 className="
@@ -50,6 +49,7 @@ export default function Footer() {
                 justify-between
                 rounded-2xl
                 bg-red-800
+                md:max-w-sm
                 px-8
                 py-6
                 transition-all

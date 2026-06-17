@@ -6,9 +6,9 @@ GraduationCap,
 BadgeDollarSign,
 MessageCircle,
 } from "lucide-react";
-import Badge from "../../Badge";
-import BlackButton from "../../BlackButton";
-import { handleWhatsappClick } from "@/app/function/handleWhatsapp";
+import Badge from "@/components/Badge";
+import BlackButton from "@/components/BlackButton";
+import { handleWhatsappClick } from "@/function/handleWhatsapp";
 
 export default function PreparationSection() {
 const documents = [

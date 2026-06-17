@@ -4,17 +4,19 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   BookOpen,
-  FileText,
-  GraduationCap,
-  Send,
+  Calendar,
+  School,
   ShieldCheck,
-  UserCheck,
+  CreditCard,
+  Mic,
+  Plane
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import LeftColumn from "./left-column";
 import { customScrollTo } from "@/lib/scroll-to";
-import CustomButton from "@/components/ui/custom-button";
+import RedButton from "@/components/Red-Buttons";
+import { handleWhatsappClick } from "@/function/handleWhatsapp";
 
 gsap.registerPlugin(ScrollTrigger);
 function HowThisWork() {
@@ -28,34 +30,34 @@ function HowThisWork() {
     () => [
       {
         step: 1,
-        title: "Start for ₹999",
+        title: "Step 1 Onboarding & Strategy",
         content:
-          "Create your profile for a ₹999 introductory token fee. Receive a quick eligibility check and professional clarity on your options.",
-        icon: FileText,
+          "We review your university acceptance and academic profile to build a custom timeline.",
+        icon: School,
         image: "/images/howthiswork/1.jpg",
       },
       {
         step: 2,
-        title: "Shortlist & Strategy",
+        title: "Step 2 Filing & Financials",
         content:
-          "Receive a shortlist of 3–6 matched courses and universities with clear requirements, entry fees, and deadlines.",
-        icon: UserCheck,
+          "We handle your DS-160, guide your SEVIS fee payment, and structure your sponsor documents perfectly.",
+        icon: CreditCard,
         image: "/images/howthiswork/2.jpg",
       },
       {
         step: 3,
-        title: "Documents & Application",
+        title: "Step 3 Mock Interviews",
         content:
-          "We provide expert guidance on preparing SOPs, LORs, and financial checklists, facilitating the submission of genuine applications.",
-        icon: Send,
+          "Rigorous 1-on-1 practice to ensure you confidently prove your non-immigrant intent to the officer.",
+        icon: Mic,
         image: "/images/howthiswork/3.jpg",
       },
       {
         step: 4,
-        title: "Offer Letter & Next Steps",
+        title: "Step 4 Approval & Departure",
         content:
-          "Track your university admission decisions, book IELTS/DET if needed, and prepare for the visa stage.",
-        icon: GraduationCap,
+          "Get your visa stamped and prepare for your flight to the United States!",
+        icon: Plane,
         image: "/images/howthiswork/4.jpg",
       },
     ],
@@ -176,33 +178,34 @@ function HowThisWork() {
   };
 
   return (
-    <section className="bg-zinc-50 py-20 px-4 xl:px-0 ">
+    <section className="bg-zinc-100 py-20 px-4 xl:px-0 ">
       <div className="max-w-7xl mx-auto  ">
         <div className="flex justify-center items-center flex-col">
           <h2
             ref={addToRefs}
             className="text-red-700 flex gap-2 items-center font-semibold "
           >
-            <GraduationCap className="size-4 " />
-            We help you apply to your dream colleges.
+            <Calendar className="size-4 " />
+            Timeline
           </h2>
           <h3
             ref={() => {
               divElement.current;
             }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold pt-3 pb-8 "
+            className="text-4xl text-zinc-950 md:text-5xl lg:text-6xl font-bold pt-3 pb-8 "
           >
-            How does it <span className="text-red-700">work?</span>
+           Your Visa  <span className="text-red-700">Journey</span>
           </h3>
         </div>
-        <div className=" lg:grid lg:grid-cols-5  flex flex-col">
-          <LeftColumn currentImage={currentImage} steps={steps} />
+        <div className="  flex flex-col justify-center items-center">
+          {/* <LeftColumn  /> */}
+          {/* <LeftColumn currentImage={currentImage} steps={steps} /> */}
           <div className=" order-1 lg:order-2 col-span-3">
             {steps.map((item, index) => {
               return (
                 <div className="flex px-3 " key={index}>
                   <div className="relative rounded-full z-50">
-                    <span className="w-11 h-14 bg-white text-zinc-300 p-1 rounded-full absolute top-0 border-6 border-zinc-200 text-2xl flex justify-center items-center font-bold">
+                    <span className=" w-11 h-14 bg-white text-zinc-300 p-1 rounded-full absolute top-0 border-6 border-zinc-200 text-2xl flex justify-center items-center font-bold">
                       {item.step}
                     </span>
                     <item.icon
@@ -242,7 +245,7 @@ function HowThisWork() {
                       }}
                       className="pl-10"
                     >
-                      <h4 className="text-xl font-bold pb-1 ">{item.title}</h4>
+                      <h4 className="text-xl font-bold pb-1 text-zinc-900 ">{item.title}</h4>
                       <p className=" text-zinc-600 text-base">{item.content}</p>
                     </div>
                   </div>
@@ -251,26 +254,12 @@ function HowThisWork() {
             })}
 
             <div className="pt-8 md:pl-4 pl-0 ">
-              <CustomButton
-                title="Start for just 1"
-                onClick={() => customScrollTo("ContactForm")}
+              <RedButton
+              className="py-4 text-lg"
+                text="Start Process With Us for just 1"
+                onClick={handleWhatsappClick}
               />
-              <div className="bg-zinc-200 py-2 px-3 mt-4 rounded-md flex flex-col items-start space-x-3">
-                {
-                specialNotes.map((item) => (
-                  <div 
-                  key={item.content}
-                  className="text-zinc-600 leading-relaxed flex gap-2 mb-2 text-justify">
-                    <div className="size-5 mt-1">
-                      <item.icon className="size-5 text-red-700" />
-                    </div>
-                    <p>
-                      {item.content}
-                    </p>
-                  </div>
-                ))
-              }
-              </div>
+              
             </div>
           </div>
         </div>

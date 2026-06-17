@@ -1,17 +1,18 @@
 import React from 'react';
-import clsx from 'clsx';
+import clsx, {ClassValue} from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
-// Helper function to merge classes intelligently
-const cn = (...inputs: clsx.ClassValue[]) => {
-  return twMerge(clsx(inputs));
-};
+// Utility to intelligently merge Tailwind classes (allows overriding base styles)
+const cn = (...inputs: ClassValue[]) =>
+  twMerge(clsx(...inputs));
 
-interface RedButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface RedButtonProps {
   text: string;
   href?: string;
   className?: string;
   icon?: React.ReactNode;
+  disabled?: boolean;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 const RedButton = ({ 
@@ -42,7 +43,7 @@ const RedButton = ({
     return (
       <a
         href={href}
-        onClick={onClick as React.MouseEventHandler<HTMLAnchorElement>}
+        onClick={(e) => onClick?.(e as unknown as React.MouseEvent<HTMLButtonElement>)}
         className={finalClasses}
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noopener noreferrer" : undefined}

@@ -1,21 +1,18 @@
 import React from 'react';
-import clsx from 'clsx';
+import clsx, {ClassValue} from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 // Utility to intelligently merge Tailwind classes (allows overriding base styles)
-const cn = (...inputs: clsx.ClassValue[]) => {
-  return twMerge(clsx(inputs));
-};
+const cn = (...inputs: ClassValue[]) =>
+  twMerge(clsx(...inputs));
 
-interface BlackButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /** Button text content */
+interface BlackButtonProps {
   text: string;
-  /** Optional link URL - renders as <a> tag when provided */
   href?: string;
-  /** Custom additional className (overrides base styles) */
   className?: string;
-  /** Icon element to render before text */
   icon?: React.ReactNode;
+  disabled?: boolean;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 const BlackButton = ({ 
@@ -56,7 +53,7 @@ const BlackButton = ({
     return (
       <a
         href={href}
-        onClick={onClick as React.MouseEventHandler<HTMLAnchorElement>}
+        onClick={(e) => onClick?.(e as unknown as React.MouseEvent<HTMLButtonElement>)}
         className={baseStyles}
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noopener noreferrer" : undefined}

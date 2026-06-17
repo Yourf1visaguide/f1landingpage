@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 
-import RedButton from "../../Red-Buttons";
-import { handleWhatsappClick } from "@/app/function/handleWhatsapp";
+import RedButton from "@/components/Red-Buttons";
+import { handleWhatsappClick } from "@/function/handleWhatsapp";
 export default function Navbar() {
 
   

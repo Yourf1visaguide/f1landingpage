@@ -1,14 +1,13 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import { Play, Star, Loader2, MessageCircle } from "lucide-react";
-import Image from "next/image";
+import React, { useState } from "react";
+import {  Loader2, MessageCircle } from "lucide-react";
 
-import BlackButton from "../../BlackButton";
+import BlackButton from "@/components/BlackButton";
 import { testimonialsData } from "./Testimonials";
 import VideoCard from "./VideoCard";
-import RedButton from "../../Red-Buttons";
-import { handleWhatsappClick } from "@/app/function/handleWhatsapp";
+import RedButton from "@/components/Red-Buttons";
+import { handleWhatsappClick } from "@/function/handleWhatsapp";
 
 // --- Section 1: Instagram-style Grid ---
 export const TestimonialGridSection = () => {

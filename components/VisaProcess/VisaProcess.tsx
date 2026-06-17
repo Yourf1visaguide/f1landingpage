@@ -1,9 +1,9 @@
 "use client";
 
 import { MessageCircle } from "lucide-react";
-import RedButton from "../Red-Buttons";
-import Badge from "../Badge";
-import { handleWhatsappClick } from "@/app/function/handleWhatsapp";
+import RedButton from "@/components/Red-Buttons";
+import Badge from "@/components/Badge";
+import { handleWhatsappClick } from "@/function/handleWhatsapp";
 
 const steps = [
 {

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, MessageCircle, CheckCircle2 } from "lucide-react";
-import Badge from "../../Badge";
+import { ChevronDown } from "lucide-react";
+import Badge from "@/components/Badge";
 
 const faqs = [
   {

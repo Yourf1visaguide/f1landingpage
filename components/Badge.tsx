@@ -1,10 +1,11 @@
 import React from "react";
-import clsx from "clsx";
+import clsx, { type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { CheckCircle2, type LucideIcon } from "lucide-react";
 
 // Utility to merge Tailwind classes safely
-const cn = (...inputs: clsx.ClassValue[]) => twMerge(clsx(inputs));
+const cn = (...inputs: ClassValue[]) =>
+  twMerge(clsx(...inputs));
 
 // Define available color themes
 type BadgeColor = "red" | "green" | "blue" | "amber" | "slate";

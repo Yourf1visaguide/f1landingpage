@@ -1,11 +1,11 @@
-import React from "react";
 import { Inter, Playfair_Display } from "next/font/google";
-import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import HeroStats from "./HeroStats";
-import RedButton from "../../Red-Buttons";
-import BlackButton from "../../BlackButton";
-import Badge from "../../Badge";
-import { handleWhatsappClick } from "@/app/function/handleWhatsapp";
+
+import RedButton from "@/components/Red-Buttons";
+import BlackButton from "@/components/BlackButton";
+import Badge from "@/components/Badge";
+import { handleWhatsappClick } from "@/function/handleWhatsapp";
 
 
 

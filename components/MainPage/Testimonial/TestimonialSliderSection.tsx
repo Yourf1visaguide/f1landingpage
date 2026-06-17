@@ -2,6 +2,7 @@ import { useRef } from "react";
 import TestimonialsPage from "./Testimonial";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import VideoCard from "./VideoCard";
+import { testimonialsData } from "./Testimonials";
 
 export const TestimonialSliderSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -42,7 +43,7 @@ export const TestimonialSliderSection = () => {
             {/* Spacer for edge alignment */}
             <div className="flex-shrink-0 w-2" />
             
-            {TestimonialsPage.map((t) => (
+            {testimonialsData.map((t) => (
               <div key={t.id} className="flex-shrink-0 w-[85vw] sm:w-[400px] md:w-[350px] snap-center">
                 <VideoCard data={t} />
               </div>
