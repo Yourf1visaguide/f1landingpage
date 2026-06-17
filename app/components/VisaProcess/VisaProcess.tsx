@@ -3,6 +3,7 @@
 import { MessageCircle } from "lucide-react";
 import RedButton from "../Red-Buttons";
 import Badge from "../Badge";
+import { handleWhatsappClick } from "@/app/function/handleWhatsapp";
 
 const steps = [
 {
@@ -50,7 +51,7 @@ description: "Begin your study journey in the USA.",
 ];
 
 export default function VisaProcessSection() {
-return ( <section className="relative overflow-hidden bg-white py-24">
+return ( <section id="process" className="relative overflow-hidden bg-white py-24">
 {/* Background Accent */} <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.08),transparent_40%)]" />
 
 ```
@@ -178,6 +179,7 @@ return ( <section className="relative overflow-hidden bg-white py-24">
           Ready to Start Step 1?
         </h3>
         <RedButton 
+        onClick={handleWhatsappClick}
         text="Contact Us on WhatsApp"
         icon={<MessageCircle  />}
         className="text-xl p-4"

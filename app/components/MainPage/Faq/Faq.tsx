@@ -36,7 +36,9 @@ export default function FAQSection() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section className="relative overflow-hidden bg-white py-24">
+    <section 
+    id="faq"
+    className="relative overflow-hidden bg-white py-24">
       {" "}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(220,38,38,.06),transparent_35%)]" />
       ```

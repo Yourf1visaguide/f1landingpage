@@ -5,6 +5,7 @@ import HeroStats from "./HeroStats";
 import RedButton from "../../Red-Buttons";
 import BlackButton from "../../BlackButton";
 import Badge from "../../Badge";
+import { handleWhatsappClick } from "@/app/function/handleWhatsapp";
 
 
 
@@ -51,8 +52,8 @@ function HeroLeft() {
 
       {/* CTA Button */}
       <div className="flex flex-col sm:flex-row gap-4">
-        <RedButton text="APPLY ON WHATSAPP" className="text-base py-5" icon={<MessageCircle className="h-5 w-5" />} />
-        <BlackButton text="See Success Stories"  className="text-base py-5" icon={<ArrowRight className="h-5 w-5" />} />
+        <RedButton onClick={handleWhatsappClick} text="APPLY ON WHATSAPP" className="text-base py-5" icon={<MessageCircle className="h-5 w-5" />} />
+        <BlackButton href="#stories" text="See Success Stories"  className="text-base py-5" icon={<ArrowRight className="h-5 w-5" />} />
       </div>
 
       {/* Stats */}

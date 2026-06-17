@@ -1,15 +1,16 @@
-import React from "react";
-import { MessageCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import RedButton from "../../Red-Buttons";
+import { MessageCircle } from "lucide-react";
 
+import RedButton from "../../Red-Buttons";
+import { handleWhatsappClick } from "@/app/function/handleWhatsapp";
 export default function Navbar() {
+
+  
   const navLinks = [
-    { name: "Stories", href: "#stories" },
+    { name: "Success Stories", href: "#stories" },
     { name: "Process", href: "#process" },
     { name: "Requirements", href: "#requirements" },
-    { name: "AI Tools", href: "#ai-tools" },
     { name: "FAQ", href: "#faq" },
   ];
 
@@ -50,8 +51,8 @@ export default function Navbar() {
             
             {/* Social Icons */}
             <div className="flex items-center gap-4">
-              <a
-                href="https://wa.me/YOUR_NUMBER"
+              <Link
+                href="https://wa.me/91917087775007"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
@@ -59,9 +60,9 @@ export default function Navbar() {
                 className="text-zinc-600 hover:text-[#DC2626] transition-colors"
               >
                 <MessageCircle className="w-5 h-5" strokeWidth={1.5} />
-              </a>
-              <a
-                href="https://instagram.com/YOUR_HANDLE"
+              </Link>
+              <Link
+                href="https://instagram.com/yourf1visaguide/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -72,14 +73,14 @@ export default function Navbar() {
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                 </svg>
-              </a>
+              </Link>
             </div>
 
             {/* Vertical Divider (Height reduced to h-6 to match the shorter nav) */}
             <div className="hidden sm:block w-px h-6 bg-zinc-300" />
 
             {/* Apply Now Button (Padding slightly reduced to fit h-16 perfectly) */}
-            <RedButton text="Call Now" />
+            <RedButton text="Call Now" onClick={handleWhatsappClick} />
           </div>
         </div>
       </div>

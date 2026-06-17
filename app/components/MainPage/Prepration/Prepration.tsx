@@ -1,6 +1,4 @@
-import React from "react";
 import {
-CheckCircle2,
 FileText,
 Monitor,
 Landmark,
@@ -9,6 +7,8 @@ BadgeDollarSign,
 MessageCircle,
 } from "lucide-react";
 import Badge from "../../Badge";
+import BlackButton from "../../BlackButton";
+import { handleWhatsappClick } from "@/app/function/handleWhatsapp";
 
 export default function PreparationSection() {
 const documents = [
@@ -38,7 +38,7 @@ description:
 },
 ];
 
-return ( <section className="relative overflow-hidden bg-slate-50 py-20">
+return ( <section id="requirements" className="relative overflow-hidden bg-slate-50 py-20">
 ```
   <div className="relative mx-auto max-w-7xl px-6 lg:px-8 flex justify-center items-center flex-col">
     {/* Badge */}
@@ -171,27 +171,13 @@ return ( <section className="relative overflow-hidden bg-slate-50 py-20">
             US Government fees are paid separately.
           </p>
 
-          <button
-            className="
-              mt-8
-              flex
-              w-full
-              items-center
-              justify-center
-              gap-2
-              rounded-xl
-              bg-slate-900
-              px-6
-              py-4
-              font-semibold
-              text-white
-              transition
-              hover:bg-black
-            "
-          >
-            <MessageCircle className="h-5 w-5" />
-            Apply on WhatsApp
-          </button>
+          <BlackButton 
+            text="Apply on WhatsApp" 
+            icon={<MessageCircle className="h-5 w-5" />}
+            className="w-full mt-4 py-4 md:text-xl text-base"
+            onClick={handleWhatsappClick}
+          />
+            
         </div>
       </div>
     </div>
