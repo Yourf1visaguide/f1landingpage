@@ -40,7 +40,7 @@ export default function FAQSection() {
       {" "}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(220,38,38,.06),transparent_35%)]" />
       ```
-      <div className="relative mx-auto max-w-5xl px-6">
+      <div className="relative mx-auto max-w-7xl px-6">
         {/* Badge */}
 
         <Badge text="Have Questions?" color="blue"  isLive={true} />
