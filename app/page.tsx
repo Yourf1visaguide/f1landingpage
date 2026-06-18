@@ -1,5 +1,3 @@
-
-
 import FooterSection from "@/components/Footer/footer";
 import FAQSection from "@/components/MainPage/Faq/Faq";
 import HeroSection from "@/components/MainPage/HeroSection/HeroSection";

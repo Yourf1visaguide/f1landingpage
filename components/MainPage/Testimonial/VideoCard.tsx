@@ -15,7 +15,6 @@ const VideoCard = ({ data }: { data: Testimonial }) => {
 const getYouTubeThumbnail = (id: string) => {
   return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
 };
-console.log(data);
 const [isPlaying, setIsPlaying] = useState(false);
 
 const isYouTube = isYouTubeVideo(data.videoUrl);
@@ -85,7 +84,7 @@ const posterSrc = isYouTube ? getYouTubeThumbnail(data.videoUrl) : null;
       {/* Content Area */}
       <div className="p-6 flex flex-col flex-grow">
         <div
-          className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border w-fit mb-4 ${data.tagColor}`}
+          className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold border w-fit mb-4 ${data.tagColor}`}
         >
           {data.tag}
         </div>

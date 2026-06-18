@@ -14,22 +14,16 @@ export default function TestimonialsPage() {
       try {
         setLoading(true);
         setError(null);
-        const SHEET_ID = "1XkWPcdjHHONeQ38QOLkx6utKmFUVWe6aJFFtjIDQw2A";
+        const SHEET_ID = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID;
 
         const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
-
-        const response = await fetch(url, {
-          next: {
-            revalidate: 300,
-          },
-        });
+        const response = await fetch(url);
 
         if (!response.ok) {
           throw new Error(`Google Sheet request failed: ${response.status}`);
         }
 
         const text = await response.text();
-        console.log(response);
         const start = text.indexOf("{");
         const end = text.lastIndexOf("}");
 
@@ -38,15 +32,15 @@ export default function TestimonialsPage() {
         const data:Testimonial[] = await json.table.rows
           .map((row: any) => ({
             id: Number(row.c[0]?.v ?? 0),
-            tag: "",
-            tagColor: "bg-red-50 text-red-700 border-red-100",
+            tagColor: "bg-red-50 text-red-800 border-red-300",
             description: String(row.c[1]?.v ?? ""),
             name: String(row.c[2]?.v ?? ""),
             visa: String(row.c[3]?.v ?? ""),
             location: String(row.c[4]?.v ?? ""),
             initials: String(row.c[5]?.v ?? ""),
-            priority: Boolean(row.c[6]?.v),
+            priority: Boolean(row.c[6]?.v ?? false),
             videoUrl: String(row.c[7]?.v ?? ""),
+            tag: String(row.c[8]?.v ?? ""),
           }))
           .filter((item: Testimonial) => item.id > 0)
           .sort((a: Testimonial, b: Testimonial) => {
@@ -71,7 +65,6 @@ export default function TestimonialsPage() {
 
     getTestimonials();
   }, []);
-
   console.log(testimonialsData);
   return (
     <main id="stories" className="bg-zinc-100 border-t-2 border-zinc-200">
