@@ -1,31 +1,26 @@
 import Image from "next/image";
-import { testimonialsData } from "./Testimonials";
 import { useState } from "react";
 import { Play, Star } from "lucide-react";
 
+import { Testimonial } from "@/lib/types";
+
+
 // --- Video Card Component (Universal & Optimized) ---
-const VideoCard = ({ data }: { data: (typeof testimonialsData)[0] }) => {
+const VideoCard = ({ data }: { data: Testimonial }) => {
   // --- Utilities ---
-  const isYouTubeUrl = (url: string) => {
-    return url.includes("youtube.com") || url.includes("youtu.be");
-  };
-  const getYouTubeId = (url: string) => {
-    const regExp =
-      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-    const match = url.match(regExp);
-    return match && match[2].length === 11 ? match[2] : null;
-  };
+  const isYouTubeVideo = (url: string) => {
+  return /^[a-zA-Z0-9_-]{11}$/.test(url);
+};
 
-  const getYouTubeThumbnail = (url: string) => {
-    const id = getYouTubeId(url);
-    return id ? `https://img.youtube.com/vi/${id}/maxresdefault.jpg` : null;
-  };
-  const [isPlaying, setIsPlaying] = useState(false);
-  const isYouTube = isYouTubeUrl(data.videoUrl);
+const getYouTubeThumbnail = (id: string) => {
+  return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+};
+console.log(data);
+const [isPlaying, setIsPlaying] = useState(false);
 
-  // Smart Poster Logic
-  const posterSrc =
-    data.poster || (isYouTube ? getYouTubeThumbnail(data.videoUrl) : null);
+const isYouTube = isYouTubeVideo(data.videoUrl);
+
+const posterSrc = isYouTube ? getYouTubeThumbnail(data.videoUrl) : null;
 
   return (
     <div className="group bg-white rounded-md border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col h-full">
@@ -70,7 +65,7 @@ const VideoCard = ({ data }: { data: (typeof testimonialsData)[0] }) => {
         ) : // Render actual video player based on type
         isYouTube ? (
           <iframe
-            src={`${data.videoUrl}?autoplay=1&rel=0`}
+            src={`https://www.youtube.com/embed/${data.videoUrl}?autoplay=1&rel=0&modestbranding=1&controls=1&showinfo=0`}
             title={`Testimonial by ${data.name}`}
             className="absolute inset-0 w-full h-full"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

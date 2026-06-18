@@ -1,63 +1,145 @@
+"use client";
+
 import { Inter, Playfair_Display } from "next/font/google";
-import { ArrowRight, MessageCircle } from "lucide-react";
 import HeroStats from "./HeroStats";
-
-import RedButton from "@/components/Red-Buttons";
-import BlackButton from "@/components/BlackButton";
 import Badge from "@/components/Badge";
-import { handleWhatsappClick } from "@/function/handleWhatsapp";
+import HeroSectionCta from "./HeroSectionCta";
 
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
-
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
 
 function HeroLeft() {
-  
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+
+    tl.fromTo(
+      badgeRef.current,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 0.4,
+        ease: "power2.out",
+      }
+    )
+      .fromTo(
+        headingRef.current,
+        {
+          x: -10,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: "power2.out",
+        },
+        "-=0.1"
+      )
+      .fromTo(
+        paragraphRef.current,
+        {
+          x: -10,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      )
+      .fromTo(
+        ctaRef.current,
+        {
+          x: -10,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        "-=0.2"
+      )
+      .fromTo(
+        statsRef.current,
+        {
+          y: 10,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        "-=0.2"
+      );
+
+    return () => {
+      tl.kill();
+    };
+  }, []);
+
   return (
-    <div className="space-y-8 lg:col-span-8">
-        <Badge text="Over 50,000+ Success Stories" isLive={true} color="green" />
-      
-
-      {/* Headline */}
-      <h1
-        className={`${playfair.variable} font-serif text-5xl lg:text-6xl xl:text-6xl font-bold text-[#0F172A] leading-[1.1] tracking-tight`}
-      >
-        Your Dream of <br className="hidden lg:block" />
-        Studying in <span className="text-red-600">America</span>
-        <br />
-        Starts Here
-      </h1>
-
-      {/* Testimonial Quote */}
-      <div className="border-l-4 border-red-600 pl-6 py-2">
-        <p className="text-lg text-[#0F172A] italic font-medium">
-          "Because of this team, my visa was approved in less than 2 minutes!"
-        </p>
-        <p className="text-sm text-slate-600 mt-2 font-medium">
-          — Arjun M., NYU
-        </p>
+    <div className="space-y-8 lg:col-span-8 z-30">
+      <div ref={badgeRef}>
+        <Badge
+          text="Over 50,000+ Success Stories"
+          isLive={true}
+          color="red"
+        />
       </div>
 
-      {/* Subheadline */}
-      <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl">
-        Navigate the F-1 student visa process with confidence.{" "}
-        <span className="font-semibold text-[#0F172A]">
+      <h1
+        ref={headingRef}
+        className={`${playfair.variable} font-serif text-5xl lg:text-6xl xl:text-6xl font-bold leading-[1.1] tracking-tight text-white`}
+      >
+        Your Dream of Studying <br className="hidden lg:block" />
+        in <span className="text-red-600">America </span> Starts Here
+        <br />
+      </h1>
+
+      <p
+        ref={paragraphRef}
+        className="text-lg lg:text-xl text-zinc-200 leading-relaxed max-w-3xl"
+      >
+        Navigate the F-1 student visa process with confidence.
+        <span className="font-semibold text-red-600">
+          {" "}
           Apply now in just Rs 36,000
         </span>{" "}
         and get step-by-step guidance, mock interview mastery, and everything
         you need to land your USA study visa.
       </p>
 
-      {/* CTA Button */}
-      <div className="flex flex-col sm:flex-row gap-4">
-        <RedButton onClick={handleWhatsappClick} text="APPLY ON WHATSAPP" className="text-base py-5" icon={<MessageCircle className="h-5 w-5" />} />
-        <BlackButton href="#stories" text="See Success Stories"  className="text-base py-5" icon={<ArrowRight className="h-5 w-5" />} />
+      <div ref={ctaRef}>
+        <HeroSectionCta />
       </div>
 
-      {/* Stats */}
-      <HeroStats />
+      <div ref={statsRef}>
+        <HeroStats />
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-"use client";
+
 
 import FooterSection from "@/components/Footer/footer";
 import FAQSection from "@/components/MainPage/Faq/Faq";

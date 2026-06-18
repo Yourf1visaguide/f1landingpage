@@ -84,18 +84,18 @@ export default function HeroStats() {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-wrap gap-8 lg:gap-12 pt-8 border-t border-slate-200"
+      className="flex flex-wrap gap-8 lg:gap-12 pt-8 border-t border-zinc-500"
     >
       {stats.map((stat, index) => (
         <div key={stat.label} className="stat-item">
-          <div className="text-3xl lg:text-4xl font-bold text-[#0F172A]">
+          <div className="text-3xl lg:text-4xl font-bold text-red-600">
             <AnimatedCounter
               value={stat.value}
               suffix={stat.suffix}
               duration={2}
             />
           </div>
-          <div className="text-sm text-slate-600 mt-1">{stat.label}</div>
+          <div className="text-sm text-zinc-100 mt-1">{stat.label}</div>
         </div>
       ))}
     </div>

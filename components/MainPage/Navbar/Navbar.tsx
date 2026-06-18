@@ -1,9 +1,9 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 
-import RedButton from "@/components/Red-Buttons";
-import { handleWhatsappClick } from "@/function/handleWhatsapp";
+import NavbarButton from "./NavbarButton";
 export default function Navbar() {
 
   
@@ -15,10 +15,10 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-100/90 border-b border-zinc-200 shadow-sm ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-100/90 border-b border-zinc-200 shadow-sm z-50 ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-50">
         {/* Height reduced from h-20 to h-16 for a sleeker look */}
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 z-50">
           
           {/* 1. Logo (Left) */}
           <Link href="/" className="flex-shrink-0">
@@ -39,7 +39,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 // Changed to dark text, hovers to brand red
-                className="text-zinc-700 hover:text-[#DC2626] font-medium text-[15px] transition-colors duration-200"
+                className="text-zinc-900 hover:text-red-700  font-medium text-[16px] transition-colors duration-200"
               >
                 {link.name}
               </a>
@@ -80,7 +80,7 @@ export default function Navbar() {
             <div className="hidden sm:block w-px h-6 bg-zinc-300" />
 
             {/* Apply Now Button (Padding slightly reduced to fit h-16 perfectly) */}
-            <RedButton text="Call Now" onClick={handleWhatsappClick} />
+            <NavbarButton />
           </div>
         </div>
       </div>

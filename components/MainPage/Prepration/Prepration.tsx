@@ -9,6 +9,7 @@ MessageCircle,
 import Badge from "@/components/Badge";
 import BlackButton from "@/components/BlackButton";
 import { handleWhatsappClick } from "@/function/handleWhatsapp";
+import PreprationCtaButton from "./PreprationCtaButton";
 
 export default function PreparationSection() {
 const documents = [
@@ -171,12 +172,7 @@ return ( <section id="requirements" className="relative overflow-hidden bg-slate
             US Government fees are paid separately.
           </p>
 
-          <BlackButton 
-            text="Apply on WhatsApp" 
-            icon={<MessageCircle className="h-5 w-5" />}
-            className="w-full mt-4 py-4 md:text-xl text-base"
-            onClick={handleWhatsappClick}
-          />
+          <PreprationCtaButton />
             
         </div>
       </div>

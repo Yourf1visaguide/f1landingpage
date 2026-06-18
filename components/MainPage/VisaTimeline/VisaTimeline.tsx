@@ -166,10 +166,18 @@ function HowThisWork() {
         }
       );
     });
+    
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
+  useEffect(() => {
+  const timer = setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 1500);
+
+  return () => clearTimeout(timer);
+}, []);
 
   const addToRefs = (el: HTMLHeadingElement | null) => {
     if (el && !divElement?.current?.includes(el)) {
@@ -204,7 +212,7 @@ function HowThisWork() {
             {steps.map((item, index) => {
               return (
                 <div className="flex px-3 " key={index}>
-                  <div className="relative rounded-full z-50">
+                  <div className="relative rounded-full z-40">
                     <span className=" w-11 h-14 bg-white text-zinc-300 p-1 rounded-full absolute top-0 border-6 border-zinc-200 text-2xl flex justify-center items-center font-bold">
                       {item.step}
                     </span>
