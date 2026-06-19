@@ -29,7 +29,7 @@ export default function TestimonialsPage() {
 
         const json = JSON.parse(text.substring(start, end + 1));
 
-        const data:Testimonial[] = await json.table.rows
+        const data: Testimonial[] = await json.table.rows
           .map((row: any) => ({
             id: Number(row.c[0]?.v ?? 0),
             tagColor: "bg-red-50 text-red-800 border-red-300",
@@ -39,8 +39,13 @@ export default function TestimonialsPage() {
             location: String(row.c[4]?.v ?? ""),
             initials: String(row.c[5]?.v ?? ""),
             priority: Boolean(row.c[6]?.v ?? false),
-            videoUrl: String(row.c[7]?.v ?? ""),
-            tag: String((row.c[8]?.v === "-" || (row.c[8]?.v)?.trim() === "") ? "Study Visa" : row.c[8]?.v),
+            videoUrl: String(row.c[7]?.v ?? "").trim(),
+            tag: String(
+              row.c[8]?.v?.trim() && row.c[8]?.v?.trim() !== "-"
+                ? row.c[8].v.trim()
+                : "Study Visa",
+            ),
+            type: String(row.c[9]?.v?.toLowerCase()),
           }))
           .filter((item: Testimonial) => item.id > 0)
           .sort((a: Testimonial, b: Testimonial) => {

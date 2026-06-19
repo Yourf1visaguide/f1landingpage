@@ -86,7 +86,7 @@ export const TestimonialGridSection = ({
           longSwipesMs={200}
           // 👇 Momentum feel
           freeMode={{
-            enabled: true,
+            enabled: false,
             momentum: true,
             momentumRatio: 0.8,
           }}

@@ -21,11 +21,23 @@ const isYouTube = isYouTubeVideo(data.videoUrl);
 
 const posterSrc = isYouTube ? getYouTubeThumbnail(data.videoUrl) : null;
 
+console.log(`https://res.cloudinary.com/dkno1wygy/image/upload/f_auto,q_auto/${data.videoUrl}`);
   return (
     <div className="group bg-white rounded-md border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col h-full">
       {/* Video / Poster Area - Increased height to aspect-[4/5] for modern vertical feel */}
-      <div className="relative aspect-[4/5] bg-slate-900 overflow-hidden">
-        {!isPlaying ? (
+      <div className="relative aspect-[4/5] bg-slate-900 overflow-hidden border-2 ">
+        {
+          data.type === "image"
+          ?
+          <Image
+                src={`https://res.cloudinary.com/dkno1wygy/image/upload/f_auto,q_auto/${data.videoUrl}`}
+                alt={`Testimonial by ${data.name}`}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105 bg-zinc-600 "
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+              />
+          :!isPlaying ? (
           <>
             {posterSrc ? (
               <Image
@@ -53,9 +65,9 @@ const posterSrc = isYouTube ? getYouTubeThumbnail(data.videoUrl) : null;
               className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors group/play cursor-pointer"
               aria-label={`Play video testimonial from ${data.name}`}
             >
-              <div className="w-16 h-16 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 group-hover/play:scale-110">
+              <div className="w-14 h-14  bg-white/70 group-hover:bg-white/90 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 group-hover/play:scale-110">
                 <Play
-                  className="w-6 h-6 text-[#DC2626] ml-1"
+                  className="w-5 h-5 text-red-600 ml-1"
                   fill="currentColor"
                 />
               </div>
@@ -78,7 +90,8 @@ const posterSrc = isYouTube ? getYouTubeThumbnail(data.videoUrl) : null;
             controls
             playsInline
           />
-        )}
+        )
+        }
       </div>
 
       {/* Content Area */}

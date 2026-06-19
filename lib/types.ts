@@ -10,4 +10,5 @@ export type Testimonial = {
   initials:string;
   priority:boolean;
   videoUrl:string;
+  type: "image" | "video"
 }
