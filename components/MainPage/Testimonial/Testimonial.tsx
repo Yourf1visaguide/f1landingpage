@@ -40,7 +40,7 @@ export default function TestimonialsPage() {
             initials: String(row.c[5]?.v ?? ""),
             priority: Boolean(row.c[6]?.v ?? false),
             videoUrl: String(row.c[7]?.v ?? ""),
-            tag: String(row.c[8]?.v ?? ""),
+            tag: String((row.c[8]?.v === "-" || (row.c[8]?.v)?.trim() === "") ? "Study Visa" : row.c[8]?.v),
           }))
           .filter((item: Testimonial) => item.id > 0)
           .sort((a: Testimonial, b: Testimonial) => {

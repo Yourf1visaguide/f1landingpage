@@ -99,11 +99,11 @@ const posterSrc = isYouTube ? getYouTubeThumbnail(data.videoUrl) : null;
           ))}
         </div>
 
-        <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+        <p className="text-slate-600 text-sm leading-relaxed mb-3 flex-grow min-h-24  ">
           {data.description}
         </p>
 
-        <div className="flex items-center gap-3 pt-4 border-t border-slate-50">
+        <div className="flex items-start gap-3 border-t border-slate-200 pt-3 min-h-[68px] ">
           <div className="w-10 h-10 rounded-full bg-[#0B1120] text-white flex items-center justify-center font-bold text-sm">
             {data.initials}
           </div>
