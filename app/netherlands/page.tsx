@@ -26,8 +26,9 @@ export default function LandingPage() {
       heroSection.description
       } 
     />
+    
     <TestimonialsPage 
-      sheet={process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID ?? ""}
+      sheet={process.env.NEXT_PUBLIC_NETHERLANDS_GOOGLE_SHEET_ID ?? ""}
       title={testimonialsPage.title}
       description={testimonialsPage.description}
     />
