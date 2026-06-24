@@ -78,6 +78,8 @@ export default function TestimonialsPage() {
         loading={loading}
         error={error}
       />
+
+
     </main>
   );
 }

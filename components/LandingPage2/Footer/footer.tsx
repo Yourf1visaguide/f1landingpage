@@ -88,7 +88,7 @@ export default function Footer() {
                 <Mail className="h-5 w-5 text-red-600" />
 
                 <span className="text-white/70">
-                  support@yourdomain.com
+                  info@yourf1visaguide.com
                 </span>
               </div>
             </div>

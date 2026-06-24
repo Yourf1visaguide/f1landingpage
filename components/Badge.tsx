@@ -11,15 +11,10 @@ const cn = (...inputs: ClassValue[]) =>
 type BadgeColor = "red" | "green" | "blue" | "amber" | "slate";
 
 interface BadgeProps {
-  /** The text content of the badge */
   text: string;
-  /** The color theme of the badge */
   color?: BadgeColor;
-  /** Optional custom icon (defaults to CheckCircle2) */
   icon?: LucideIcon;
-  /** Enables the pulsing/pinging "live" animation effect */
   isLive?: boolean;
-  /** Additional custom className overrides */
   className?: string;
 }
 

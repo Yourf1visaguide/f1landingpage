@@ -1,14 +1,44 @@
+import { LucideIcon } from "lucide-react";
+import { ReactNode } from "react";
 
 export type Testimonial = {
-  id:number;
-  tag?:string;
-  tagColor?:string;
-  description:string;
-  name:string;
-  visa:string;
-  location:string;
-  initials:string;
-  priority:boolean;
-  videoUrl:string;
-  type: "image" | "video"
-}
+  id: number;
+  tag?: string;
+  tagColor?: string;
+  description: string;
+  name: string;
+  visa: string;
+  location: string;
+  initials: string;
+  priority: boolean;
+  videoUrl: string;
+  type: "image" | "video";
+};
+export type WhyFeature = {
+  icon: string;
+  title: string;
+  description: string;
+  large?: boolean;
+};
+
+export type WhySection = {
+  features: WhyFeature[];
+  title: ReactNode;
+  description: string;
+  badge: string;
+};
+
+export type VisaTimelineSteps =  {
+    step: number;
+    title: string;
+    content: string;
+    icon: string;
+    image: string;
+  };
+
+export type VisaTimelineType = {
+  title: ReactNode;
+  description: string;
+  badge: string;
+  steps: VisaTimelineSteps[];
+};

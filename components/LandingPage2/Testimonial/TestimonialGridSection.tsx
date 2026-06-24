@@ -25,19 +25,8 @@ export const TestimonialGridSection = ({
   loading: boolean;
 }) => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden ">
-      {/* Header */}
-      <div className="text-center mb-20">
-        <h2 className="text-4xl sm:text-5xl font-bold text-[#0B1120] tracking-tight mb-4">
-          Real Students. <span className="text-[#DC2626]">Real Results.</span>
-        </h2>
-
-        <p className="text-lg text-slate-600 mx-auto">
-          Join thousands of successful applicants who navigated the F-1 process
-          with our strategy.
-        </p>
-      </div>
-
+    <>
+      
       {/* Error */}
       {error ? (
         <div className="rounded-xl border border-red-200 bg-red-50 p-8 text-center">
@@ -74,8 +63,9 @@ export const TestimonialGridSection = ({
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
+          
           loop={true}
-          // 👇 Better touch + mouse dragging
+         
           grabCursor={true}
           simulateTouch={true}
           touchRatio={1.5}
@@ -84,13 +74,13 @@ export const TestimonialGridSection = ({
           longSwipes={true}
           longSwipesRatio={0.2}
           longSwipesMs={200}
-          // 👇 Momentum feel
+         
           freeMode={{
             enabled: false,
             momentum: true,
             momentumRatio: 0.8,
           }}
-          // 👇 Smooth
+          
           speed={300}
           spaceBetween={24}
           slidesPerView={1.2}
@@ -121,6 +111,6 @@ export const TestimonialGridSection = ({
           icon={<MessageCircle className="size-4" />}
         />
       </div>
-    </section>
+    </>
   );
 };
