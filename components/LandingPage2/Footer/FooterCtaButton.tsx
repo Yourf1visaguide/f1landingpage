@@ -38,9 +38,8 @@ function FooterCtaButton() {
                 <ArrowRight className="h-8 w-8 transition-transform group-hover:translate-x-2" />
               </button>
 
-              <p className="mt-4 text-center text-sm text-white/70">
-                Join 12,500+ successful students.
-                Your dream university awaits.
+              <p className="mt-4 text-center text-sm text-zinc-300 ">
+                Get a FREE counseling call today — no obligations.
               </p>
             </div>
   )

@@ -42,3 +42,17 @@ export type VisaTimelineType = {
   badge: string;
   steps: VisaTimelineSteps[];
 };
+
+
+
+
+export type FAQType = {
+  question: string;
+  paragraphs?: string[];
+  list?: string[];
+  table?: {
+    headers: string[];
+    rows: string[][];
+  };
+  custom?: ReactNode;
+};

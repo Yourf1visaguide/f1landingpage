@@ -9,7 +9,12 @@ import {
   BriefcaseBusiness,
   IdCard,
   Rocket,
+  ArrowUpRight,
+  MessageCircle,
+  SendHorizonal,
 } from "lucide-react";
+import Badge from "../Badge";
+import RedButton from "../Red-Buttons";
 
 
 
@@ -24,7 +29,7 @@ export default function WhySection({title, description, features, badge}:WhySect
   rocket: Rocket,
 };
   return (
-    <section className="bg-zinc-50 py-24">
+    <section className="bg-zinc-50 py-24" id="whyNetherlands">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <motion.div
@@ -34,16 +39,14 @@ export default function WhySection({title, description, features, badge}:WhySect
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-4xl text-center mb-16"
         >
-          <span className="inline-flex rounded-full border border-red-200 bg-red-50 px-4 py-2 text-sm font-semibold text-red-700">
-            {badge}
-          </span>
+          <Badge isLive={true} text={badge} color="blue" />
 
-          <h2 className="mt-6 text-4xl font-bold tracking-tight text-zinc-950 md:text-6xl">
+          <h2 className="mt-6 text-4xl font-bold tracking-tight text-zinc-950 md:text-5xl/tight">
             {title}
            
           </h2>
 
-          <p className="mt-6 text-lg text-zinc-600">
+          <p className="mt-6 text-lg text-zinc-600 max-w-3xl mx-auto">
             {description}
           </p>
         </motion.div>
@@ -72,6 +75,7 @@ export default function WhySection({title, description, features, badge}:WhySect
                   bg-white
                   p-8
                   shadow-sm
+                  cursor-pointer
                   transition-all
                   duration-300
                   hover:-translate-y-1
@@ -96,6 +100,9 @@ export default function WhySection({title, description, features, badge}:WhySect
               </motion.div>
             );
           })}
+        </div>
+        <div className="pt-12 flex justify-center ">
+
         </div>
       </div>
     </section>

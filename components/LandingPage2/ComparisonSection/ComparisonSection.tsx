@@ -92,7 +92,7 @@ function Cell({ value }: { value: string | boolean }) {
 
 export default function CountryComparison() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-24" id="whyNetherlands">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center">
           {/* <Badge  text="COUNTRY COMPARISON" /> */}
@@ -117,68 +117,68 @@ export default function CountryComparison() {
           transition={{ duration: 0.6 }}
           className="mt-16 overflow-x-auto"
         >
-          <div className="min-w-[1000px] overflow-hidden rounded-md border border-red-200 bg-white shadow-2xl">
+          <div className="min-w-[800px] overflow-hidden rounded-md border border-red-200 bg-white shadow-2xl">
             {/* Header */}
-            <div className="grid grid-cols-6 border-b border-slate-200">
-              <div className="bg-black px-6 py-6 font-bold text-white">
+            <div className="flex justify-between items-center bg-black border-b border-slate-200 ">
+              <div className="bg-black min-w-44    px-3 py-4 font-bold text-white">
                 Feature
               </div>
-
-              <div className="bg-black px-6 py-6 text-center font-semibold text-white">
-                🇨🇦 Canada
+              <div className="bg-black w-28 px-3 py-4  text-center font-semibold text-white">
+                Canada
               </div>
 
-              <div className="bg-black px-6 py-6 text-center font-semibold text-white">
-                🇦🇺 Australia
+              <div className="bg-black w-28 px-3 py-4  text-center font-semibold text-white">
+                Australia
               </div>
 
-              <div className="bg-black px-6 py-6 text-center font-semibold text-white">
-                🇬🇧 UK
+              <div className="bg-black w-28 px-3 py-4  text-center font-semibold text-white">
+                UK
               </div>
 
-              <div className="bg-black px-6 py-6 text-center font-semibold text-white">
-                🇩🇪 Germany
+              <div className="bg-black w-32 px-3 py-4  text-center font-semibold text-white">
+                Germany
               </div>
 
-              <div className="relative bg-red-700 px-4 py-2 text-center text-white">
-                <div className=" flex justify-start items-start gap-1 rounded-md text-white px-3 py-1 text-base font-bold  h-full">
-                  <Trophy className="h-12 w-12 text-amber-500 " />
-                  <span>BEST OPTION Netherlands</span> 
-                </div>
+              <div className="flex justify-center items-center bg-red-700 px-3 py-4 text-center text-white w-64 text-base font-bold h-full">
+                <Trophy className="h-6 w-6 text-amber-300 mr-2  " />
+                  Netherlands <i className="text-sm ">(BEST OPTION)</i> 
+                  
+                
               </div>
             </div>
 
             {/* Rows */}
-            {rows.map((row, index) => (
+            
+{rows.map((row, index) => (
               <div
                 key={row.feature}
-                className={`grid grid-cols-6 items-center cursor-pointer ${
+                className={`flex justify-between items-center cursor-pointer ${
                   index % 2 === 0
                     ? "bg-red-50/50"
                     : "bg-white"
                 } hover:bg-red-50 transition-colors`}
               >
-                <div className="px-5 py-5 font-semibold text-slate-900">
+                <div className="px-3 py-3 min-w-44 font-semibold text-slate-900 text-sm ">
                   {row.feature}
                 </div>
 
-                <div className="px-5 py-5 text-center text-zinc-600">
+                <div className="px-3 py-3 w-28  text-center text-zinc-600">
                   <Cell value={row.canada} />
                 </div>
 
-                <div className="px-5 py-5 text-center text-zinc-600">
+                <div className="px-3 py-3 w-28  text-center text-zinc-600">
                   <Cell value={row.australia} />
                 </div>
 
-                <div className="px-5 py-5 text-center text-zinc-600">
+                <div className="px-3 py-3 w-28 text-center text-zinc-600">
                   <Cell value={row.uk} />
                 </div>
 
-                <div className="px-5 py-5 text-center text-zinc-600 ">
+                <div className="px-3 py-3 w-32 text-center text-zinc-600 ">
                   <Cell value={row.germany} />
                 </div>
 
-                <div className="border-l border-red-200 bg-red-50 px-5 py-5 text-center font-bold text-red-700">
+                <div className="border-l w-64 border-red-200 bg-red-50 px-3 py-5 text-center font-bold text-red-700 h-full border-b">
                   <Cell value={row.netherlands} />
                 </div>
               </div>

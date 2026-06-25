@@ -1,6 +1,7 @@
-import { WhySection as WhySectionType } from "@/lib/types";
+import { FAQType, WhySection as WhySectionType } from "@/lib/types";
 import { BadgeCheck, BriefcaseBusiness, Building2, Check, CheckSquare, Globe, IdCard, Rocket } from "lucide-react";
 import { ReactNode } from "react";
+
 
 export const heroSection: {
   image: string;
@@ -147,7 +148,7 @@ export const VisaTimelineData = {
         step: 4,
         title: "Fees Deposit — 6K Euro",
         content:
-          "Deposit €6,000 to confirm your university seat. No old bank funds required. Financial assistance is available if you need it.",
+          "Deposit €6,000 to confirm your university seat. Financial assistance is available if you need it.",
         icon: "Banknote",
         image: "/images/howthiswork/4.jpg",
       },
@@ -170,3 +171,175 @@ export const VisaTimelineData = {
     ],
 } 
 
+
+
+
+export const faqsData: FAQType[] = [
+  {
+    question: "What is your service fee?",
+    paragraphs: [
+      "Our service fee for the complete Netherlands study process is ₹36,000 only.",
+      "This covers application guidance, documentation, university liaison, and visa support — end to end.",
+    ],
+  },
+
+  {
+    question: "What is the ₹50,000 guarantee? How does it work?",
+    paragraphs: [
+      "We are so confident in our service that we offer a unique ₹50,000 benefit regardless of outcome. We are so confident in our service that we offer a unique ₹50,000 benefit regardless of outcome.",
+      "Whether your visa is approved or refused, you receive ₹50,000 from us in either case. Your ₹36,000 fee is fully covered and you walk away with more.",
+    ],
+
+    table: {
+      headers: ["Visa Result", "What You Get"],
+      rows: [
+        [
+          "✅ Approved",
+          "₹50,000 🎉 Welcome Bonus after your visa is approved",
+        ],
+        [
+          "❌ Refused",
+          "₹50,000 Refund / Compensation",
+        ],
+      ],
+    },
+
+    
+  },
+
+  {
+    question: "How much funds do I need to show?",
+    paragraphs: [
+      "You need to show ₹40 Lakhs (40L) in your bank account as proof of sufficient funds for living expenses and tuition.",
+    ],
+
+    list: [
+      "New funds work too.",
+      "We can help you arrange the required financial statement if needed.",
+    ],
+  },
+
+  {
+    question: "I don't have ₹40L in my account. Can you help?",
+    paragraphs: [
+      "Yes! If you don't have the required funds, we have funding support available.",
+      "Just reach out to us and we'll guide you through the available options.",
+    ],
+  },
+
+  {
+    question: "Is there an interview with the embassy?",
+    paragraphs: [
+      "No. There is no interview required.",
+      "The visa process is straightforward and handled through your university and the IND.",
+      "You just need to submit the right documents — we guide you through everything.",
+    ],
+  },
+
+  {
+    question: "Do I need to apply for the visa myself?",
+    paragraphs: [
+      "No. Once you get admission, your Dutch university applies for the visa (MVV + Residence Permit) on your behalf through the IND.",
+      "We coordinate with the university to ensure everything is submitted correctly and on time.",
+    ],
+  },
+
+  {
+    question: "What documents are needed for the Netherlands study visa?",
+
+    paragraphs: [
+      "Typical documents include:",
+    ],
+
+    list: [
+      "Valid Passport (scanned — all pages for MVV applicants)",
+      "Unconditional Admission Letter from the Dutch University",
+      "Proof of Financial Resources (₹40L Bank Statement)",
+      "Health Insurance Proof or Intent to Purchase",
+      "Antecedents Certificate (Declaration of Good Conduct)",
+      "Statement of Intent (with IND Request Form)",
+    ],
+
+    custom: (
+      <p className="mt-5">
+        We provide a complete checklist and review every document before
+        submission.
+      </p>
+    ),
+  },
+
+  {
+    question: "How long does the visa process take?",
+
+    paragraphs: [
+      "IND processing typically takes 60–90 days (around 2–3 months) from the date a complete application is submitted.",
+      "We recommend starting the process at least 4–5 months before your intended arrival.",
+    ],
+  },
+
+  {
+    question: "When do I pay the ₹36,000 fee?",
+
+    paragraphs: [
+      "The ₹36,000 fee is paid upfront when you enroll with us for the complete process.",
+      "After that, we handle everything.",
+    ],
+  },
+
+  {
+    question: "When will I receive the ₹50,000?",
+
+    paragraphs: [
+      "You receive the ₹50,000 after the visa decision is announced.",
+    ],
+
+    list: [
+      "If approved → We transfer ₹50,000 within [X days].",
+      "If refused → We transfer ₹50,000 within [X days].",
+    ],
+  },
+
+  {
+    question: "Can I work while studying in the Netherlands?",
+
+    paragraphs: [
+      "Yes! As an international student you can work:",
+    ],
+
+    list: [
+      "Up to 16 hours per week during the academic year (with a work permit arranged by your employer).",
+      "Full-time during June, July, and August (summer months — no permit needed).",
+    ],
+  },
+
+  {
+    question: "What happens after I get the visa?",
+
+    paragraphs: [
+      "After your MVV entry sticker is issued:",
+    ],
+
+    list: [
+      "Collect your MVV from the Dutch Embassy/Consulate (Delhi, Mumbai or Bangalore).",
+      "Schedule your travel to the Netherlands.",
+      "Register at your local municipality (Gemeente) within 2 weeks of arrival to receive your BSN.",
+      "Collect your VVR Residence Permit Card from the IND Office.",
+    ],
+
+    custom: (
+      <p className="mt-5">
+        We continue guiding you through every step even after your visa has been
+        issued.
+      </p>
+    ),
+  },
+
+  {
+    question: "What if I have more questions?",
+
+    paragraphs: [
+      "You can reach out to us anytime.",
+      "We're here to help you through the complete process — from choosing the right university to arriving safely in the Netherlands.",
+    ],
+  },
+];

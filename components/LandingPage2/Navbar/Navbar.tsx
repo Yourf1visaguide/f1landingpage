@@ -10,7 +10,8 @@ export default function Navbar() {
   const navLinks = [
     { name: "Success Stories", href: "#stories" },
     { name: "Process", href: "#process" },
-    { name: "Requirements", href: "#requirements" },
+    { name: "Why Netherlands", href: "#whyNetherlands" },
+    { name: "Eligibility & Cost", href: "#eligibility" },
     { name: "FAQ", href: "#faq" },
   ];
 

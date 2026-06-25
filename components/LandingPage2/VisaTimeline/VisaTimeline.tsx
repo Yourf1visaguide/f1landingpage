@@ -153,7 +153,7 @@ function HowThisWork({steps, title, description, badge}:VisaTimelineType) {
     "Plane":Plane,
   }
   return (
-    <section className="bg-zinc-100 py-20 px-4 xl:px-0 ">
+    <section className="bg-zinc-100 py-20 px-4 xl:px-0 " id="process">
       <div className="max-w-7xl mx-auto  ">
         <div className="flex justify-center items-center flex-col">
           <div
