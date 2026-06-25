@@ -35,7 +35,7 @@ export default function EligibilityAndCost() {
       title: "Bachelors Eligibility",
       description: [
         "12th with 60%+ mark",
-        "IELTS: 7.0 bands / PTE: 65+",
+        "IELTS: 6.0 bands / PTE: 45+",
         "Up to 5 years gap acceptable",
         "No old funds required",
         "Visa guarantee included",

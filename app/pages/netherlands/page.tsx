@@ -10,7 +10,6 @@ import { heroSection, testimonialsPage, VisaTimelineData, whySection } from "@/d
 import WhySection from "@/components/WhySection/WhySection";
 import CountryComparison from "@/components/LandingPage2/ComparisonSection/ComparisonSection";
 import EligibilityAndCost from "@/components/LandingPage2/EligibilityAndCost/EligibilityAndCost";
-import WhatsappBubble from "@/components/whatsapp/whatsapp-button";
 
 export default function LandingPage() {
   
