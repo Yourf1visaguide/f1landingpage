@@ -56,3 +56,22 @@ export type FAQType = {
   };
   custom?: ReactNode;
 };
+
+
+export type TouristDestination = {
+  id: string;
+  country: string;
+  flag: string;
+  image: string;
+
+  visaType: string;
+  validity: string;
+  processingTime: string;
+  fee: string;
+
+  badge?: string;
+
+  documents: string[];
+
+  popular?: boolean;
+};

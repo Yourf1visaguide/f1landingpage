@@ -77,8 +77,8 @@ export default function HeroStats() {
 
   const stats = [
     { value: 94, suffix: "%", label: "Approval Rate" },
-    { value: 50, suffix: "K+", label: "Students Helped" },
-    { value: 120, suffix: "+", label: "Countries" },
+    { value: 50, suffix: "K+", label: "Happy Clients" },
+    { value: 15, suffix: "+", label: "Countries Served" },
   ];
 
   return (
