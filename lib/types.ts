@@ -75,6 +75,6 @@ export type TouristDestination = {
 export type TouristDestinationCategory = {
   mainTitle:string;
   description:string;
-  titleColor:"text-blue-600" | "text-red-600" | "text-black-600";
+  titleColor:"text-blue-600" | "text-red-600" | "text-black-600" | "text-amber-600";
   countries:TouristDestination[]
 }
