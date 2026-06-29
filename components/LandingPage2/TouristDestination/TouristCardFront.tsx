@@ -1,5 +1,5 @@
-import { BadgeDollarSign, ChevronRight, Clock3, Plane } from "lucide-react"
-import React from 'react'
+import { BadgeDollarSign, ChevronRight, Clock3, Plane } from "lucide-react";
+import React from "react";
 import StatCard from "./StatCard";
 import { TouristDestination } from "@/lib/types";
 import Image from "next/image";
@@ -7,73 +7,72 @@ import Image from "next/image";
 type TouristCardProps = {
   data: TouristDestination;
   onClick?: () => void;
+  selected:boolean
 };
 
-
-function TouristCardFront({ data, onClick }: TouristCardProps) {
+function TouristCardFront({ data, onClick, selected }: TouristCardProps) {
   return (
     <div>
-            <div className="absolute top-4 left-0 flex justify-between items-center w-full ">
-          {/* Flag short form of  name */}
-          <div className="text-xl ml-4 border border-white rounded-full size-6 object-fill">
-            <Image
-    src="https://flagcdn.com/w80/th.png"
-    width={24}
-    className="rounded-full object-fill"
-    height={30}
-    
-    alt="Thailand"
-/>
-          </div>
-
-          {/* Popular */}
-          {data.popular && (
-            <div className=" mr-4 rounded-full bg-red-700 px-3 py-1 text-xs font-semibold text-white ">
-              {" "}
-              Most Popular{" "}
-            </div>
-          )}
+      <div className="absolute top-4 left-0 flex justify-between items-center w-full ">
+        {/* Flag short form of  name */}
+        <div className="text-xl ml-4 border border-white rounded-full size-6 object-fill">
+          <Image
+            src="https://flagcdn.com/w80/th.png"
+            width={24}
+            className="rounded-full object-fill"
+            height={30}
+            alt="Thailand"
+          />
         </div>
 
-        {/* Content */}
-        <div className={`absolute inset-x-0 bottom-0 p-6 text-white bg-linear-to-t from-zinc-900 to-transparent `}>
-          {/* Country */}
-          <div>
-            <h3 className="mt-3 text-4xl font-bold tracking-wide ">
-              {data.country}
-            </h3>
-
-            <div className=" mt-6 grid grid-cols-3 gap-3 ">
-              <StatCard
-                icon={<Plane size={18} />}
-                title="Visa"
-                value={data.visaType}
-              />
-
-              <StatCard
-                icon={<Clock3 size={18} />}
-                title="Valid"
-                value={data.validity}
-              />
-
-              <StatCard
-                icon={<BadgeDollarSign size={18} />}
-                title="Fee"
-                value={data.fee}
-              />
-            </div>
+        {/* Popular */}
+        {data.popular && (
+          <div className=" mr-4 rounded-full bg-red-700 px-3 py-1 text-xs font-semibold text-white ">
+            {" "}
+            Most Popular{" "}
           </div>
+        )}
+      </div>
 
-          {/* Stats */}
+      {/* Content */}
+      <div
+        className={`absolute inset-x-0 bottom-0 p-6 text-white bg-linear-to-t from-zinc-900 to-transparent `}
+      >
+        {/* Country */}
+        <div className="h-auto lg:h-[26px] lg:group-hover:h-[150px] transition-all duration-700">
+          <h3 className="mt-3 text-4xl font-bold tracking-wide ">
+            {data.country}
+          </h3>
 
-          <div
-            className={`bottom transition-all duration-500`}
-          >
-            <div className="my-5 h-px bg-white/15" />
+          <div className=" mt-6 grid grid-cols-2 gap-3 ">
+            <StatCard
+              icon={<Plane size={18} />}
+              title="Visa"
+              value={data.visaType}
+            />
 
-            {/* Documents */}
+            <StatCard
+              icon={<Clock3 size={18} />}
+              title="Valid"
+              value={data.validity}
+            />
 
-            {/* <div>
+            {/* <StatCard
+              icon={<BadgeDollarSign size={18} />}
+              title="Fee"
+              value={data.fee}
+            /> */}
+          </div>
+        </div>
+
+        {/* Stats */}
+
+        <div className={`bottom transition-all duration-500`}>
+          <div className="my-5 h-px bg-white/15" />
+
+          {/* Documents */}
+
+          {/* <div>
               <p className="  text-xs uppercase tracking-[0.18em] text-white/60 ">
                 Documents
               </p>
@@ -94,18 +93,17 @@ function TouristCardFront({ data, onClick }: TouristCardProps) {
               </div>
             </div> */}
 
-            {/* Button */}
+          {/* Button */}
 
-            <div className=" mt-6  flex items-center justify-between rounded-2xl bg-white/10 px-5 py-2 backdrop-blur transition group-hover:bg-red-600 ">
-              <span className="font-semibold" >View More</span>
+          <div className=" mt-6  flex items-center justify-between rounded-2xl bg-white/10 px-5 py-2 backdrop-blur transition group-hover:bg-red-600 ">
+            <span className="font-semibold">View More</span>
 
-              <ChevronRight className=" transition-transform group-hover:translate-x-1 " />
-            </div>
+            <ChevronRight className=" transition-transform group-hover:translate-x-1 " />
           </div>
-          
         </div>
-          </div>
-  )
+      </div>
+    </div>
+  );
 }
 
-export default TouristCardFront
+export default TouristCardFront;

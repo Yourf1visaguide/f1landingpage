@@ -63,15 +63,18 @@ export type TouristDestination = {
   country: string;
   flag: string;
   image: string;
-
   visaType: string;
   validity: string;
   processingTime: string;
   fee: string;
-
   badge?: string;
-
   documents: string[];
-
   popular?: boolean;
 };
+
+export type TouristDestinationCategory = {
+  mainTitle:string;
+  description:string;
+  titleColor:"text-blue-600" | "text-red-600" | "text-black-600";
+  countries:TouristDestination[]
+}

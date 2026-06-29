@@ -4,6 +4,7 @@ import { CheckSquare } from "lucide-react";
 import {
   FAQType,
   TouristDestination,
+  TouristDestinationCategory,
   WhySection as WhySectionType,
 } from "@/lib/types";
 
@@ -39,77 +40,302 @@ export const heroSection: {
     </>
   ),
 };
+export const touristDestinationBasicData = {
+  title: (
+    <>
+      Choose Your <span className="text-red-700">Dream Destination</span>
+    </>
+  ),
+  description:
+    "Explore tourist visa options across the world's most popular destinations. Select one country from each category to compare requirements, processing time, and travel opportunities before starting your application.",
+  buttonText: "Continue",
+};
 
-export const touristDestinationData: TouristDestination[] = [
+
+
+
+export const touristDestinationData: TouristDestinationCategory[] = [
   {
-    id: "thailand",
-    country: "Thailand",
-    flag: "🇹🇭",
-    image: "/images/tourist-visa/thailand.webp",
-
-    visaType: "E-Visa",
-    validity: "90 Days",
-    processingTime: "5-7 Days",
-    fee: "₹400",
-
-    badge: "Fast Processing",
-
-    documents: ["Passport", "Photo", "Bank Statement", "Travel Itinerary"],
-
-    popular: true,
+    mainTitle: "Choose Your Premium Destination",
+    description:
+      "Select one of our most popular English-speaking destinations with world-famous attractions and unforgettable travel experiences.",
+    titleColor: "text-red-600",
+    countries: [
+      {
+        id: "usa",
+        country: "USA",
+        flag: "🇺🇸",
+        image: "/images/tourist-visa/usa.webp",
+        visaType: "B1/B2",
+        validity: "10 Years",
+        processingTime: "Varies",
+        fee: "Check",
+        badge: "Most Popular",
+        documents: [
+          "Passport",
+          "Photograph",
+          "Bank Statement",
+          "Travel Itinerary",
+        ],
+        popular: true,
+      },
+      {
+        id: "canada",
+        country: "Canada",
+        flag: "🇨🇦",
+        image: "/images/tourist-visa/canada.webp",
+        visaType: "Visitor Visa",
+        validity: "Up to 10 Years",
+        processingTime: "Varies",
+        fee: "Check",
+        badge: "Top Choice",
+        documents: [
+          "Passport",
+          "Photo",
+          "Financial Proof",
+          "Travel Plan",
+        ],
+      },
+      {
+        id: "uk",
+        country: "United Kingdom",
+        flag: "🇬🇧",
+        image: "/images/tourist-visa/uk.webp",
+        visaType: "Standard Visitor",
+        validity: "6 Months",
+        processingTime: "3 Weeks",
+        fee: "Check",
+        badge: "Fast Processing",
+        documents: [
+          "Passport",
+          "Photo",
+          "Financial Proof",
+          "Accommodation",
+        ],
+      },
+      {
+        id: "australia",
+        country: "Australia",
+        flag: "🇦🇺",
+        image: "/images/tourist-visa/australia.webp",
+        visaType: "Visitor Visa",
+        validity: "12 Months",
+        processingTime: "2–4 Weeks",
+        fee: "Check",
+        badge: "Popular",
+        documents: [
+          "Passport",
+          "Photo",
+          "Bank Statement",
+          "Travel Plan",
+        ],
+      },
+      {
+        id: "new-zealand",
+        country: "New Zealand",
+        flag: "🇳🇿",
+        image: "/images/tourist-visa/new-zealand.webp",
+        visaType: "Visitor Visa",
+        validity: "9 Months",
+        processingTime: "3–5 Weeks",
+        fee: "Check",
+        badge: "Nature Escape",
+        documents: [
+          "Passport",
+          "Photo",
+          "Financial Proof",
+          "Travel Plan",
+        ],
+      },
+    ],
   },
+
   {
-    id: "thailand",
-    country: "Thailand",
-    flag: "🇹🇭",
-    image: "/images/tourist-visa/thailand.webp",
-
-    visaType: "E-Visa",
-    validity: "90 Days",
-    processingTime: "5-7 Days",
-    fee: "₹400",
-
-    badge: "Fast Processing",
-
-    documents: ["Passport", "Photo", "Bank Statement", "Travel Itinerary"],
-
-    popular: true,
+    mainTitle: "Explore Europe",
+    description:
+      "Discover historic cities, breathtaking landscapes, and effortless travel across Europe's most loved destinations.",
+    titleColor: "text-blue-600",
+    countries: [
+      {
+        id: "netherlands",
+        country: "Netherlands",
+        flag: "🇳🇱",
+        image: "/images/tourist-visa/netherlands.webp",
+        visaType: "Schengen",
+        validity: "90 Days",
+        processingTime: "15 Days",
+        fee: "€90",
+        badge: "Schengen",
+        documents: ["Passport", "Photo", "Insurance", "Bank Statement"],
+      },
+      {
+        id: "france",
+        country: "France",
+        flag: "🇫🇷",
+        image: "/images/tourist-visa/france.webp",
+        visaType: "Schengen",
+        validity: "90 Days",
+        processingTime: "15 Days",
+        fee: "€90",
+        badge: "Romantic",
+        documents: ["Passport", "Photo", "Insurance", "Bank Statement"],
+      },
+      {
+        id: "germany",
+        country: "Germany",
+        flag: "🇩🇪",
+        image: "/images/tourist-visa/germany.webp",
+        visaType: "Schengen",
+        validity: "90 Days",
+        processingTime: "15 Days",
+        fee: "€90",
+        badge: "Popular",
+        documents: ["Passport", "Photo", "Insurance", "Bank Statement"],
+      },
+      {
+        id: "spain",
+        country: "Spain",
+        flag: "🇪🇸",
+        image: "/images/tourist-visa/spain.webp",
+        visaType: "Schengen",
+        validity: "90 Days",
+        processingTime: "15 Days",
+        fee: "€90",
+        badge: "Beach Holiday",
+        documents: ["Passport", "Photo", "Insurance", "Bank Statement"],
+      },
+      {
+        id: "switzerland",
+        country: "Switzerland",
+        flag: "🇨🇭",
+        image: "/images/tourist-visa/switzerland.webp",
+        visaType: "Schengen",
+        validity: "90 Days",
+        processingTime: "15 Days",
+        fee: "€90",
+        badge: "Luxury",
+        documents: ["Passport", "Photo", "Insurance", "Bank Statement"],
+      },
+      {
+        id: "cyprus",
+        country: "Cyprus",
+        flag: "🇨🇾",
+        image: "/images/tourist-visa/cyprus.webp",
+        visaType: "Tourist Visa",
+        validity: "90 Days",
+        processingTime: "15 Days",
+        fee: "Check",
+        badge: "Island Paradise",
+        documents: ["Passport", "Photo", "Financial Proof", "Travel Plan"],
+      },
+    ],
   },
+
   {
-    id: "thailand",
-    country: "Thailand",
-    flag: "🇹🇭",
-    image: "/images/tourist-visa/thailand.webp",
-
-    visaType: "E-Visa",
-    validity: "90 Days",
-    processingTime: "5-7 Days",
-    fee: "₹400",
-
-    badge: "Fast Processing",
-
-    documents: ["Passport", "Photo", "Bank Statement", "Travel Itinerary"],
-
-    popular: true,
-  },
-  {
-    id: "thailand",
-    country: "Thailand",
-    flag: "🇹🇭",
-    image: "/images/tourist-visa/thailand.webp",
-
-    visaType: "E-Visa",
-    validity: "90 Days",
-    processingTime: "5-7 Days",
-    fee: "₹400",
-
-    badge: "Fast Processing",
-
-    documents: ["Passport", "Photo", "Bank Statement", "Travel Itinerary"],
-
-    popular: true,
+    mainTitle: "Asia & Middle East Adventures",
+    description:
+      "From luxury shopping to tropical beaches and cultural experiences, choose your perfect holiday destination.",
+    titleColor: "text-amber-600",
+    countries: [
+      {
+        id: "dubai",
+        country: "Dubai",
+        flag: "🇦🇪",
+        image: "/images/tourist-visa/dubai.webp",
+        visaType: "Tourist Visa",
+        validity: "30 Days",
+        processingTime: "3–5 Days",
+        fee: "Check",
+        badge: "Fast Processing",
+        popular: true,
+        documents: [
+          "Passport",
+          "Photo",
+          "Return Ticket",
+          "Hotel Booking",
+        ],
+      },
+      {
+        id: "singapore",
+        country: "Singapore",
+        flag: "🇸🇬",
+        image: "/images/tourist-visa/singapore.webp",
+        visaType: "Tourist Visa",
+        validity: "30 Days",
+        processingTime: "3–5 Days",
+        fee: "Check",
+        badge: "Family Favourite",
+        documents: [
+          "Passport",
+          "Photo",
+          "Return Ticket",
+          "Financial Proof",
+        ],
+      },
+      {
+        id: "japan",
+        country: "Japan",
+        flag: "🇯🇵",
+        image: "/images/tourist-visa/japan.webp",
+        visaType: "Tourist Visa",
+        validity: "90 Days",
+        processingTime: "7–10 Days",
+        fee: "Check",
+        badge: "Cherry Blossom",
+        documents: ["Passport", "Photo", "Bank Statement", "Travel Plan"],
+      },
+      {
+        id: "thailand",
+        country: "Thailand",
+        flag: "🇹🇭",
+        image: "/images/tourist-visa/thailand.webp",
+        visaType: "E-Visa",
+        validity: "90 Days",
+        processingTime: "5–7 Days",
+        fee: "₹400",
+        badge: "Beach Holiday",
+        documents: ["Passport", "Photo", "Bank Statement", "Travel Itinerary"],
+      },
+      {
+        id: "vietnam",
+        country: "Vietnam",
+        flag: "🇻🇳",
+        image: "/images/tourist-visa/vietnam.webp",
+        visaType: "E-Visa",
+        validity: "90 Days",
+        processingTime: "3–5 Days",
+        fee: "Check",
+        badge: "Budget Friendly",
+        documents: ["Passport", "Photo", "Travel Itinerary", "Financial Proof"],
+      },
+      {
+        id: "turkey",
+        country: "Turkey",
+        flag: "🇹🇷",
+        image: "/images/tourist-visa/turkey.webp",
+        visaType: "Tourist Visa",
+        validity: "90 Days",
+        processingTime: "7–10 Days",
+        fee: "Check",
+        badge: "Historic Beauty",
+        documents: ["Passport", "Photo", "Financial Proof", "Travel Plan"],
+      },
+      {
+        id: "russia",
+        country: "Russia",
+        flag: "🇷🇺",
+        image: "/images/tourist-visa/russia.webp",
+        visaType: "Tourist Visa",
+        validity: "30 Days",
+        processingTime: "10 Days",
+        fee: "Check",
+        badge: "Unique Experience",
+        documents: ["Passport", "Photo", "Invitation", "Travel Itinerary"],
+      },
+    ],
   },
 ];
+
 
 export const testimonialsPage = {
   title: (
