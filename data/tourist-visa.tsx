@@ -1,10 +1,13 @@
 import { ReactNode } from "react";
-import { CheckSquare } from "lucide-react";
+import { CheckSquare, WholeWord } from "lucide-react";
 
 import {
   FAQType,
+  FooterType,
   TouristDestination,
   TouristDestinationCategory,
+  VisaTimelineSteps,
+  VisaTimelineType,
   WhySection as WhySectionType,
 } from "@/lib/types";
 
@@ -51,9 +54,6 @@ export const touristDestinationBasicData = {
   buttonText: "Continue",
 };
 
-
-
-
 export const touristDestinationData: TouristDestinationCategory[] = [
   {
     mainTitle: "Choose Your Premium Destination",
@@ -64,8 +64,8 @@ export const touristDestinationData: TouristDestinationCategory[] = [
       {
         id: "usa",
         country: "USA",
-        flag: "🇺🇸",
-        image: "/images/tourist-visa/usa.webp",
+        flag: "us",
+        image: "/images/tourist-visa/usa.jpg",
         visaType: "B1/B2",
         validity: "10 Years",
         processingTime: "Varies",
@@ -80,72 +80,54 @@ export const touristDestinationData: TouristDestinationCategory[] = [
         popular: true,
       },
       {
-        id: "canada",
-        country: "Canada",
-        flag: "🇨🇦",
-        image: "/images/tourist-visa/canada.webp",
-        visaType: "Visitor Visa",
-        validity: "Up to 10 Years",
-        processingTime: "Varies",
-        fee: "Check",
-        badge: "Top Choice",
-        documents: [
-          "Passport",
-          "Photo",
-          "Financial Proof",
-          "Travel Plan",
-        ],
-      },
-      {
-        id: "uk",
-        country: "United Kingdom",
-        flag: "🇬🇧",
-        image: "/images/tourist-visa/uk.webp",
-        visaType: "Standard Visitor",
-        validity: "6 Months",
-        processingTime: "3 Weeks",
-        fee: "Check",
-        badge: "Fast Processing",
-        documents: [
-          "Passport",
-          "Photo",
-          "Financial Proof",
-          "Accommodation",
-        ],
-      },
-      {
         id: "australia",
         country: "Australia",
-        flag: "🇦🇺",
-        image: "/images/tourist-visa/australia.webp",
+        flag: "au",
+        image: "/images/tourist-visa/australia.jpg",
         visaType: "Visitor Visa",
         validity: "12 Months",
         processingTime: "2–4 Weeks",
         fee: "Check",
         badge: "Popular",
-        documents: [
-          "Passport",
-          "Photo",
-          "Bank Statement",
-          "Travel Plan",
-        ],
+        documents: ["Passport", "Photo", "Bank Statement", "Travel Plan"],
       },
+      {
+        id: "uk",
+        country: "uk",
+        flag: "gb",
+        image: "/images/tourist-visa/uk.jpg",
+        visaType: "Standard Visitor",
+        validity: "6 Months",
+        processingTime: "3 Weeks",
+        fee: "Check",
+        badge: "Fast Processing",
+        documents: ["Passport", "Photo", "Financial Proof", "Accommodation"],
+      },
+      
       {
         id: "new-zealand",
         country: "New Zealand",
-        flag: "🇳🇿",
-        image: "/images/tourist-visa/new-zealand.webp",
+        flag: "nz",
+        image: "/images/tourist-visa/new-zealand.jpg",
         visaType: "Visitor Visa",
         validity: "9 Months",
         processingTime: "3–5 Weeks",
         fee: "Check",
         badge: "Nature Escape",
-        documents: [
-          "Passport",
-          "Photo",
-          "Financial Proof",
-          "Travel Plan",
-        ],
+        documents: ["Passport", "Photo", "Financial Proof", "Travel Plan"],
+      },
+      
+      {
+        id: "canada",
+        country: "Canada",
+        flag: "ca",
+        image: "/images/tourist-visa/canada.jpg",
+        visaType: "Visitor Visa",
+        validity: "Up to 10 Years",
+        processingTime: "Varies",
+        fee: "Check",
+        badge: "Top Choice",
+        documents: ["Passport", "Photo", "Financial Proof", "Travel Plan"],
       },
     ],
   },
@@ -159,8 +141,8 @@ export const touristDestinationData: TouristDestinationCategory[] = [
       {
         id: "netherlands",
         country: "Netherlands",
-        flag: "🇳🇱",
-        image: "/images/tourist-visa/netherlands.webp",
+        flag: "nl",
+        image: "/images/tourist-visa/netherlands.jpg",
         visaType: "Schengen",
         validity: "90 Days",
         processingTime: "15 Days",
@@ -171,8 +153,8 @@ export const touristDestinationData: TouristDestinationCategory[] = [
       {
         id: "france",
         country: "France",
-        flag: "🇫🇷",
-        image: "/images/tourist-visa/france.webp",
+        flag: "fr",
+        image: "/images/tourist-visa/france.jpg",
         visaType: "Schengen",
         validity: "90 Days",
         processingTime: "15 Days",
@@ -183,8 +165,8 @@ export const touristDestinationData: TouristDestinationCategory[] = [
       {
         id: "germany",
         country: "Germany",
-        flag: "🇩🇪",
-        image: "/images/tourist-visa/germany.webp",
+        flag: "de",
+        image: "/images/tourist-visa/germany.jpg",
         visaType: "Schengen",
         validity: "90 Days",
         processingTime: "15 Days",
@@ -195,8 +177,8 @@ export const touristDestinationData: TouristDestinationCategory[] = [
       {
         id: "spain",
         country: "Spain",
-        flag: "🇪🇸",
-        image: "/images/tourist-visa/spain.webp",
+        flag: "es",
+        image: "/images/tourist-visa/spain.jpg",
         visaType: "Schengen",
         validity: "90 Days",
         processingTime: "15 Days",
@@ -207,8 +189,8 @@ export const touristDestinationData: TouristDestinationCategory[] = [
       {
         id: "switzerland",
         country: "Switzerland",
-        flag: "🇨🇭",
-        image: "/images/tourist-visa/switzerland.webp",
+        flag: "ch",
+        image: "/images/tourist-visa/switzerland.jpg",
         visaType: "Schengen",
         validity: "90 Days",
         processingTime: "15 Days",
@@ -219,8 +201,8 @@ export const touristDestinationData: TouristDestinationCategory[] = [
       {
         id: "cyprus",
         country: "Cyprus",
-        flag: "🇨🇾",
-        image: "/images/tourist-visa/cyprus.webp",
+        flag: "cy",
+        image: "/images/tourist-visa/cyprus.jpg",
         visaType: "Tourist Visa",
         validity: "90 Days",
         processingTime: "15 Days",
@@ -240,43 +222,33 @@ export const touristDestinationData: TouristDestinationCategory[] = [
       {
         id: "dubai",
         country: "Dubai",
-        flag: "🇦🇪",
-        image: "/images/tourist-visa/dubai.webp",
+        flag: "ae",
+        image: "/images/tourist-visa/dubai.jpg",
         visaType: "Tourist Visa",
         validity: "30 Days",
         processingTime: "3–5 Days",
         fee: "Check",
         badge: "Fast Processing",
         popular: true,
-        documents: [
-          "Passport",
-          "Photo",
-          "Return Ticket",
-          "Hotel Booking",
-        ],
+        documents: ["Passport", "Photo", "Return Ticket", "Hotel Booking"],
       },
       {
         id: "singapore",
         country: "Singapore",
-        flag: "🇸🇬",
-        image: "/images/tourist-visa/singapore.webp",
+        flag: "sg",
+        image: "/images/tourist-visa/singapore.jpg",
         visaType: "Tourist Visa",
         validity: "30 Days",
         processingTime: "3–5 Days",
         fee: "Check",
         badge: "Family Favourite",
-        documents: [
-          "Passport",
-          "Photo",
-          "Return Ticket",
-          "Financial Proof",
-        ],
+        documents: ["Passport", "Photo", "Return Ticket", "Financial Proof"],
       },
       {
         id: "japan",
         country: "Japan",
-        flag: "🇯🇵",
-        image: "/images/tourist-visa/japan.webp",
+        flag: "jp",
+        image: "/images/tourist-visa/japan.jpg",
         visaType: "Tourist Visa",
         validity: "90 Days",
         processingTime: "7–10 Days",
@@ -287,8 +259,8 @@ export const touristDestinationData: TouristDestinationCategory[] = [
       {
         id: "thailand",
         country: "Thailand",
-        flag: "🇹🇭",
-        image: "/images/tourist-visa/thailand.webp",
+        flag: "th",
+        image: "/images/tourist-visa/thailand.jpg",
         visaType: "E-Visa",
         validity: "90 Days",
         processingTime: "5–7 Days",
@@ -299,8 +271,8 @@ export const touristDestinationData: TouristDestinationCategory[] = [
       {
         id: "vietnam",
         country: "Vietnam",
-        flag: "🇻🇳",
-        image: "/images/tourist-visa/vietnam.webp",
+        flag: "vn",
+        image: "/images/tourist-visa/vietnam.jpg",
         visaType: "E-Visa",
         validity: "90 Days",
         processingTime: "3–5 Days",
@@ -311,8 +283,8 @@ export const touristDestinationData: TouristDestinationCategory[] = [
       {
         id: "turkey",
         country: "Turkey",
-        flag: "🇹🇷",
-        image: "/images/tourist-visa/turkey.webp",
+        flag: "tr",
+        image: "/images/tourist-visa/turkey.jpg",
         visaType: "Tourist Visa",
         validity: "90 Days",
         processingTime: "7–10 Days",
@@ -323,8 +295,8 @@ export const touristDestinationData: TouristDestinationCategory[] = [
       {
         id: "russia",
         country: "Russia",
-        flag: "🇷🇺",
-        image: "/images/tourist-visa/russia.webp",
+        flag: "ru",
+        image: "/images/tourist-visa/russia.jpg",
         visaType: "Tourist Visa",
         validity: "30 Days",
         processingTime: "10 Days",
@@ -335,7 +307,6 @@ export const touristDestinationData: TouristDestinationCategory[] = [
     ],
   },
 ];
-
 
 export const testimonialsPage = {
   title: (
@@ -351,268 +322,408 @@ export const whySection: WhySectionType = {
   features: [
     {
       icon: "globe",
-      title: "Schengen Zone Access",
+      title: "15+ Travel Destinations",
       description:
-        "Travel freely across 26+ European countries on a single student visa. Live, explore & experience all of Europe from Amsterdam.",
+        "Explore popular tourist destinations worldwide with expert visa guidance tailored to each country's requirements.",
+    },
+    {
+      icon: "shieldCheck",
+      title: "High Visa Success Rate",
+      description:
+        "Our experienced visa specialists carefully review every application to maximize your chances of approval.",
       large: true,
     },
     {
-      icon: "building2",
-      title: "Study in Amsterdam",
+      icon: "clock3",
+      title: "Fast & Hassle-Free Processing",
       description:
-        "One of Europe's most vibrant, multicultural & globally ranked cities. World-class universities. World-class life.",
+        "From document verification to application submission, we handle the complete process so you can focus on planning your trip.",
       large: true,
     },
     {
-      icon: "badgeCheck",
-      title: "Highest Visa Approval Ratio",
+      icon: "fileCheck",
+      title: "Complete Documentation Support",
       description:
-        "While other countries are rejecting Indian students, Netherlands has the best visa ratio right now. Your approval is our guarantee.",
+        "We prepare, review, and organize every required document to minimize errors and avoid unnecessary delays.",
     },
     {
-      icon: "briefcaseBusiness",
-      title: "Work 16–20 Hrs/Week Legally",
+      icon: "headset",
+      title: "Dedicated Visa Expert",
       description:
-        "Earn up to ₹1.5–₹2 Lakh per month working part-time. Cover your living expenses and save money while studying in Europe.",
+        "Get one-on-one guidance from a dedicated consultant throughout your tourist visa journey.",
     },
     {
-      icon: "idCard",
-      title: "TRC of Europe in 90 Days",
+      icon: "planeTakeoff",
+      title: "Travel Assistance",
       description:
-        "Receive your Temporary Residence Card within 90 days of arrival. Your official European identity — fast tracked.",
-    },
-    {
-      icon: "rocket",
-      title: "Move Anywhere After 90 Days",
-      description:
-        "With TRC in hand, explore, work, or even relocate to any Schengen country after just 90 days. Germany, France, Spain — your choice.",
+        "Need help with flights, hotel bookings, travel insurance, or itinerary planning? We've got you covered.",
     },
   ],
+
   title: (
     <>
-      Why <span className="text-red-600"> Indian Students </span> Are Choosing
-      Netherlands
+      Why Travelers <span className="text-red-600">Choose Us</span>
     </>
   ),
+
   description:
-    "When Canada, UK & Australia are saying NO — Netherlands opens the door wide open for you.",
-  badge: "Why Choose Netherland",
+    "From documentation to visa approval, we make international travel simple, transparent, and stress-free for every traveler.",
+
+  badge: "Why Choose Us",
 };
 
-export const VisaTimelineData = {
+export const VisaTimelineData: VisaTimelineType = {
   title: (
     <>
-      Easy
-      <span className="text-red-700"> 6-Step </span>Process
+      Your
+      <span className="text-red-700"> Journey </span>Begins Here
     </>
   ),
   description:
-    "We handle everything—from applications and documentation to visa guidance and travel preparation. You can focus on your future while our team takes care of the process.",
-  badge: "Journey to Europe",
+    "From choosing your dream destination to receiving your visa, our experts guide you through every step of the journey.",
+  badge: "How It Works",
   steps: [
     {
       step: 1,
-      title: "Application Fees",
+      title: "Choose Your Destination",
       content:
-        "Pay just ₹11,000 to kick-start your European journey. We begin processing your university application immediately.",
-      icon: "CreditCard",
+        "Select the country you want to visit and let our experts guide you through the right visa requirements.",
+      icon: "MapPinned",
       image: "/images/howthiswork/1.jpg",
     },
     {
       step: 2,
-      title: "Receive Offer Letter",
+      title: "Free Consultation",
       content:
-        "Get your official university offer letter quickly. We have partnerships with multiple top Netherlands universities for you to choose from.",
-      icon: "Mail",
+        "Our visa specialists review your travel plans and explain the complete application process.",
+      icon: "MessagesSquare",
       image: "/images/howthiswork/2.jpg",
     },
     {
       step: 3,
-      title: "University Interview",
+      title: "Submit Documents",
       content:
-        "Super easy, friendly interview. Almost everyone clears it. We fully prepare you — no stress, no anxiety, just confidence.",
-      icon: "Mic2",
+        "Share your passport and supporting documents. We'll verify everything before submission.",
+      icon: "FileText",
       image: "/images/howthiswork/3.jpg",
     },
     {
       step: 4,
-      title: "Fees Deposit — 6K Euro",
+      title: "Application Processing",
       content:
-        "Deposit €6,000 to confirm your university seat. Financial assistance is available if you need it.",
-      icon: "Banknote",
+        "We prepare and submit your visa application while keeping you updated at every stage.",
+      icon: "ClipboardCheck",
       image: "/images/howthiswork/4.jpg",
     },
     {
       step: 5,
-      title: "Rest Fees in Installments",
+      title: "Visa Decision",
       content:
-        "Pay remaining university fees in comfortable installments. No lump sum pressure. Study now, pay comfortably over time.",
-      icon: "HandCoins",
+        "Receive your approved visa and final travel guidance before your departure.",
+      icon: "BadgeCheck",
       image: "/images/howthiswork/4.jpg",
     },
     {
       step: 6,
-      title: "Visa Approved — Fly!",
+      title: "Travel With Confidence",
       content:
-        "Your visa is approved — we guarantee it. Choose your FREE Air Ticket to Amsterdam or a FREE Laptop as your welcome gift!",
-      icon: "Plane",
+        "Pack your bags and enjoy your international trip while we remain available for any assistance.",
+      icon: "PlaneTakeoff",
       image: "/images/howthiswork/4.jpg",
     },
   ],
 };
 
+export const visaRejectionSection = {
+  badge: "Avoid Common Mistakes",
+
+  title: (
+    <>
+      Why Tourist Visa Applications{" "}
+      <span className="text-red-600">Get Rejected</span>
+    </>
+  ),
+
+  description:
+    "Most tourist visa refusals happen because of avoidable mistakes. Our experts carefully review every application to help reduce errors and improve your chances of approval.",
+
+  buttonText: "Start Your Application",
+
+  reasons: [
+    {
+      reason: {
+        icon: "FileWarning",
+        title: "Incomplete Documents",
+        description:
+          "Missing or incorrect documents can delay processing or even lead to visa refusal.",
+      },
+
+      solution: {
+        icon: "ShieldCheck",
+        title: "Complete Document Review",
+        description:
+          "We carefully verify every required document before submission to reduce mistakes and delays.",
+      },
+    },
+
+    {
+      reason: {
+        icon: "Wallet",
+        title: "Financial Proof Issues",
+        description:
+          "Some countries require specific financial documents to prove you can support your trip.",
+      },
+
+      solution: {
+        icon: "BadgeDollarSign",
+        title: "Financial Guidance",
+        description:
+          "Our team explains exactly which financial documents are required for your destination.",
+      },
+    },
+
+    {
+      reason: {
+        icon: "FilePenLine",
+        title: "Incorrect Information",
+        description:
+          "Typing mistakes or inconsistent information may create unnecessary complications.",
+      },
+
+      solution: {
+        icon: "ClipboardCheck",
+        title: "Expert Application Review",
+        description:
+          "Every application is reviewed by experienced visa specialists before submission.",
+      },
+    },
+
+    {
+      reason: {
+        icon: "MapPinned",
+        title: "Weak Travel Itinerary",
+        description:
+          "An unclear travel purpose or incomplete itinerary may raise additional questions.",
+      },
+
+      solution: {
+        icon: "Route",
+        title: "Travel Planning Support",
+        description:
+          "We help prepare a clear travel itinerary with supporting documents where required.",
+      },
+    },
+
+    {
+      reason: {
+        icon: "FolderX",
+        title: "Missing Supporting Documents",
+        description:
+          "Hotel bookings, employment proof, invitation letters, or other documents may be required.",
+      },
+
+      solution: {
+        icon: "Files",
+        title: "Country-Specific Checklist",
+        description:
+          "Receive a personalized checklist based on your destination before applying.",
+      },
+    },
+
+    {
+      reason: {
+        icon: "ClockAlert",
+        title: "Late Application",
+        description:
+          "Applying too close to your travel date can result in unnecessary delays.",
+      },
+
+      solution: {
+        icon: "CalendarClock",
+        title: "Application Timeline Guidance",
+        description:
+          "We recommend the ideal time to apply based on your destination and travel plans.",
+      },
+    },
+  ],
+
+  cta: {
+    title: "Don't Leave Your Visa to Chance",
+
+    description:
+      "Professional guidance helps you avoid common mistakes and submit a stronger visa application.",
+
+    points: [
+      "Expert Document Review",
+      "Country-Specific Checklist",
+      "End-to-End Visa Support",
+    ],
+  },
+};
+
 export const faqsData: FAQType[] = [
   {
-    question: "What is your service fee?",
+    question: "How do I apply for a tourist visa?",
+
     paragraphs: [
-      "Our service fee for the complete Netherlands study process is ₹36,000 only.",
-      "This covers application guidance, documentation, university liaison, and visa support — end to end.",
+      "The application process generally starts with choosing your destination, preparing the required documents, completing the visa application, and attending biometrics or an interview if required by the destination country.",
+      "Our team guides you through every step of the process, helping you prepare your application accurately and submit the required documents with confidence.",
     ],
   },
 
   {
-    question: "What is the ₹50,000 guarantee? How does it work?",
-    paragraphs: [
-      "We are so confident in our service that we offer a unique ₹50,000 benefit regardless of outcome. We are so confident in our service that we offer a unique ₹50,000 benefit regardless of outcome.",
-      "Whether your visa is approved or refused, you receive ₹50,000 from us in either case. Your ₹36,000 fee is fully covered and you walk away with more.",
-    ],
+    question: "What documents are generally required for a tourist visa?",
 
-    table: {
-      headers: ["Visa Result", "What You Get"],
-      rows: [
-        ["✅ Approved", "₹50,000 🎉 Welcome Bonus after your visa is approved"],
-        ["❌ Refused", "₹50,000 Refund / Compensation"],
-      ],
-    },
-  },
-
-  {
-    question: "How much funds do I need to show?",
     paragraphs: [
-      "You need to show ₹40 Lakhs (40L) in your bank account as proof of sufficient funds for living expenses and tuition.",
+      "The required documents vary by country, but most tourist visa applications typically require the following:",
     ],
 
     list: [
-      "New funds work too.",
-      "We can help you arrange the required financial statement if needed.",
-    ],
-  },
-
-  {
-    question: "I don't have ₹40L in my account. Can you help?",
-    paragraphs: [
-      "Yes! If you don't have the required funds, we have funding support available.",
-      "Just reach out to us and we'll guide you through the available options.",
-    ],
-  },
-
-  {
-    question: "Is there an interview with the embassy?",
-    paragraphs: [
-      "No. There is no interview required.",
-      "The visa process is straightforward and handled through your university and the IND.",
-      "You just need to submit the right documents — we guide you through everything.",
-    ],
-  },
-
-  {
-    question: "Do I need to apply for the visa myself?",
-    paragraphs: [
-      "No. Once you get admission, your Dutch university applies for the visa (MVV + Residence Permit) on your behalf through the IND.",
-      "We coordinate with the university to ensure everything is submitted correctly and on time.",
-    ],
-  },
-
-  {
-    question: "What documents are needed for the Netherlands study visa?",
-
-    paragraphs: ["Typical documents include:"],
-
-    list: [
-      "Valid Passport (scanned — all pages for MVV applicants)",
-      "Unconditional Admission Letter from the Dutch University",
-      "Proof of Financial Resources (₹40L Bank Statement)",
-      "Health Insurance Proof or Intent to Purchase",
-      "Antecedents Certificate (Declaration of Good Conduct)",
-      "Statement of Intent (with IND Request Form)",
+      "Valid Passport",
+      "Recent Passport-size Photographs",
+      "Completed Visa Application Form",
+      "Financial Proof or Bank Statements",
+      "Travel Itinerary",
+      "Hotel Booking or Accommodation Details (where applicable)",
+      "Return Flight Reservation (where applicable)",
+      "Employment, Business or Student Proof (where applicable)",
     ],
 
-    custom: (
-      <p className="mt-5">
-        We provide a complete checklist and review every document before
-        submission.
-      </p>
+      custom: (
+       <>
+    {["Our experts provide a country-specific checklist before you apply to help ensure nothing important is missed.", ].map((item, index) => (
+      <div key={index}  className="mt-5">{item}</div>
+    ))}
+  </>
     ),
   },
 
   {
-    question: "How long does the visa process take?",
+    question: "How long does tourist visa processing usually take?",
 
     paragraphs: [
-      "IND processing typically takes 60–90 days (around 2–3 months) from the date a complete application is submitted.",
-      "We recommend starting the process at least 4–5 months before your intended arrival.",
+      "Visa processing times vary depending on the destination country, embassy workload, seasonal demand, and the completeness of your application.",
+      "We recommend applying well in advance of your intended travel date to allow sufficient processing time.",
     ],
   },
 
   {
-    question: "When do I pay the ₹36,000 fee?",
+    question: "Can I apply for a tourist visa without any travel history?",
 
     paragraphs: [
-      "The ₹36,000 fee is paid upfront when you enroll with us for the complete process.",
-      "After that, we handle everything.",
+      "Yes. Many first-time international travelers successfully receive tourist visas every year.",
+      "Approval depends on meeting the destination country's eligibility requirements and submitting a complete, well-prepared application.",
     ],
   },
 
   {
-    question: "When will I receive the ₹50,000?",
+    question: "How much financial proof or bank balance is required?",
 
     paragraphs: [
-      "You receive the ₹50,000 after the visa decision is announced.",
+      "Financial requirements differ from one country to another and may also depend on your travel duration, itinerary, and personal circumstances.",
+      "Our team explains the financial documentation required for your chosen destination before you submit your application.",
+    ],
+  },
+
+  {
+    question: "Can someone else sponsor my trip?",
+
+    paragraphs: [
+      "Yes. Many countries allow tourist visa applicants to receive financial sponsorship from eligible family members or sponsors.",
+      "Additional supporting documents may be required depending on the destination country's immigration guidelines.",
+    ],
+  },
+
+  {
+    question: "Does receiving a tourist visa guarantee entry into the country?",
+
+    paragraphs: [
+      "No. A valid tourist visa allows you to travel to the destination, but the final decision regarding entry is made by the immigration authorities at the port of entry.",
+      "Travelers should always carry the necessary supporting documents when arriving at their destination.",
+    ],
+  },
+
+  {
+    question: "Can a tourist visa be extended?",
+
+    paragraphs: [
+      "Visa extension policies vary by country. Some destinations may allow extensions under specific circumstances, while others may not permit extensions at all.",
+      "We recommend following the immigration rules of your destination and applying for any extension only if permitted by local authorities.",
+    ],
+  },
+
+  {
+    question: "What assistance do you provide during the tourist visa process?",
+
+    paragraphs: [
+      "Our experienced visa consultants assist you throughout the application process to help reduce common mistakes and improve document quality.",
     ],
 
     list: [
-      "If approved → We transfer ₹50,000 within [X days].",
-      "If refused → We transfer ₹50,000 within [X days].",
+      "Document Checklist",
+      "Application Form Guidance",
+      "Document Review",
+      "Financial Documentation Guidance",
+      "Appointment Assistance (where applicable)",
+      "Interview Preparation (where applicable)",
+      "End-to-End Application Support",
     ],
   },
 
   {
-    question: "Can I work while studying in the Netherlands?",
+    question: "Do you guarantee tourist visa approval?",
 
-    paragraphs: ["Yes! As an international student you can work:"],
-
-    list: [
-      "Up to 16 hours per week during the academic year (with a work permit arranged by your employer).",
-      "Full-time during June, July, and August (summer months — no permit needed).",
-    ],
-  },
-
-  {
-    question: "What happens after I get the visa?",
-
-    paragraphs: ["After your MVV entry sticker is issued:"],
-
-    list: [
-      "Collect your MVV from the Dutch Embassy/Consulate (Delhi, Mumbai or Bangalore).",
-      "Schedule your travel to the Netherlands.",
-      "Register at your local municipality (Gemeente) within 2 weeks of arrival to receive your BSN.",
-      "Collect your VVR Residence Permit Card from the IND Office.",
+    paragraphs: [
+      "No. No individual, consultant, or agency can legally guarantee visa approval.",
+      "Visa decisions are made solely by the relevant embassy, consulate, or immigration authority based on their own assessment of each application.",
     ],
 
     custom: (
-      <p className="mt-5">
-        We continue guiding you through every step even after your visa has been
-        issued.
-      </p>
+       <>
+    {["Our role is to help you prepare the strongest possible application by reviewing your documents carefully and guiding you throughout the process.",
+    ].map((item, index) => (
+      <div key={index}  className="mt-5">{item}</div>
+    ))}
+  </>
     ),
   },
 
   {
-    question: "What if I have more questions?",
+    question: "Can I apply again if my tourist visa application is refused?",
 
     paragraphs: [
-      "You can reach out to us anytime.",
-      "We're here to help you through the complete process — from choosing the right university to arriving safely in the Netherlands.",
+      "Yes. In many cases, applicants may reapply after addressing the reasons that contributed to the previous refusal.",
+      "Our consultants can review your previous application, identify potential issues, and help you prepare a stronger application before reapplying.",
     ],
   },
 ];
+
+export const footerData:FooterType = {
+  badge: "Start Your Journey Today",
+  heading: <>Ready For Your Next
+  <span className=" text-red-600">{" "} International Trip?
+ </span>
+  </>,
+  description: "Join thousands of happy travelers who trusted our experts for a smooth tourist visa application process.",
+  smallText:"Apply on WhatsApp",
+  largeText: " Rs 36,000",
+  leftIcon:"MessageCircle",
+  rightIcon: "ArrowRight",
+  buttonBelowText:"Available on WhatsApp • Fast response • Expert assistance",
+
+  quickLinks: [
+    { linkText: "Success Stories", link: "#stories" },
+    { linkText: "Why Visa Get Rejected", link: "#rejection" },
+    { linkText: "Step-by-Step Process", link: "#process" },
+    { linkText: "Why Choose Us", link: "#whyNetherlands" },
+    { linkText: "Choose Destination", link: "#destination" },
+    { linkText: "Eligibility & Cost", link: "#eligibility" },
+    { linkText: "FAQ", link: "#faq" },
+  ],
+  services:[
+    "Application Processing",
+    "Document Preparation",
+    "Interview Preparation",
+    "Dedicated Personal Counselor",
+  ]
+};

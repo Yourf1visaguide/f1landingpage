@@ -1,4 +1,4 @@
-import { FAQType, WhySection as WhySectionType } from "@/lib/types";
+import { FAQType, FooterType, WhySection as WhySectionType } from "@/lib/types";
 import { BadgeCheck, BriefcaseBusiness, Building2, Check, CheckSquare, Globe, IdCard, Rocket } from "lucide-react";
 import { ReactNode } from "react";
 
@@ -261,10 +261,11 @@ export const faqsData: FAQType[] = [
     ],
 
     custom: (
-      <p className="mt-5">
-        We provide a complete checklist and review every document before
-        submission.
-      </p>
+      <>
+    {["We provide a complete checklist and review every document before submission.", ].map((item, index) => (
+      <div key={index}  className="mt-5">{item}</div>
+    ))}
+  </>
     ),
   },
 
@@ -327,10 +328,12 @@ export const faqsData: FAQType[] = [
     ],
 
     custom: (
-      <p className="mt-5">
-        We continue guiding you through every step even after your visa has been
-        issued.
-      </p>
+      <>
+    {["We continue guiding you through every step even after your visa has been issued.", ].map((item, index) => (
+      <div key={index}  className="mt-5">{item}</div>
+    ))}
+  </>
+     
     ),
   },
 
@@ -343,3 +346,33 @@ export const faqsData: FAQType[] = [
     ],
   },
 ];
+
+
+
+export const footerData:FooterType = {
+  badge: "Start Your Journey Today",
+  heading: <>
+  <span className=" text-red-600">Don't Miss </span>
+                Upcoming Intake
+  </>,
+  description: "Join hundreds of successful Indian students studying in the Netherlands. Total budget under 13-15 Lakhs. Secure your spot today!",
+  smallText:"Apply on WhatsApp",
+  largeText: " Rs 36,000",
+  leftIcon:"MessageCircle",
+  rightIcon: "ArrowRight",
+  buttonBelowText:" Get a FREE counseling call today — no obligations.",
+
+  quickLinks: [
+    { linkText: "Success Stories", link: "#stories" },
+    { linkText: "Step-by-Step Process", link: "#process" },
+    { linkText: "Why Netherlands", link: "#whyNetherlands" },
+    { linkText: "Eligibility & Cost", link: "#eligibility" },
+    { linkText: "FAQ", link: "#faq" },
+  ],
+  services:[
+    "Application Processing",
+    "Document Preparation",
+    "Interview Preparation",
+    "Dedicated Personal Counselor",
+  ]
+};

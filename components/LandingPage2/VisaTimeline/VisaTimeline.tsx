@@ -1,22 +1,7 @@
 "use client";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import {
-  BookOpen,
-  Calendar,
-  School,
-  ShieldCheck,
-  CreditCard,
-  Mic,
-  Plane,
-  Mic2,
-  LetterText,
-  Mail,
-  Banknote,
-  HandCoins
-} from "lucide-react";
-
+import  { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import LeftColumn from "./left-column";
 import { customScrollTo } from "@/lib/scroll-to";
@@ -24,6 +9,7 @@ import RedButton from "@/components/Red-Buttons";
 import { handleWhatsappClick } from "@/function/handleWhatsapp";
 import { VisaTimelineType } from "@/lib/types";
 import Badge from "@/components/Badge";
+import { icons } from "@/lib/icons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -144,14 +130,7 @@ function HowThisWork({steps, title, description, badge}:VisaTimelineType) {
       divElement?.current?.push(el);
     }
   };
-  const icons = {
-    "CreditCard":CreditCard,
-    "Mail":Mail,
-    "Mic2":Mic2,
-    "Banknote":Banknote,
-    "HandCoins":HandCoins,
-    "Plane":Plane,
-  }
+  
   return (
     <section className="bg-zinc-100 py-20 px-4 xl:px-0 " id="process">
       <div className="max-w-7xl mx-auto  ">
@@ -170,7 +149,7 @@ function HowThisWork({steps, title, description, badge}:VisaTimelineType) {
           >
            {title}
           </h3>
-          <p className="mt-0 mb-8 text-lg text-slate-600 max-w-4xl">
+          <p className="mt-0 mb-8 text-lg text-center text-slate-600 max-w-5xl">
         {description}
       </p>
         </div>

@@ -6,11 +6,13 @@ import { CheckCircle2, Circle, ArrowRight } from "lucide-react";
 import Badge from "@/components/Badge";
 import RedButton from "@/components/Red-Buttons";
 
-import { touristDestinationBasicData, touristDestinationData, } from "@/data/tourist-visa";
 
 import DestinationCategory from "./DestinationCategory";
 import JourneySummary from "./JourneySummary";
 import CardSelectionProgress from "./CardSelectionProgress";
+import { handleWhatsappClickWithMessage } from "@/function/handleWhatsapp";
+import { touristDestinationBasicData, touristDestinationData, } from "@/data/tourist-visa";
+import { TouristDestinationMessage } from "./whatsappMessageSentFormt";
 
 export default function TouristDestination() {
 
@@ -35,8 +37,11 @@ export default function TouristDestination() {
     });
   }, [selectedCountries]);
 
+
+  const message = TouristDestinationMessage(selectedCountries)
+
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-24" id="destination">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         {/* Header */}
 
@@ -53,7 +58,9 @@ export default function TouristDestination() {
 
         {/* Progress */}
 
-        <CardSelectionProgress selectedCount={selectedCount} totalCategories={totalCategories} progress={progress} selectedCountries={selectedCountries} touristDestinationData={touristDestinationData} />
+
+        <JourneySummary selectedDestinations={selectedDestinations} />
+
 
         {/* Categories */}
 
@@ -73,7 +80,7 @@ export default function TouristDestination() {
         
         {/* Journey Summary */}
 
-        <JourneySummary selectedDestinations={selectedDestinations} />
+        <CardSelectionProgress selectedCount={selectedCount} totalCategories={totalCategories} progress={progress} selectedCountries={selectedCountries} touristDestinationData={touristDestinationData} />
 
         {/* CTA */}
 
@@ -86,6 +93,7 @@ export default function TouristDestination() {
                     totalCategories - selectedCount > 1 ? "s" : ""
                   }`
             }
+            onClick={() => handleWhatsappClickWithMessage(message)}
             disabled={selectedCount !== totalCategories}
             className="py-4"
             icon={<ArrowRight />}

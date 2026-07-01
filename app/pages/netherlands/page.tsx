@@ -6,7 +6,7 @@ import PreparationSection from "@/components/LandingPage2/Prepration/Prepration"
 import TestimonialsPage from "@/components/LandingPage2/Testimonial/Testimonial";
 import VisaTimeline from "@/components/LandingPage2/VisaTimeline/VisaTimeline";
 import ProcessSection from "@/components/LandingPage2/VisaProcess/VisaProcess";
-import { heroSection, testimonialsPage, VisaTimelineData, whySection } from "@/data/netherland";
+import { faqsData, footerData, heroSection, testimonialsPage, VisaTimelineData, whySection } from "@/data/netherland";
 import WhySection from "@/components/WhySection/WhySection";
 import CountryComparison from "@/components/LandingPage2/ComparisonSection/ComparisonSection";
 import EligibilityAndCost from "@/components/LandingPage2/EligibilityAndCost/EligibilityAndCost";
@@ -45,8 +45,8 @@ export default function LandingPage() {
     <CountryComparison />
     {/* <PreparationSection /> */}
     <EligibilityAndCost />
-    <FAQSection />
-    <FooterSection />
+    <FAQSection data={faqsData} />
+    <FooterSection data={footerData} />
     </div>
   );
 }

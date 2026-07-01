@@ -15,13 +15,13 @@ function TouristCardFront({ data, onClick, selected }: TouristCardProps) {
     <div>
       <div className="absolute top-4 left-0 flex justify-between items-center w-full ">
         {/* Flag short form of  name */}
-        <div className="text-xl ml-4 border border-white rounded-full size-6 object-fill">
-          <Image
-            src="https://flagcdn.com/w80/th.png"
-            width={24}
-            className="rounded-full object-fill"
-            height={30}
-            alt="Thailand"
+        <div className="text-xl ml-4 rounded-full h-7 w-7 relative ">
+            <Image
+            src={`https://flagcdn.com/w80/${data.flag}.png`}
+            fill
+            objectFit="cover"
+            className="rounded-full object-cover"
+            alt={data.flag.toUpperCase()}
           />
         </div>
 
@@ -40,7 +40,7 @@ function TouristCardFront({ data, onClick, selected }: TouristCardProps) {
       >
         {/* Country */}
         <div className="h-auto lg:h-[26px] lg:group-hover:h-[150px] transition-all duration-700">
-          <h3 className="mt-3 text-4xl font-bold tracking-wide ">
+          <h3 className="mt-3 text-3xl font-bold tracking-wide ">
             {data.country}
           </h3>
 

@@ -78,3 +78,21 @@ export type TouristDestinationCategory = {
   titleColor:"text-blue-600" | "text-red-600" | "text-black-600" | "text-amber-600";
   countries:TouristDestination[]
 }
+
+export type FooterQuickLink = {
+  linkText: string;
+  link: string;
+};
+
+export type FooterType = {
+  badge: string;
+  heading: ReactNode;
+  description: string;
+  smallText: string;
+  largeText: string;
+  leftIcon: string;
+  rightIcon: string;
+  buttonBelowText:string;
+  quickLinks: FooterQuickLink[];
+  services: string[];
+};

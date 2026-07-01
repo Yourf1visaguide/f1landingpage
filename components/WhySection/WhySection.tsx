@@ -12,6 +12,13 @@ import {
   ArrowUpRight,
   MessageCircle,
   SendHorizonal,
+  ShieldCheck,
+  Clock3,
+  FileCheck,
+  Headset,
+  PlaneTakeoff,
+  MessageCircleMore,
+  Globe2,
 } from "lucide-react";
 import Badge from "../Badge";
 import RedButton from "../Red-Buttons";
@@ -27,6 +34,14 @@ export default function WhySection({title, description, features, badge}:WhySect
   briefcaseBusiness: BriefcaseBusiness,
   idCard: IdCard,
   rocket: Rocket,
+  shieldCheck:ShieldCheck,
+  clock3:Clock3,
+  fileCheck:FileCheck,
+  headset:Headset,
+  planeTakeoff:PlaneTakeoff,
+  messageCircleMore: MessageCircleMore,
+  
+
 };
   return (
     <section className="bg-zinc-50 py-24" id="whyNetherlands">

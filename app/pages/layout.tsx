@@ -5,7 +5,7 @@ function layout({children}:{children:ReactNode}) {
   return (
     <div>
       {children}
-      {/* <WhatsappBubble /> */}
+      <WhatsappBubble />
     </div>
   )
 }

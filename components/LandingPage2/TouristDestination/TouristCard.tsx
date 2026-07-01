@@ -42,7 +42,7 @@ export default function TouristCard({
       className={` group relative cursor-pointer transition-all duration-500 ${selected ? "-translate-y-1" : "hover:-translate-y-1"} ${inactive ? "opacity-65 grayscale-[.25] scale-[.97]" : ""} `}
     >
       <div
-        className={` relative h-[520px]  overflow-hidden rounded-lg border transition-all duration-500 ${
+        className={` relative h-[500px]  overflow-hidden rounded-lg border transition-all duration-500 ${
           selected
             ? ` border-red-500 shadow-[0_20px_50px_rgba(220,38,38,.28)] `
             : `
@@ -61,7 +61,7 @@ export default function TouristCard({
 
         {/* Overlay */}
 
-        <div className=" absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/90 " />
+        <div className=" absolute inset-0 bg-linear-to-b to-black to-80%  via-zinc-950/10 from-transparent " />
 
         {/* Step */}
 

@@ -1,9 +1,11 @@
-import { MapPin, Phone, Mail } from "lucide-react";
 
-import FooterCtaButton from "./FooterCtaButton";
+
+import { icons } from "@/lib/icons";
+import { FooterType } from "@/lib/types";
 import { handleWhatsappClick } from "@/function/handleWhatsapp";
+import FooterCtaButton from "./FooterCtaButton";
 
-export default function Footer() {
+export default function Footer({data}:{data:FooterType}) {
   return (
     <footer className="relative mt-32 bg-linear-to-b from-red-950 via-zinc-950 to-zinc-950 text-white ">
       {/* Floating CTA Card */}
@@ -17,22 +19,19 @@ export default function Footer() {
           <div className="relative z-10 flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
             <div className="">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-600">
-                Start Your Journey Today
+                {data.badge}
               </p>
 
               <h2 className="mt-4 text-3xl font-bold leading-tight lg:text-5xl text-blue-50">
-                <span className=" text-red-600">Don't Miss </span>
-                Upcoming Intake
+                {data.heading}
               </h2>
 
               <p className="mt-6 text-lg text-red-100 text-justify">
-                Join hundreds of successful Indian students studying in the
-                Netherlands. Total budget under 13-15 Lakhs. Secure your spot
-                today!
+                {data.description}
               </p>
             </div>
 
-            <FooterCtaButton />
+            <FooterCtaButton data={data} />
           </div>
         </div>
       </div>
@@ -56,7 +55,7 @@ export default function Footer() {
 
             <div className="mt-2 space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin className="mt-1 h-5 w-5 text-red-600" />
+                <icons.MapPin className="mt-1 h-5 w-5 text-red-600" />
 
                 <div className="text-white/70">
                   Taj Food Market, SCO 18-19, 2nd Floor
@@ -69,13 +68,13 @@ export default function Footer() {
               </div>
 
               <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-red-600" />
+                <icons.Phone className="h-5 w-5 text-red-600" />
 
                 <span className="text-white/70">+91 917087 775007</span>
               </div>
 
               <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-red-600" />
+                <icons.Mail className="h-5 w-5 text-red-600" />
 
                 <span className="text-white/70">info@yourf1visaguide.com</span>
               </div>
@@ -88,33 +87,14 @@ export default function Footer() {
             <h4 className="font-semibold text-white">Quick Links</h4>
 
             <div className="mt-5 space-y-3">
-              <a
-                href="#stories"
-                className="block text-white/70 hover:text-red-600"
-              >
-                Success Stories
-              </a>
-
-              <a
-                href="#process"
-                className="block text-white/70 hover:text-red-600"
-              >
-                Step-by-Step Process
-              </a>
-
-              <a
-                href="#whyNetherlands"
-                className="block text-white/70 hover:text-red-600"
-              >
-                Why Netherlands
-              </a>
-
-              <a href="#eligibility" className="block text-white/70 hover:text-red-600">
-               Eligibility & Cost
-              </a>
-              <a href="#faq" className="block text-white/70 hover:text-red-600">
-               FAQ
-              </a>
+              {
+                data.quickLinks.map((item, index) => (
+                  <a href={item.link} key={index} className="block text-white/70 hover:text-red-600">
+                  {item.linkText}
+                  </a>
+                ))
+              }
+              
             </div>
           </div>
 
@@ -124,10 +104,13 @@ export default function Footer() {
             <h4 className="font-semibold text-white">Services</h4>
 
             <div className="mt-5 space-y-3">
-              <p className="text-white/70">Application Processing</p>
-              <p className="text-white/70">Document Preparation</p>
-              <p className="text-white/70">Interview Preparation </p>
-              <p className="text-white/70">Dedicated Personal Counselor</p>
+              {
+                data.services.map((item, index) => (
+                  <p className="text-white/70" key={index}>
+                    {item}
+                  </p>
+                ))
+              }
             </div>
           </div>
 
@@ -140,7 +123,7 @@ export default function Footer() {
               <div>
                 <div className="text-3xl font-bold text-red-600">50,000+</div>
 
-                <div className="text-white/70">Students Helped</div>
+                <div className="text-white/70">Happy Clients</div>
               </div>
 
               <div>
