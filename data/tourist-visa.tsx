@@ -438,7 +438,7 @@ export const costAndRequirementData: CostAndRequirementType = {
   pricing: {
     governmentFees: {
       icon: "badgeIndianRupee",
-      title: "Government & Embassy Fees",
+      title: "Fees",
       description: "Paid Separately",
 
       items: [

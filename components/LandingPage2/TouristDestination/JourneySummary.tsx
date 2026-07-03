@@ -13,11 +13,11 @@ export default function JourneySummary({ selectedDestinations }: Props) {
   const completed = selectedDestinations.every(Boolean);
 
   return (
-    <section className="mt-24 ">
-      <div className=" overflow-hidden rounded-lg border border-red-100 bg-white shadow-xl shadow-red-100/30">
+    <section className="mt-12 ">
+      <div className=" overflow-hidden rounded-lg border border-red-100 bg-white shadow-xl shadow-red-100/30 p-4 sm:p-6">
         {/* Header */}
 
-        <div className="border-b border-zinc-100 p-6">
+        <div className="border-b border-zinc-100 ">
           <div className="flex items-center gap-4">
             <div className="rounded-lg bg-red-50 p-4">
               <PlaneTakeoff className="size-8 text-red-600" />
@@ -28,7 +28,7 @@ export default function JourneySummary({ selectedDestinations }: Props) {
                 Your Journey
               </p>
 
-              <h3 className="mt-1 text-2xl font-bold text-slate-900">
+              <h3 className="mt-1 sm:text-2xl text-xl font-bold text-slate-900">
                 Selected Destinations
               </h3>
             </div>
@@ -37,7 +37,7 @@ export default function JourneySummary({ selectedDestinations }: Props) {
 
         {/* Content */}
 
-        <div className="px-6 py-8">
+        <div className="py-8 ">
           {completed ? (
             <div className="md:flex md:flex-row md:gap-8  items-center justify-between ">
               {selectedDestinations.map((country, index) => {
@@ -69,10 +69,10 @@ export default function JourneySummary({ selectedDestinations }: Props) {
               )})}
             </div>
           ) : (
-            <div className=" flex flex-col  items-center justify-center rounded-2xl border-2 border-dashed border-zinc-200 py-16 ">
+            <div className=" flex flex-col  items-center justify-center rounded-lg border-2 border-dashed border-zinc-200 py-16 px-4 sm:px-8">
               <PlaneTakeoff className="size-10 text-zinc-300" />
 
-              <h4 className="mt-6 text-2xl font-bold text-slate-900">
+              <h4 className="mt-6 text-2xl font-bold text-slate-900 text-center">
                 Build Your Dream Journey By Selecting Any Three Countries. 
               </h4>
 

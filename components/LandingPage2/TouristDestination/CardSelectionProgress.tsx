@@ -12,14 +12,14 @@ type CardSelectionProgressProps = {
 
 function CardSelectionProgress({selectedCount, totalCategories, progress, selectedCountries, touristDestinationData}:CardSelectionProgressProps) {
   return (
-    <div className="mx-auto mt-14 max-w-7xl rounded-lg border border-zinc-200 bg-white p-8 shadow-sm">
-          <div className="flex items-center justify-between">
+    <div className="mx-auto mt-12 max-w-7xl rounded-lg border border-zinc-200 bg-white p-4 sm:p-6 shadow-sm">
+          <div className="flex items-center gap-x-2 justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-wider text-red-600">
                 Progress
               </p>
 
-              <h3 className="mt-2 text-2xl font-bold text-slate-900">
+              <h3 className="mt-2 text-lg sm:text-2xl font-bold text-slate-900">
                 Build Your Dream Journey
               </h3>
             </div>
@@ -35,7 +35,7 @@ function CardSelectionProgress({selectedCount, totalCategories, progress, select
 
           {/* Progress Bar */}
 
-          <div className="mt-8 h-3 overflow-hidden rounded-full bg-zinc-200">
+          <div className="mt-8  h-3 overflow-hidden rounded-full bg-zinc-200">
             <div
               style={{
                 width: `${progress}%`,
@@ -46,14 +46,14 @@ function CardSelectionProgress({selectedCount, totalCategories, progress, select
 
           {/* Steps */}
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
             {touristDestinationData.map((item, index) => {
               const completed = !!selectedCountries[index];
 
               return (
                 <div
                   key={item.mainTitle}
-                  className={`rounded-2xl border p-5 transition-all ${ completed ? "border-red-200 bg-red-50" : "border-zinc-200 bg-white" } `} >
+                  className={`rounded-lg border p-4 transition-all ${ completed ? "border-red-200 bg-red-50" : "border-zinc-200 bg-white" } `} >
                   <div className="flex items-center gap-3">
                     {completed ? ( 
                       <CheckCircle2 className="text-red-600" />

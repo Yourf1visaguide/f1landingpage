@@ -51,11 +51,11 @@ export default function DestinationCategory({  title, description, titleColor = 
                 )}
               </div>
 
-              <h3 className={`my-4 text-4xl font-bold ${titleColor}`}>
+              <h3 className={`my-4 sm:text-4xl text-2xl font-bold ${titleColor}`}>
                 {title}
               </h3>
 
-              <p className="max-w-3xl text-lg leading-7 text-zinc-600">
+              <p className="max-w-3xl text-base text-justify sm:text-left sm:text-lg leading-7 text-zinc-600">
                 {description}
               </p>
             </div>

@@ -15,7 +15,7 @@ const documents = data.documents
 
 return ( <section id="requirements" className="relative overflow-hidden bg-slate-50 py-20">
 
-  <div className="relative mx-auto max-w-7xl px-6 lg:px-8 flex justify-center items-center flex-col">
+  <div className="relative mx-auto max-w-7xl px-4 min-[500px]:px-6 flex justify-center items-center flex-col">
     {/* Badge */}
 <Badge text={data.badge} color="red"  />
 
@@ -34,18 +34,18 @@ return ( <section id="requirements" className="relative overflow-hidden bg-slate
 
     {/* Content */}
 
-    <div className="mt-16 grid gap-8 lg:grid-cols-12 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+    <div className="mt-16 grid gap-8 lg:grid-cols-12 rounded-lg border border-slate-200 bg-white min-[500px]:p-8 p-4 shadow-sm">
       {/* Left Side */}
 
       <div className="lg:col-span-7 ">
         <div className="">
-          <div className="mb-8 flex items-center gap-3">
-            <div className="rounded-2xl bg-red-50 p-3">
+          <div className="mb-8 flex items-start gap-3  ">
+            <div className="rounded-lg bg-red-100 p-3 mt-1.5">
               <FileText className="h-6 w-6 text-red-600" />
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-slate-900">
+              <h3 className="text-xl font-bold text-slate-900 ">
                 {documents.title}
               </h3>
 
@@ -60,7 +60,7 @@ return ( <section id="requirements" className="relative overflow-hidden bg-slate
               const Icon = icons[item.icon as keyof typeof icons]
               return (<div
                 key={item.title}
-                className=" group rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-lg "
+                className=" group rounded-lg border border-slate-200 bg-white p-4 min-[500px]:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-lg "
               >
                 <div className="mb-4">
                   <Icon className="size-8 text-red-600" />
@@ -70,7 +70,7 @@ return ( <section id="requirements" className="relative overflow-hidden bg-slate
                   {item.title}
                 </h4>
 
-                <p className="text-sm leading-6 text-slate-600">
+                <p className="text-sm leading-6 text-slate-600 text-justify">
                   {item.description}
                 </p>
               </div>)
