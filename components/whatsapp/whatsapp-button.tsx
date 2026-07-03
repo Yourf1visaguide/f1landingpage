@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import Image from "next/image";
-import { handleWhatsappClick } from "@/function/handleWhatsapp";
+import { handleWhatsappClick, handleWhatsappClickWithMessage } from "@/function/handleWhatsapp";
 
 export default function WhatsappBubble() {
   const messages = [
@@ -70,7 +70,7 @@ export default function WhatsappBubble() {
 
       {/* WhatsApp Button with WAVE Hover Animation */}
       <motion.button
-        onClick={handleWhatsappClick}
+        onClick={() => handleWhatsappClickWithMessage()}
         className=" text-white rounded-full w-[56px] h-[56px] flex items-center justify-center cursor-pointer relative "
         whileHover={{ 
           rotate: [0, -10, 10, -6, 6, 0],

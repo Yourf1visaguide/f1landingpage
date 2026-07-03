@@ -50,7 +50,7 @@ export default function VisaRejection({
 
 
   return (
-    <section className="bg-zinc-50 py-24" id="rejection">
+    <section className="bg-zinc-100 py-24" id="rejection">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
 

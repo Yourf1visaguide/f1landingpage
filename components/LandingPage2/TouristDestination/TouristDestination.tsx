@@ -47,7 +47,7 @@ export default function TouristDestination() {
 
         <div className="text-center">
           <Badge isLive color="red" text="Choose Destination" />
-          <h2 className="mt-6 text-4xl font-bold text-slate-900 lg:text-5xl">
+          <h2 className="mt-6 text-4xl font-bold text-slate-900 lg:text-5xl/tight max-w-5xl mx-auto">
             {touristDestinationBasicData.title}
           </h2>
 
@@ -59,7 +59,6 @@ export default function TouristDestination() {
         {/* Progress */}
 
 
-        <JourneySummary selectedDestinations={selectedDestinations} />
 
 
         {/* Categories */}
@@ -79,8 +78,10 @@ export default function TouristDestination() {
         </div>
         
         {/* Journey Summary */}
-
+        
         <CardSelectionProgress selectedCount={selectedCount} totalCategories={totalCategories} progress={progress} selectedCountries={selectedCountries} touristDestinationData={touristDestinationData} />
+
+        <JourneySummary selectedDestinations={selectedDestinations} />
 
         {/* CTA */}
 

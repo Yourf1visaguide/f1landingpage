@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { footerData, heroSection, visaRejectionSection, VisaTimelineData, whySection } from "@/data/tourist-visa";
+import { costAndRequirementData, footerData, heroSection, navlinksData, visaRejectionSection, VisaTimelineData, whySection } from "@/data/tourist-visa";
 import HeroSection from "@/components/LandingPage2/HeroSection/HeroSection";
 import Navbar from "@/components/LandingPage2/Navbar/Navbar";
 import TouristDestination from "@/components/LandingPage2/TouristDestination/TouristDestination";
@@ -12,13 +12,14 @@ import Footer from "@/components/LandingPage2/Footer/footer";
 import FAQSection from "@/components/LandingPage2/Faq/Faq";
 import { faqsData } from "@/data/tourist-visa";
 import CountryComparison from "@/components/LandingPage2/ComparisonSection/ComparisonSection";
+import PreparationSection from "@/components/LandingPage2/Prepration/Prepration";
 
 
 
 function TouristVisa() {
   return (
     <div className="bg-white">
-      <Navbar />
+      <Navbar navLinks={navlinksData} />
 
       <HeroSection 
       heading={heroSection.heading}
@@ -36,7 +37,8 @@ function TouristVisa() {
       title={VisaTimelineData.title}
       description={VisaTimelineData.description}
       badge={VisaTimelineData.badge}
-    />
+      />
+      <PreparationSection data={costAndRequirementData} />
     <VisaRejection  badge={visaRejectionSection.badge}
       title={visaRejectionSection.title}
       description={visaRejectionSection.description}

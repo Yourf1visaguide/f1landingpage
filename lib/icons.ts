@@ -30,7 +30,11 @@ import {
   MapPin,
   Phone,
   MessageCircle,
-  ArrowRight
+  ArrowRight,
+  FileCheck,
+  Landmark,
+  FileUser,
+  Briefcase
 } from "lucide-react";
 
 export const icons = {
@@ -61,9 +65,14 @@ export const icons = {
     "MessageCircle":MessageCircle,
     "ShieldCheck":ShieldCheck,
     "BookOpen":BookOpen,
-"Calendar":Calendar,
-"School":School,
-"LetterText":LetterText
+    "Calendar":Calendar,
+    "School":School,
+    "LetterText":LetterText,
+    "FileUser":FileUser,
+    "FileCheck":FileCheck,
+    "LandMark":Landmark,
+    "Briefcase":Briefcase
+
     
   }
 

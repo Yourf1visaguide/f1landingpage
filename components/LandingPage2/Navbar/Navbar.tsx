@@ -4,17 +4,10 @@ import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 
 import NavbarButton from "./NavbarButton";
-export default function Navbar() {
+import { NavLinks } from "@/lib/types";
+export default function Navbar({navLinks}:{navLinks:NavLinks[]}) {
 
   
-  const navLinks = [
-    { name: "Success Stories", href: "#stories" },
-    { name: "Process", href: "#process" },
-    { name: "Why Netherlands", href: "#whyNetherlands" },
-    { name: "Eligibility & Cost", href: "#eligibility" },
-    { name: "FAQ", href: "#faq" },
-  ];
-
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-100/90 border-b border-zinc-200 shadow-sm z-50 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-50">

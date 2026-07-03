@@ -11,11 +11,13 @@ type TouristCardProps = {
   state: TouristCardState; 
   step: number; 
   category: string; 
+  index:number;
   onSelect: () => void; };
 
 export default function TouristCard({
   data,
   state,
+  index,
   step,
   category,
   onSelect,
@@ -35,7 +37,6 @@ export default function TouristCard({
 
   const selected = state === "selected";
   const inactive = state === "inactive";
-
   return (
     <div
       onClick={onSelect}
@@ -55,7 +56,7 @@ export default function TouristCard({
           src={data.image}
           alt={data.country}
           fill
-          priority
+          priority={false}
           className={` object-cover transition-all rounded-lg duration-700 ${selected ? "scale-110 brightness-105 saturate-110" : ` group-hover:scale-110 group-hover:brightness-110 group-hover:saturate-110 `} `}
         />
 

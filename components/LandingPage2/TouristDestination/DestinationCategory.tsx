@@ -104,12 +104,13 @@ export default function DestinationCategory({  title, description, titleColor = 
                 },
               }}
             >
-              {countries.map((country) => (
+              {countries.map((country, index) => (
                 <SwiperSlide key={country.id} className="pb-12  ">
                   <TouristCard
                     data={country}
                     step={1} // later use category.step
                     category={title}
+                    index={index}
                     state={
                       selectedId === country.id
                         ? "selected"

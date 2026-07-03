@@ -1,6 +1,11 @@
 import { LucideIcon } from "lucide-react";
 import { ReactNode } from "react";
 
+export type NavLinks = {
+  name:string;
+  href:string;
+}
+
 export type Testimonial = {
   id: number;
   tag?: string;
@@ -75,7 +80,7 @@ export type TouristDestination = {
 export type TouristDestinationCategory = {
   mainTitle:string;
   description:string;
-  titleColor:"text-blue-600" | "text-red-600" | "text-black-600" | "text-amber-600";
+  titleColor:"text-blue-600" | "text-red-600" | "text-black-900" | "text-amber-600";
   countries:TouristDestination[]
 }
 
@@ -83,6 +88,55 @@ export type FooterQuickLink = {
   linkText: string;
   link: string;
 };
+
+
+//prepration types
+
+
+export interface RequirementItemType {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface GovernmentFeeItemType {
+  label: string;
+  value: string;
+}
+
+export interface CostAndRequirementType {
+  badge: string;
+  title: ReactNode;
+  description: string;
+
+  documents: {
+    icon: string;
+    title: string;
+    description: string;
+    items: RequirementItemType[];
+  };
+
+  pricing: {
+    governmentFees: {
+      icon: string;
+      title: string;
+      description: string;
+      items: GovernmentFeeItemType[];
+    };
+
+    package: {
+      title: string;
+      price: string;
+      description: string;
+
+      button: {
+        text: string;
+      };
+    };
+  };
+}
+
+//prepration types
 
 export type FooterType = {
   badge: string;

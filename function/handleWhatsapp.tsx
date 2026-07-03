@@ -6,7 +6,7 @@ export const handleWhatsappClick = () => {
   };
 
   export const handleWhatsappClickWithMessage = (
-  message = "Hello, I visited your website and would like to start my visa application."
+  message = "Hello, I visited your website and would like to talk further about visa application."
 ) => {
   window.open(
     `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,

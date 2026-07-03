@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
-import { CheckSquare, WholeWord } from "lucide-react";
+import { CheckSquare} from "lucide-react";
 
 import {
+  CostAndRequirementType,
   FAQType,
   FooterType,
   TouristDestination,
@@ -10,6 +11,16 @@ import {
   VisaTimelineType,
   WhySection as WhySectionType,
 } from "@/lib/types";
+
+
+
+
+export const navlinksData = [
+    { name: "Success Stories", href: "#stories" },
+    { name: "Choose Destination", href: "#destination" },
+    { name: "Process", href: "#process" },
+    { name: "FAQ", href: "#faq" },
+  ];
 
 export const heroSection: {
   image: string;
@@ -46,17 +57,17 @@ export const heroSection: {
 export const touristDestinationBasicData = {
   title: (
     <>
-      Choose Your <span className="text-red-700">Dream Destination</span>
+      Apply for Tourist Visas to Any Three Countries for <span className="text-red-700"> {" "} Just ₹36,000</span>
     </>
   ),
   description:
-    "Explore tourist visa options across the world's most popular destinations. Select one country from each category to compare requirements, processing time, and travel opportunities before starting your application.",
-  buttonText: "Continue",
+    "Select your preferred destinations and let our visa experts guide you through the complete application process.",
+  buttonText: "Continue with these 3 countries ",
 };
 
 export const touristDestinationData: TouristDestinationCategory[] = [
   {
-    mainTitle: "Choose Your Premium Destination",
+    mainTitle: "Choose Your First Destination.",
     description:
       "Select one of our most popular English-speaking destinations with world-famous attractions and unforgettable travel experiences.",
     titleColor: "text-red-600",
@@ -133,10 +144,10 @@ export const touristDestinationData: TouristDestinationCategory[] = [
   },
 
   {
-    mainTitle: "Explore Europe",
+    mainTitle: "Select Your Second Country From Europe.",
     description:
       "Discover historic cities, breathtaking landscapes, and effortless travel across Europe's most loved destinations.",
-    titleColor: "text-blue-600",
+    titleColor: "text-red-600",
     countries: [
       {
         id: "netherlands",
@@ -214,10 +225,10 @@ export const touristDestinationData: TouristDestinationCategory[] = [
   },
 
   {
-    mainTitle: "Asia & Middle East Adventures",
+    mainTitle: "Choose Third Destination from Asia & the Middle East",
     description:
       "From luxury shopping to tropical beaches and cultural experiences, choose your perfect holiday destination.",
-    titleColor: "text-amber-600",
+    titleColor: "text-red-600",
     countries: [
       {
         id: "dubai",
@@ -370,6 +381,94 @@ export const whySection: WhySectionType = {
     "From documentation to visa approval, we make international travel simple, transparent, and stress-free for every traveler.",
 
   badge: "Why Choose Us",
+};
+
+
+export const costAndRequirementData: CostAndRequirementType = {
+  badge: "Requirement & Cost",
+
+  title: (
+    <>
+      Requirements & Costs at a{" "}
+      <span className="text-red-600">Glance</span>
+    </>
+  ),
+
+  description:
+    "Know exactly what documents to prepare and the estimated costs before starting your visa application.",
+
+  // Left Side
+  documents: {
+    icon: "FileText",
+    title: "Documents We Help You Organize",
+    description: "Everything needed for a strong visa application.",
+
+    items: [
+      {
+        icon: "FileUser",
+        title: "Valid Passport",
+        description:
+          "Passport with sufficient validity and available blank pages.",
+      },
+
+      {
+        icon: "FileCheck",
+        title: "Visa Application Form",
+        description:
+          "Correctly completed application form based on your destination.",
+      },
+
+      {
+        icon: "LandMark",
+        title: "Financial Proof",
+        description:
+          "Bank statements, income proof, sponsorship or other financial documents if required.",
+      },
+
+      {
+        icon: "Briefcase",
+        title: "Supporting Documents",
+        description:
+          "Travel itinerary, accommodation details, employment or invitation documents where applicable.",
+      },
+    ],
+  },
+
+  // Right Side
+  pricing: {
+    governmentFees: {
+      icon: "badgeIndianRupee",
+      title: "Government & Embassy Fees",
+      description: "Paid Separately",
+
+      items: [
+        {
+          label: "Visa Application Fee",
+          value: "Varies by Country",
+        },
+        {
+          label: "Biometric Fee",
+          value: "If Applicable",
+        },
+        {
+          label: "Travel Insurance",
+          value: "If Required",
+        },
+      ],
+    },
+
+    package: {
+      title: "Our Full Service Package*",
+      price: "₹36,000",
+
+      description:
+        "*The Rs 36,000 fee covers our complete end-to-end consulting, application assistance, and document structuring for up to three selected tourist visa destinations. Government visa fees, embassy charges, travel insurance and other third-party costs are paid separately.",
+
+      button: {
+        text: "Apply on WhatsApp",
+      },
+    },
+  },
 };
 
 export const VisaTimelineData: VisaTimelineType = {
@@ -563,6 +662,15 @@ export const visaRejectionSection = {
 
 export const faqsData: FAQType[] = [
   {
+  question: "What does the ₹36,000 package include?",
+
+  paragraphs: [
+    "The ₹36,000 package includes professional guidance and assistance for up to three selected tourist visa destinations. Our experienced team supports you throughout the application process and helps you prepare your application with confidence.",
+    "Since every applicant and destination is different, the exact level of assistance may vary based on your travel plans and visa requirements. Contact our team to discuss your profile and learn what's included for your selected destinations."
+  ],
+
+},
+  {
     question: "How do I apply for a tourist visa?",
 
     paragraphs: [
@@ -713,11 +821,11 @@ export const footerData:FooterType = {
 
   quickLinks: [
     { linkText: "Success Stories", link: "#stories" },
-    { linkText: "Why Visa Get Rejected", link: "#rejection" },
-    { linkText: "Step-by-Step Process", link: "#process" },
-    { linkText: "Why Choose Us", link: "#whyNetherlands" },
     { linkText: "Choose Destination", link: "#destination" },
-    { linkText: "Eligibility & Cost", link: "#eligibility" },
+    { linkText: "Step-by-Step Process", link: "#process" },
+    { linkText: "Requirements & Cost", link: "#requirements" },
+    { linkText: "Why Choose Us", link: "#whyNetherlands" },
+    { linkText: "Why Visa Get Rejected", link: "#rejection" },
     { linkText: "FAQ", link: "#faq" },
   ],
   services:[
