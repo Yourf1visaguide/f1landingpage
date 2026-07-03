@@ -438,7 +438,7 @@ export const costAndRequirementData: CostAndRequirementType = {
   pricing: {
     governmentFees: {
       icon: "badgeIndianRupee",
-      title: "Fees",
+      title: "Government & Embassy Fees",
       description: "Paid Separately",
 
       items: [
@@ -462,7 +462,7 @@ export const costAndRequirementData: CostAndRequirementType = {
       price: "₹36,000",
 
       description:
-        "*The Rs 36,000 fee covers our complete end-to-end consulting, application assistance, and document structuring for up to three selected tourist visa destinations. Government visa fees, embassy charges, travel insurance and other third-party costs are paid separately.",
+        "*The ₹36,000 fee covers our end-to-end consulting, application assistance, and document structuring for up to three selected tourist visa destinations. Government visa fees, embassy charges, biometric fees (where applicable), travel insurance,  and other third-party costs are paid separately.",
 
       button: {
         text: "Apply on WhatsApp",

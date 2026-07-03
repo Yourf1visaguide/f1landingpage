@@ -23,7 +23,7 @@ export default function FAQSection({data}:{data:FAQType[]}) {
         {/* Heading */}
 
         <div className="mt-6">
-          <h2 className="text-4xl font-bold text-slate-900 lg:text-6xl">
+          <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
             Frequently Asked
             <span className=" text-red-600"> Questions</span>
           </h2>

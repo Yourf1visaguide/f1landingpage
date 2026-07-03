@@ -25,7 +25,7 @@ function PreprationRight({data}:{data:CostAndRequirementType}) {
 
           <div className="mt-8 space-y-4">
             {data.pricing.governmentFees.items.map((item) => (
-              <div className="flex items-center gap-x-2 justify-between border-b border-slate-100 pb-4">
+              <div key={item.label} className="flex items-center gap-x-2 justify-between border-b border-slate-100 pb-4">
               <span className="text-slate-600 text-sm min-[450px]:text-base ">
                 {item.label}
               </span>
