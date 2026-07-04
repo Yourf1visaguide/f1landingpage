@@ -12,4 +12,4 @@ export const navLinksData = [
     href: "https://touristvisa.yourf1visaguide.com",
   },
 ];
-  // git commit -m "make chagnes in next.config.ts file and navbar"
+  

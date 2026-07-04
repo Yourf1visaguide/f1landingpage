@@ -6,13 +6,14 @@ import PreparationSection from "@/components/LandingPage/Prepration/Prepration";
 import TestimonialsPage from "@/components/LandingPage/Testimonial/Testimonial";
 import VisaTimeline from "@/components/LandingPage/VisaTimeline/VisaTimeline";
 import ProcessSection from "@/components/LandingPage/VisaProcess/VisaProcess";
-import { navlinksData } from "@/data/navlinks";
+import { navLinksData } from "@/data/navlinks";
+
 
 export default function LandingPage() {
   
   return (
     <div className="bg-white">
-    <Navbar navLinks={navlinksData} />
+    <Navbar navLinks={navLinksData} />
     <HeroSection />
     <TestimonialsPage />
     <ProcessSection />
