@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { costAndRequirementData, footerData, heroSection, navlinksData, visaRejectionSection, VisaTimelineData, whySection } from "@/data/tourist-visa";
+import { navlinksData } from "@/data/navlinks";
 import HeroSection from "@/components/LandingPage2/HeroSection/HeroSection";
 import Navbar from "@/components/LandingPage2/Navbar/Navbar";
 import TouristDestination from "@/components/LandingPage2/TouristDestination/TouristDestination";
@@ -11,8 +11,16 @@ import VisaRejection from "@/components/LandingPage2/VisaRejection/VisaRejection
 import Footer from "@/components/LandingPage2/Footer/footer";
 import FAQSection from "@/components/LandingPage2/Faq/Faq";
 import { faqsData } from "@/data/tourist-visa";
-import CountryComparison from "@/components/LandingPage2/ComparisonSection/ComparisonSection";
 import PreparationSection from "@/components/LandingPage2/Prepration/Prepration";
+import CountryComparison from "@/components/LandingPage2/ComparisonSection/ComparisonSection";
+
+import { costAndRequirementData, 
+  footerData, 
+  heroSection,
+  visaRejectionSection, 
+  VisaTimelineData, 
+  whySection 
+} from "@/data/tourist-visa";
 
 
 

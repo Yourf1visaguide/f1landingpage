@@ -15,12 +15,15 @@ import {
 
 
 
-export const navlinksData = [
-    { name: "Success Stories", href: "#stories" },
-    { name: "Choose Destination", href: "#destination" },
-    { name: "Process", href: "#process" },
-    { name: "FAQ", href: "#faq" },
-  ];
+// export const navlinksData = [
+//     { name: "Success Stories", href: "#stories" },
+//     { name: "Choose Destination", href: "#destination" },
+//     { name: "Process", href: "#process" },
+//     { name: "FAQ", href: "#faq" },
+//   ];
+
+
+
 
 export const heroSection: {
   image: string;

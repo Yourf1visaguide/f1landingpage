@@ -1,3 +1,4 @@
+import { navlinksData } from "@/data/navlinks";
 import FooterSection from "@/components/LandingPage2/Footer/footer";
 import FAQSection from "@/components/LandingPage2/Faq/Faq";
 import HeroSection from "@/components/LandingPage2/HeroSection/HeroSection";
@@ -6,16 +7,23 @@ import PreparationSection from "@/components/LandingPage2/Prepration/Prepration"
 import TestimonialsPage from "@/components/LandingPage2/Testimonial/Testimonial";
 import VisaTimeline from "@/components/LandingPage2/VisaTimeline/VisaTimeline";
 import ProcessSection from "@/components/LandingPage2/VisaProcess/VisaProcess";
-import { faqsData, footerData, heroSection, navlinks, testimonialsPage, VisaTimelineData, whySection } from "@/data/netherland";
 import WhySection from "@/components/WhySection/WhySection";
 import CountryComparison from "@/components/LandingPage2/ComparisonSection/ComparisonSection";
 import EligibilityAndCost from "@/components/LandingPage2/EligibilityAndCost/EligibilityAndCost";
+import { 
+  faqsData, 
+  footerData, 
+  heroSection, 
+  testimonialsPage, 
+  VisaTimelineData, 
+  whySection 
+} from "@/data/netherland";
 
 export default function LandingPage() {
   
   return (
     <div className="bg-white">
-    <Navbar navLinks={navlinks} />
+    <Navbar navLinks={navlinksData} />
     <HeroSection 
     image={heroSection.image}
       heading={ 

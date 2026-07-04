@@ -4,13 +4,14 @@ import { ReactNode } from "react";
 
 
 
-export const navlinks = [
-    { name: "Success Stories", href: "#stories" },
-    { name: "Process", href: "#process" },
-    { name: "Why Netherlands", href: "#whyNetherlands" },
-    { name: "Eligibility & Cost", href: "#eligibility" },
-    { name: "FAQ", href: "#faq" },
-  ];
+// export const navlinks = [
+//     { name: "Success Stories", href: "#stories" },
+//     { name: "Process", href: "#process" },
+//     { name: "Why Netherlands", href: "#whyNetherlands" },
+//     { name: "Eligibility & Cost", href: "#eligibility" },
+//     { name: "FAQ", href: "#faq" },
+//   ];
+
 
 
 export const heroSection: {
