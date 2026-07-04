@@ -1,4 +1,3 @@
-import { navlinksData } from "@/data/navlinks";
 import FooterSection from "@/components/LandingPage2/Footer/footer";
 import FAQSection from "@/components/LandingPage2/Faq/Faq";
 import HeroSection from "@/components/LandingPage2/HeroSection/HeroSection";
@@ -18,12 +17,13 @@ import {
   VisaTimelineData, 
   whySection 
 } from "@/data/netherland";
+import { navLinksData } from "@/data/navlinks";
 
 export default function LandingPage() {
   
   return (
     <div className="bg-white">
-    <Navbar navLinks={navlinksData} />
+    <Navbar navLinks={navLinksData} />
     <HeroSection 
     image={heroSection.image}
       heading={ 

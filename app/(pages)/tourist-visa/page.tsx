@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { navlinksData } from "@/data/navlinks";
+
 import HeroSection from "@/components/LandingPage2/HeroSection/HeroSection";
 import Navbar from "@/components/LandingPage2/Navbar/Navbar";
 import TouristDestination from "@/components/LandingPage2/TouristDestination/TouristDestination";
@@ -21,13 +21,14 @@ import { costAndRequirementData,
   VisaTimelineData, 
   whySection 
 } from "@/data/tourist-visa";
+import { navLinksData } from "@/data/navlinks";
 
 
 
 function TouristVisa() {
   return (
     <div className="bg-white">
-      <Navbar navLinks={navlinksData} />
+      <Navbar navLinks={navLinksData} />
 
       <HeroSection 
       heading={heroSection.heading}
