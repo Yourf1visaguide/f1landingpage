@@ -150,3 +150,19 @@ export type FooterType = {
   quickLinks: FooterQuickLink[];
   services: string[];
 };
+
+
+export type VisaProcessStepsType = {
+  number:string;
+icon:string;
+title:string;
+description:string;
+}
+export type VisaProcessType = {
+  heading:ReactNode;
+  description:string;
+  badgeText:string;
+  steps:VisaProcessStepsType[];
+  buttonText:string;
+
+}

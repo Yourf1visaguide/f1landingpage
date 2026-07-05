@@ -27,6 +27,8 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  
 }
 .testimonial-slider .swiper-button-next,
 .testimonial-slider .swiper-button-prev {

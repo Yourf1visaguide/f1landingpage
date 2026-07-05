@@ -54,7 +54,6 @@ export default function VisaProcessSection() {
 return ( <section id="process" className="relative overflow-hidden bg-white py-24">
 {/* Background Accent */} <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.08),transparent_40%)]" />
 
-```
   <div className="relative mx-auto max-w-7xl px-6">
     {/* Header */}
     <div className="mx-auto mb-20 max-w-3xl text-center">

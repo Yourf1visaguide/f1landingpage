@@ -2,7 +2,6 @@
 
 import { icons } from "@/lib/icons";
 import { FooterType } from "@/lib/types";
-import { handleWhatsappClick } from "@/function/handleWhatsapp";
 import FooterCtaButton from "./FooterCtaButton";
 
 export default function Footer({data}:{data:FooterType}) {
@@ -70,7 +69,7 @@ export default function Footer({data}:{data:FooterType}) {
               <div className="flex items-center gap-3">
                 <icons.Phone className="h-5 w-5 text-red-600" />
 
-                <span className="text-white/70">+91 917087 775007</span>
+                <span className="text-white/70">+91 7087 775007</span>
               </div>
 
               <div className="flex items-center gap-3">

@@ -21,6 +21,7 @@ function HowThisWork({steps, title, description, badge}:VisaTimelineType) {
   const [currentImage, setCurrentImage] = useState(0);
 
   
+  
   useEffect(() => {
     divStep.current.map((el) => {
       gsap.fromTo(

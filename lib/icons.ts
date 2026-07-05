@@ -34,13 +34,22 @@ import {
   FileCheck,
   Landmark,
   FileUser,
-  Briefcase
+  Briefcase,
+  Monitor,
+  GraduationCap,
+  BadgeIndianRupee,
+  Building2,
+  House,
+  UserCheck,
+  FilePlusCorner,
+  ClipboardClock
 } from "lucide-react";
 
 export const icons = {
     "CreditCard":CreditCard,
     "Mail":Mail,
     "Mic2":Mic2,
+    "Mic":Mic,
     "Banknote":Banknote,
     "HandCoins":HandCoins,
     "Plane":Plane,
@@ -71,8 +80,15 @@ export const icons = {
     "FileUser":FileUser,
     "FileCheck":FileCheck,
     "LandMark":Landmark,
-    "Briefcase":Briefcase
-
+    "Briefcase":Briefcase,
+    "Monitor":Monitor,
+    "GraduationCap":GraduationCap,
+    "BadgeIndianRupee":BadgeIndianRupee,
+    "Building2":Building2,
+    "House":House,
+    "UserCheck":UserCheck,
+    "FilePlusCorner":FilePlusCorner,
+    "ClipboardClock":ClipboardClock,
     
   }
 
