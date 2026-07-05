@@ -1,0 +1,10 @@
+
+# public/_redirects
+
+# Netherlands subdomain → serve netherlands content
+https://netherlands.yourf1visaguide.com/  /netherlands/  200
+https://netherlands.yourf1visaguide.com/* /netherlands/:splat 200
+
+# USA subdomain → serve usa content  
+https://usa.yourf1visaguide.com/  /usa/  200
+https://usa.yourf1visaguide.com/* /usa/:splat 200
