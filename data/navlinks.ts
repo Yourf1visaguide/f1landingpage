@@ -1,14 +1,14 @@
 export const navLinksData = [
   {
-    name: "USA Visa",
+    name: "USA Study Visa",
     href: "https://usa.yourf1visaguide.com",
   },
   {
-    name: "Netherlands Visa",
+    name: "Europe Study Visa",
     href: "https://netherlands.yourf1visaguide.com",
   },
   {
-    name: "Tourist Visas",
+    name: "Tourist Visa",
     href: "https://touristvisas.yourf1visaguide.com",
   },
 ];
