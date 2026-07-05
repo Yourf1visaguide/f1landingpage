@@ -9,7 +9,7 @@ export const navLinksData = [
   },
   {
     name: "All Countries Tourist Visas",
-    href: "https://touristvisa.yourf1visaguide.com",
+    href: "https://touristvisas.yourf1visaguide.com",
   },
 ];
   
