@@ -11,16 +11,32 @@ export async function onRequest(context: any): Promise<Response> {
 
   const basePath = routeMap[hostname];
 
-  if (basePath && !url.pathname.startsWith(basePath)) {
+  // No matching subdomain — serve normally
+  if (!basePath) {
+    return context.next();
+  }
+
+  // Assets — let them fall through to root without rewriting
+  // /_next/, /favicon, images, fonts etc serve correctly from root
+  if (
+    url.pathname.startsWith('/_next/') ||
+    url.pathname.startsWith('/favicon') ||
+    url.pathname.startsWith('/images/') ||
+    url.pathname.startsWith('/fonts/') ||
+    url.pathname.match(/\.(ico|png|jpg|jpeg|svg|webp|woff|woff2|ttf)$/)
+  ) {
+    return context.next();
+  }
+
+  // Page requests — rewrite to country path
+  if (!url.pathname.startsWith(basePath)) {
     const rewrittenUrl = new URL(context.request.url);
     rewrittenUrl.pathname =
       basePath + (url.pathname === '/' ? '/' : url.pathname);
 
-    return fetch(rewrittenUrl.toString(), {
-      method: context.request.method,
-      headers: context.request.headers,
-      body: context.request.body,
-    });
+    // ✅ Your pattern — preserves entire request correctly
+    const request = new Request(rewrittenUrl.toString(), context.request);
+    return fetch(request);
   }
 
   return context.next();
