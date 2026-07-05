@@ -7,7 +7,7 @@ export async function onRequest(context: any): Promise<Response> {
   const routeMap: Record<string, string> = {
     'netherlands.yourf1visaguide.com': '/netherlands',
     'usa.yourf1visaguide.com': '/usa',
-    'touristvisas.yourf1visaguide.com': '/touristvisa',
+    'touristvisas.yourf1visaguide.com': '/tourist-visa',
   };
 
   const basePath = routeMap[hostname];
