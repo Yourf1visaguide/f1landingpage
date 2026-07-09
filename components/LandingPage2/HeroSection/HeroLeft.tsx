@@ -119,7 +119,7 @@ function HeroLeft({heading, description}:HeroLeftProps) {
 
       <h1
         ref={headingRef}
-        className={`${playfair.variable} font-serif text-5xl lg:text-6xl xl:text-6xl font-bold leading-[1.1] tracking-tight text-white max-w-5xl `}
+        className={`${playfair.variable} font-serif text-5xl/tight lg:text-6xl/tight  font-bold leading-[1.1] tracking-tight text-white max-w-5xl `}
       >
         {heading}
         <br />

@@ -166,3 +166,31 @@ export type VisaProcessType = {
   buttonText:string;
 
 }
+
+
+
+export type SuccessStoryInfoType = {
+    id: string;
+  studentName: string;
+  profileImage: string;
+  fromCountry: string;
+  toCountry: string;
+  university: string;
+  program: string;
+  shortDescription: string;
+  featured?: boolean;
+  step1:string;
+  step2:string;
+  step3:string;
+  image1:string;
+  image2:string;
+  image3:string;
+  }
+
+export interface SuccessStoryType {
+  title:ReactNode;
+  description:string;
+  badge:string;
+  info:SuccessStoryInfoType[]
+
+}
