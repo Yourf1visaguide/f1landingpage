@@ -193,15 +193,14 @@ export default function SuccessStoriesCard({
                 </div>
 
                 {/* Document image frame */}
-                <div className="relative w-full h-32 rounded-md shadow-sm overflow-hidden bg-zinc-50 border border-zinc-300 ">
+                <div className="relative h-72 shadow-sm border border-zinc-200 rounded-md overflow-hidden ">
                   {step.image ? (
                     <Image
                       src={step.image}
                       alt={step.label}
                       fill
                       draggable={false}
-                      className="object-cover object-top"
-                      sizes="(max-width: 640px) 85vw, 300px"
+                      className="object-contain object-top  "
                     />
                   ) : (
                     /* Fallback skeleton when no image provided */
