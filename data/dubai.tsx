@@ -438,7 +438,7 @@ export const whySection: WhySectionType = {
       icon: "Globe",
       title: "International Transfer Options",
       description:
-        "Some students may have opportunities to continue their studies internationally after studying in Dubai, subject to university admissions, academic performance, credit recognition, and destination-country requirements.",
+        "Some students may have opportunities to continue their studies internationally after studying in Dubai.",
     },
     {
       icon: "Building2",
