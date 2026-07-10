@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { flags } from "@/lib/flags";
 import { SuccessStoryInfoType } from "@/lib/types";
-import { ArrowRight, Plane, PlaneTakeoff } from "lucide-react";
+import { ArrowRight, Award, BathIcon, Plane, PlaneTakeoff } from "lucide-react";
 import { formatCountryWithThe } from "@/lib/countires-with-the";
 
 function SuccessStoryCardFooter({ item }: { item: SuccessStoryInfoType }) {
@@ -15,12 +15,17 @@ function SuccessStoryCardFooter({ item }: { item: SuccessStoryInfoType }) {
       <div className="mx-auto my-4 mb-6 h-1 w-14 rounded-full bg-red-600" />
 
 
-      <h2 className="text-lg/tight font-bold leading-tight text-center text-zinc-900">
-        Successfully University Transfer from Dubai to 
+      <h2 className="text-lg/tight bg-zinc-50 p-2 rounded-lg font-medium leading-tight text-center text-zinc-900 flex gap-1 justify-start items-start h-18 italic">
+        <Award className="text-red-600 size-5 shrink-0 mt-1" />
+        
+        <div className="text-center text-base">
+          Successful University Transfer
+from Dubai to
 
-        <span className="text-red-600">
+        <span className="text-red-700">
           {" "}{formatCountryWithThe(item.toCountry)}
         </span>
+        </div>
       </h2>
     </footer>
   );

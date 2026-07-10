@@ -42,7 +42,17 @@ import {
   House,
   UserCheck,
   FilePlusCorner,
-  ClipboardClock
+  ClipboardClock,
+  Globe,
+  BriefcaseBusiness,
+  IdCard,
+  Rocket,
+  Clock3,
+  Headset,
+  MessageCircleMore,
+  Languages,
+  FolderCheck,
+  Globe2
 } from "lucide-react";
 
 export const icons = {
@@ -89,7 +99,16 @@ export const icons = {
     "UserCheck":UserCheck,
     "FilePlusCorner":FilePlusCorner,
     "ClipboardClock":ClipboardClock,
-    
+    "Globe": Globe,
+    "BriefcaseBusiness": BriefcaseBusiness,
+    "IdCard": IdCard,
+    "Rocket": Rocket,
+    "Clock3":Clock3,
+    "Headset":Headset,
+    "MessageCircleMore": MessageCircleMore,
+    "Languages":Languages,
+    "FolderCheck":FolderCheck,
+    "Globe2":Globe2
+
   }
 
-  

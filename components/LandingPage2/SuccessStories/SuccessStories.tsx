@@ -78,7 +78,7 @@ export default function SuccessStoriesPage({
   }, []);
   console.log(testimonialsData);
   return (
-    <main id="stories" className="bg-zinc-100 border-t-2 border-zinc-200">
+    <main id="stories" className="border-b-2 bg-zinc-100 border-t-2 border-zinc-200">
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden ">
         {/* Header */}
         <div className="text-center mb-16">

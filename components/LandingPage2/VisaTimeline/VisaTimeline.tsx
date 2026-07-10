@@ -154,7 +154,7 @@ function HowThisWork({steps, title, description, badge}:VisaTimelineType) {
         {description}
       </p>
         </div>
-        <div className="  flex flex-col justify-center items-center">
+        <div className=" flex flex-col justify-center items-center">
           {/* <LeftColumn  /> */}
           {/* <LeftColumn currentImage={currentImage} steps={steps} /> */}
           <div className=" order-1 lg:order-2 col-span-3">

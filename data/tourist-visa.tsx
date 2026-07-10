@@ -335,39 +335,39 @@ export const testimonialsPage = {
 export const whySection: WhySectionType = {
   features: [
     {
-      icon: "globe",
+      icon: "Globe",
       title: "15+ Travel Destinations",
       description:
         "Explore popular tourist destinations worldwide with expert visa guidance tailored to each country's requirements.",
     },
     {
-      icon: "shieldCheck",
+      icon: "ShieldCheck",
       title: "High Visa Success Rate",
       description:
         "Our experienced visa specialists carefully review every application to maximize your chances of approval.",
       large: true,
     },
     {
-      icon: "clock3",
+      icon: "Clock3",
       title: "Fast & Hassle-Free Processing",
       description:
         "From document verification to application submission, we handle the complete process so you can focus on planning your trip.",
       large: true,
     },
     {
-      icon: "fileCheck",
+      icon: "FileCheck",
       title: "Complete Documentation Support",
       description:
         "We prepare, review, and organize every required document to minimize errors and avoid unnecessary delays.",
     },
     {
-      icon: "headset",
+      icon: "Headset",
       title: "Dedicated Visa Expert",
       description:
         "Get one-on-one guidance from a dedicated consultant throughout your tourist visa journey.",
     },
     {
-      icon: "planeTakeoff",
+      icon: "PlaneTakeoff",
       title: "Travel Assistance",
       description:
         "Need help with flights, hotel bookings, travel insurance, or itinerary planning? We've got you covered.",

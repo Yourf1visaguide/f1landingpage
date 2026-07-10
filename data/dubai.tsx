@@ -1,21 +1,17 @@
 import { ReactNode } from "react";
-import { AlertCircle, CheckSquare} from "lucide-react";
+import { CheckSquare } from "lucide-react";
 
 import {
   CostAndRequirementType,
   FAQType,
   FooterType,
-  TouristDestination,
   TouristDestinationCategory,
-  VisaTimelineSteps,
   VisaTimelineType,
   WhySection as WhySectionType,
-  SuccessStoryInfoType,
-  SuccessStoryType
+  SuccessStoryType,
+  StudyTransferFromDubaiType,
+  InternationalUniversityType,
 } from "@/lib/types";
-
-
-
 
 // export const navlinksData = [
 //     { name: "Success Stories", href: "#stories" },
@@ -24,25 +20,18 @@ import {
 //     { name: "FAQ", href: "#faq" },
 //   ];
 
-
-
-
 export const heroSection: {
   image: string;
   imageClass: string;
   heading: ReactNode;
   description: ReactNode;
 } = {
-  image: "/dubai/dubai-bg-hero-section4.jpg",
-  imageClass: "md:object-bottom object-[60%_center] ",
+  image: "/dubai/dubai-bg-hero-section.jpg",
+  imageClass: "md:object-bottom object-[75%_center] ",
   heading: (
     <>
-    Study in Dubai. Your Gateway  to 
-<span className="text-red-600">
-  {" "} World-Class Education.
-</span>
-
-      
+      Study in Dubai. Your Gateway to
+      <span className="text-red-600"> World-Class Education.</span>
     </>
   ),
   description: (
@@ -55,18 +44,19 @@ export const heroSection: {
           "International Transfer Options After 1 Year of Study in Dubai.",
         ].map((item, index) => (
           <li className="flex items-start justify-start " key={index}>
-            <CheckSquare className="text-red-600 shrink-0 mt-1.5 size-5 mr-3" /> {item}
+            <CheckSquare className="text-red-600 shrink-0 mt-1.5 size-5 mr-3" />{" "}
+            {item}
           </li>
         ))}
       </ul>
-      
     </>
   ),
 };
 export const touristDestinationBasicData = {
   title: (
     <>
-      Apply for Tourist Visas to Any Three Countries for <span className="text-red-700"> {" "} Just ₹36,000</span>
+      Apply for Tourist Visas to Any Three Countries for{" "}
+      <span className="text-red-700"> Just ₹36,000</span>
     </>
   ),
   description:
@@ -74,86 +64,90 @@ export const touristDestinationBasicData = {
   buttonText: "Continue with these 3 countries ",
 };
 
-
-
-
 export const successStoryData: SuccessStoryType = {
-  title:<>
-  Real Student <span className="text-red-600">Success</span> Journeys.
-  </>,
-  description:"See how students started their educational journey in Dubai and successfully continued their studies at universities in other countries, subject to university admissions and destination-country requirements.",
-  badge:"Success Stories",
-  info:[
-  {
-    id: "1",
-    studentName: "Rajwinder",
-    profileImage: "/images/dubai/students/stu1.jpg",
-    fromCountry: "Dubai", 
-    toCountry: "United Kingdom", 
-    university: "Ravensbourne University", 
-    program: "MSc Business Management", 
-    shortDescription:"Started studies in Dubai and later continued higher education in the United Kingdom.", 
-    featured: true, 
-    step1:"Started Studies in Dubai",
-    step2:"Received Admission Offer",
-    step3:"Continued Studies in the UK",
-    image1:"/images/dubai/students/student-1.png",
-    image2:"/images/dubai/students/transfer.png",
-    image3:"/images/dubai/students/visa.png"
-  },
-  {
-    id: "2",
-    studentName: "Rajwinder",
-    profileImage: "/images/dubai/students/stu1.jpg",
-    fromCountry: "Dubai", 
-    toCountry: "Malta", 
-    university: "Ravensbourne University", 
-    program: "MSc Business Management", 
-    shortDescription:"Started studies in Dubai and later continued higher education in the United Kingdom.", 
-    featured: true, 
-    step1:"Started Studies in Dubai",
-    step2:"Received Admission Offer",
-    step3:"Continued Studies in the UK",
-    image1:"/images/dubai/students/student-1.png",
-    image2:"/images/dubai/students/transfer.png",
-    image3:"/images/dubai/students/visa.png"
-  },
-  {
-    id: "3",
-    studentName: "Rajwinder",
-    profileImage: "/images/dubai/students/stu1.jpg",
-    fromCountry: "Dubai", 
-    toCountry: "Spain", 
-    university: "Ravensbourne University", 
-    program: "MSc Business Management", 
-    shortDescription:"Started studies in Dubai and later continued higher education in the United Kingdom.", 
-    featured: true, 
-    step1:"Started Studies in Dubai",
-    step2:"Received Admission Offer",
-    step3:"Continued Studies in the UK",
-    image1:"/images/dubai/students/student-1.png",
-    image2:"/images/dubai/students/transfer.png",
-    image3:"/images/dubai/students/visa.png"
-  },
-  {
-    id: "4",
-    studentName: "Rajwinder",
-    profileImage: "/images/dubai/students/stu1.jpg",
-    fromCountry: "Dubai", 
-    toCountry: "Germany", 
-    university: "Ravensbourne University", 
-    program: "MSc Business Management", 
-    shortDescription:"Started studies in Dubai and later continued higher education in the United Kingdom.", 
-    featured: true, 
-    step1:"Started Studies in Dubai",
-    step2:"Received Admission Offer",
-    step3:"Continued Studies in the UK",
-    image1:"/images/dubai/students/student-1.png",
-    image2:"/images/dubai/students/transfer.png",
-    image3:"/images/dubai/students/visa.png"
-  },
-]
-}
+  title: (
+    <>
+      Real Student <span className="text-red-600">Success</span> Journeys.
+    </>
+  ),
+  description:
+    "See how students started their educational journey in Dubai and successfully continued their studies at universities in other countries, subject to university admissions and destination-country requirements.",
+  badge: "Success Stories",
+  info: [
+    {
+      id: "1",
+      studentName: "Rajwinder",
+      profileImage: "/images/dubai/students/stu1.jpg",
+      fromCountry: "Dubai",
+      toCountry: "United Kingdom",
+      university: "Ravensbourne University",
+      program: "MSc Business Management",
+      shortDescription:
+        "Started studies in Dubai and later continued higher education in the United Kingdom.",
+      featured: true,
+      step1: "Started Studies in Dubai",
+      step2: "Received Admission Offer",
+      step3: "Continued Studies in the UK",
+      image1: "/images/dubai/students/student-1.png",
+      image2: "/images/dubai/students/transfer.png",
+      image3: "/images/dubai/students/visa.png",
+    },
+    {
+      id: "2",
+      studentName: "Rajwinder",
+      profileImage: "/images/dubai/students/stu1.jpg",
+      fromCountry: "Dubai",
+      toCountry: "Malta",
+      university: "Ravensbourne University",
+      program: "MSc Business Management",
+      shortDescription:
+        "Started studies in Dubai and later continued higher education in the United Kingdom.",
+      featured: true,
+      step1: "Started Studies in Dubai",
+      step2: "Received Admission Offer",
+      step3: "Continued Studies in the UK",
+      image1: "/images/dubai/students/student-1.png",
+      image2: "/images/dubai/students/transfer.png",
+      image3: "/images/dubai/students/visa.png",
+    },
+    {
+      id: "3",
+      studentName: "Rajwinder",
+      profileImage: "/images/dubai/students/stu1.jpg",
+      fromCountry: "Dubai",
+      toCountry: "Spain",
+      university: "Ravensbourne University",
+      program: "MSc Business Management",
+      shortDescription:
+        "Started studies in Dubai and later continued higher education in the United Kingdom.",
+      featured: true,
+      step1: "Started Studies in Dubai",
+      step2: "Received Admission Offer",
+      step3: "Continued Studies in the UK",
+      image1: "/images/dubai/students/student-1.png",
+      image2: "/images/dubai/students/transfer.png",
+      image3: "/images/dubai/students/visa.png",
+    },
+    {
+      id: "4",
+      studentName: "Rajwinder",
+      profileImage: "/images/dubai/students/stu1.jpg",
+      fromCountry: "Dubai",
+      toCountry: "Germany",
+      university: "Ravensbourne University",
+      program: "MSc Business Management",
+      shortDescription:
+        "Started studies in Dubai and later continued higher education in the United Kingdom.",
+      featured: true,
+      step1: "Started Studies in Dubai",
+      step2: "Received Admission Offer",
+      step3: "Continued Studies in the UK",
+      image1: "/images/dubai/students/student-1.png",
+      image2: "/images/dubai/students/transfer.png",
+      image3: "/images/dubai/students/visa.png",
+    },
+  ],
+};
 
 export const touristDestinationData: TouristDestinationCategory[] = [
   {
@@ -204,7 +198,7 @@ export const touristDestinationData: TouristDestinationCategory[] = [
         badge: "Fast Processing",
         documents: ["Passport", "Photo", "Financial Proof", "Accommodation"],
       },
-      
+
       {
         id: "new-zealand",
         country: "New Zealand",
@@ -217,7 +211,7 @@ export const touristDestinationData: TouristDestinationCategory[] = [
         badge: "Nature Escape",
         documents: ["Passport", "Photo", "Financial Proof", "Travel Plan"],
       },
-      
+
       {
         id: "canada",
         country: "Canada",
@@ -418,141 +412,229 @@ export const testimonialsPage = {
   description:
     "Join hundreds of Indian students already living their European dream.",
 };
-
 export const whySection: WhySectionType = {
   features: [
     {
-      icon: "globe",
-      title: "15+ Travel Destinations",
+      icon: "GraduationCap",
+      title: "Globally Recognized Universities",
       description:
-        "Explore popular tourist destinations worldwide with expert visa guidance tailored to each country's requirements.",
+        "Study at internationally recognized universities and branch campuses offering a wide range of undergraduate and postgraduate programs.",
     },
     {
-      icon: "shieldCheck",
-      title: "High Visa Success Rate",
+      icon: "Wallet",
+      title: "Affordable Study Options",
       description:
-        "Our experienced visa specialists carefully review every application to maximize your chances of approval.",
+        "Explore programs with competitive tuition fees and flexible study options compared to many traditional international study destinations.",
       large: true,
     },
     {
-      icon: "clock3",
-      title: "Fast & Hassle-Free Processing",
+      icon: "BriefcaseBusiness",
+      title: "Part-Time Work Opportunities",
       description:
-        "From document verification to application submission, we handle the complete process so you can focus on planning your trip.",
+        "Eligible students may have opportunities to work part-time while studying, subject to UAE regulations and employer requirements.",
       large: true,
     },
     {
-      icon: "fileCheck",
-      title: "Complete Documentation Support",
+      icon: "Globe",
+      title: "International Transfer Options",
       description:
-        "We prepare, review, and organize every required document to minimize errors and avoid unnecessary delays.",
+        "Some students may have opportunities to continue their studies internationally after studying in Dubai, subject to university admissions, academic performance, credit recognition, and destination-country requirements.",
     },
     {
-      icon: "headset",
-      title: "Dedicated Visa Expert",
+      icon: "Building2",
+      title: "Modern Campus Experience",
       description:
-        "Get one-on-one guidance from a dedicated consultant throughout your tourist visa journey.",
+        "Enjoy world-class campuses, advanced learning facilities, multicultural classrooms, and a safe, student-friendly environment.",
     },
     {
-      icon: "planeTakeoff",
-      title: "Travel Assistance",
+      icon: "Languages",
+      title: "International Student Community",
       description:
-        "Need help with flights, hotel bookings, travel insurance, or itinerary planning? We've got you covered.",
+        "Study alongside students from around the world while building valuable global connections and cultural experiences.",
     },
   ],
 
   title: (
     <>
-      Why Travelers <span className="text-red-600">Choose Us</span>
+      Why Study in <span className="text-red-600">Dubai?</span>
     </>
   ),
 
   description:
-    "From documentation to visa approval, we make international travel simple, transparent, and stress-free for every traveler.",
+    "Dubai combines globally recognized education, modern campuses, career opportunities, and an international learning environment, making it one of the world's most attractive destinations for higher education.",
 
-  badge: "Why Choose Us",
+  badge: "Why Study in Dubai",
 };
 
-
-export const costAndRequirementData: CostAndRequirementType = {
-  badge: "Requirement & Cost",
+export const studyTransferFromDubai: StudyTransferFromDubaiType = {
+  badge: "International Study Progression",
 
   title: (
     <>
-      Requirements & Costs at a{" "}
-      <span className="text-red-600">Glance</span>
+      <span className="text-red-600">International Transfer </span> Options
+      After One Year of Study in Dubai.
     </>
   ),
 
   description:
-    "Know exactly what documents to prepare and the estimated costs before starting your visa application.",
+    "Dubai provide opportunities for students to continue their academic journey internationally in other countries. Progression opportunities vary based on university admissions, academic performance, credit recognition (where applicable), and destination-country requirements.",
+
+  center: {
+    title: "Study in Dubai",
+    subtitle: "Your Starting Point",
+    flag: "ae",
+  },
+
+  destinations: [
+    {
+      name: "United Kingdom",
+      flag: "gb",
+      x: 20,
+      y: 22,
+    },
+    {
+      name: "Canada",
+      flag: "ca",
+      x: 50,
+      y: 12,
+    },
+    {
+      name: "Germany",
+      flag: "de",
+      x: 80,
+      y: 22,
+    },
+    {
+      name: "Australia",
+      flag: "au",
+      x: 10,
+      y: 72,
+    },
+    {
+      name: "Spain",
+      flag: "es",
+      x: 35,
+      y: 80,
+    },
+    {
+      name: "Malta",
+      flag: "mt",
+      x: 60,
+      y: 80,
+    },
+    {
+      name: "USA",
+      flag: "us",
+      x: 85,
+      y: 72,
+    },
+  ],
+
+  buttonText: "Get Personalized Guidance",
+
+  note: "Progression opportunities depend on university admissions, academic performance, credit recognition (where applicable), and destination-country requirements.",
+};
+
+export const costAndRequirementData: CostAndRequirementType = {
+  badge: "Requirements & Costs",
+
+  title: (
+    <>
+      Study Requirements & Estimated <span className="text-red-600">Costs</span>
+    </>
+  ),
+
+  description:
+    "Understand the typical admission requirements, estimated study costs, and the documents generally required before beginning your application.",
 
   // Left Side
   documents: {
     icon: "FileText",
-    title: "Documents We Help You Organize",
-    description: "Everything needed for a strong visa application.",
+
+    title: "Common Admission Requirements",
+
+    description:
+      "Requirements may vary depending on the university and program you choose.",
 
     items: [
       {
         icon: "FileUser",
+
         title: "Valid Passport",
+
         description:
-          "Passport with sufficient validity and available blank pages.",
+          "A valid passport with sufficient validity for admission and student visa processing.",
       },
 
       {
-        icon: "FileCheck",
-        title: "Visa Application Form",
+        icon: "GraduationCap",
+
+        title: "Academic Documents",
+
         description:
-          "Correctly completed application form based on your destination.",
+          "Educational certificates, transcripts, and other academic records required by your chosen university.",
       },
 
       {
-        icon: "LandMark",
-        title: "Financial Proof",
+        icon: "Languages",
+
+        title: "English Language Requirement",
+
         description:
-          "Bank statements, income proof, sponsorship or other financial documents if required.",
+          "Some universities or programs may require proof of English proficiency where applicable.",
       },
 
       {
-        icon: "Briefcase",
+        icon: "FolderCheck",
+
         title: "Supporting Documents",
+
         description:
-          "Travel itinerary, accommodation details, employment or invitation documents where applicable.",
+          "Passport-size photographs, personal statement, financial documents, and any additional documents requested by the university.",
       },
     ],
   },
 
   // Right Side
+
   pricing: {
     governmentFees: {
-      icon: "badgeIndianRupee",
-      title: "Government & Embassy Fees",
-      description: "Paid Separately",
+      icon: "BadgeIndianRupee",
+
+      title: "Typical Student Expenses",
+
+      description: "Estimates only",
 
       items: [
         {
-          label: "Visa Application Fee",
-          value: "Varies by Country",
+          label: "Annual Tuition Fees",
+          value: "Approx. AED 25,000–70,000+",
         },
+
         {
-          label: "Biometric Fee",
-          value: "If Applicable",
+          label: "Student Visa & Emirates ID",
+          value: "Varies by University",
         },
+
         {
-          label: "Travel Insurance",
-          value: "If Required",
+          label: "Living Expenses",
+          value: "Approx. AED 3,000–6,000/month",
+        },
+
+        {
+          label: "Application Processing",
+          value: "Varies by Institution",
         },
       ],
     },
 
     package: {
       title: "Our Full Service Package*",
+
       price: "₹36,000",
 
       description:
-        "*The ₹36,000 fee covers our end-to-end consulting, application assistance, and document structuring for up to three selected tourist visa destinations. Government visa fees, embassy charges, biometric fees (where applicable), travel insurance,  and other third-party costs are paid separately.",
+        "*The ₹36,000 fee covers our end-to-end education consulting, university selection guidance, admission assistance, application preparation, documentation support, and student visa guidance for your Dubai study application. University tuition fees, student visa charges, Emirates ID fees, medical examination fees, travel expenses, accommodation, health insurance, and other third-party charges are paid separately.",
 
       button: {
         text: "Apply on WhatsApp",
@@ -562,352 +644,348 @@ export const costAndRequirementData: CostAndRequirementType = {
 };
 
 export const VisaTimelineData: VisaTimelineType = {
+  badge: "How It Works",
+
   title: (
     <>
-      Your
-      <span className="text-red-700"> Journey </span>Begins Here
+      Your <span className="text-red-700">Study Journey</span> Starts Here
     </>
   ),
+
   description:
-    "From choosing your dream destination to receiving your visa, our experts guide you through every step of the journey.",
-  badge: "How It Works",
+    "From choosing the right university to arriving in Dubai, our education counsellors guide you through every important step of your study abroad journey.",
+
   steps: [
     {
       step: 1,
-      title: "Choose Your Destination",
+      title: "Counselling & Profile Evaluation",
       content:
-        "Select the country you want to visit and let our experts guide you through the right visa requirements.",
-      icon: "MapPinned",
+        "Discuss your academic background, career goals, preferred destination, and budget with our experienced education counsellors.",
+      icon: "MessagesSquare",
       image: "/images/howthiswork/1.jpg",
     },
+
     {
       step: 2,
-      title: "Free Consultation",
+      title: "University & Course Selection",
       content:
-        "Our visa specialists review your travel plans and explain the complete application process.",
-      icon: "MessagesSquare",
+        "Shortlist universities and programs that match your qualifications, interests, and future study plans.",
+      icon: "School",
       image: "/images/howthiswork/2.jpg",
     },
+
     {
       step: 3,
-      title: "Submit Documents",
+      title: "Application & Admission",
       content:
-        "Share your passport and supporting documents. We'll verify everything before submission.",
-      icon: "FileText",
+        "Prepare your application, submit the required documents, and receive your university admission offer after successful evaluation.",
+      icon: "FileCheck",
       image: "/images/howthiswork/3.jpg",
     },
+
     {
       step: 4,
-      title: "Application Processing",
+      title: "Student Visa Processing",
       content:
-        "We prepare and submit your visa application while keeping you updated at every stage.",
+        "After admission, your university and our team assist you with the student visa process and required documentation.",
       icon: "ClipboardCheck",
       image: "/images/howthiswork/4.jpg",
     },
+
     {
       step: 5,
-      title: "Visa Decision",
+      title: "Travel to Dubai & Complete Formalities",
       content:
-        "Receive your approved visa and final travel guidance before your departure.",
-      icon: "BadgeCheck",
-      image: "/images/howthiswork/4.jpg",
+        "Arrive in Dubai, complete the required post-arrival formalities, and receive your Emirates ID and student residence documentation as applicable.",
+      icon: "PlaneTakeoff",
+      image: "/images/howthiswork/5.jpg",
     },
+
     {
       step: 6,
-      title: "Travel With Confidence",
+      title: "Begin Your Student Journey",
       content:
-        "Pack your bags and enjoy your international trip while we remain available for any assistance.",
-      icon: "PlaneTakeoff",
-      image: "/images/howthiswork/4.jpg",
+        "Start your classes, explore student life in Dubai, and receive continued guidance whenever you need support during your studies.",
+      icon: "GraduationCap",
+      image: "/images/howthiswork/6.jpg",
     },
   ],
 };
 
-export const visaRejectionSection = {
-  badge: "Avoid Common Mistakes",
-
+export const internationalUniversityData: InternationalUniversityType = {
   title: (
     <>
-      Why Tourist Visa Applications{" "}
-      <span className="text-red-600">Get Rejected</span>
+      Study at
+      <span className="text-red-600"> International Universities</span>
+      <br />
+      Without Leaving Dubai
     </>
   ),
-
-  description:
-    "Most tourist visa refusals happen because of avoidable mistakes. Our experts carefully review every application to help reduce errors and improve your chances of approval.",
-
-  buttonText: "Start Your Application",
-
-  reasons: [
+  description: "",
+  buttonText: "",
+  badgeText: "International Universities",
+  whyChoose: "Why Students Choose International Universities in Dubai",
+  WhyChooseDescription:
+    "International branch campuses in Dubai allow students to study at globally recognised institutions while remaining in the UAE. Tuition fees, available scholarships, and overall study costs vary by university and program. Some students may also explore international study progression opportunities, depending on university admissions, academic performance, credit recognition (where applicable), and destination-country requirements.",
+  countries: [
     {
-      reason: {
-        icon: "FileWarning",
-        title: "Incomplete Documents",
-        description:
-          "Missing or incorrect documents can delay processing or even lead to visa refusal.",
-      },
+      country: "United Kingdom",
+      flag: "gb",
+      description: "Leading UK universities with campuses in Dubai.",
 
-      solution: {
-        icon: "ShieldCheck",
-        title: "Complete Document Review",
-        description:
-          "We carefully verify every required document before submission to reduce mistakes and delays.",
-      },
+      universities: [
+        {
+          name: "University of Birmingham Dubai",
+          image: "/images/universities/birmingham.webp",
+        },
+        {
+          name: "Heriot-Watt University Dubai",
+          image: "/images/universities/heriot.webp",
+        },
+        {
+          name: "Middlesex University Dubai",
+          image: "/images/universities/middlesex.webp",
+        },
+      ],
     },
 
     {
-      reason: {
-        icon: "Wallet",
-        title: "Financial Proof Issues",
-        description:
-          "Some countries require specific financial documents to prove you can support your trip.",
-      },
+      country: "Australia",
+      flag: "au",
+      description:
+        "Australian universities offering internationally recognised degrees.",
 
-      solution: {
-        icon: "BadgeDollarSign",
-        title: "Financial Guidance",
-        description:
-          "Our team explains exactly which financial documents are required for your destination.",
-      },
+      universities: [
+        {
+          name: "University of Wollongong in Dubai",
+          image: "/images/universities/uow.webp",
+        },
+        {
+          name: "Curtin University Dubai",
+          image: "/images/universities/curtin.webp",
+        },
+        {
+          name: "Murdoch University Dubai",
+          image: "/images/universities/murdoch.webp",
+        },
+      ],
     },
 
     {
-      reason: {
-        icon: "FilePenLine",
-        title: "Incorrect Information",
-        description:
-          "Typing mistakes or inconsistent information may create unnecessary complications.",
-      },
+      country: "United States",
+      flag: "us",
+      description: "American-style education in Dubai.",
 
-      solution: {
-        icon: "ClipboardCheck",
-        title: "Expert Application Review",
-        description:
-          "Every application is reviewed by experienced visa specialists before submission.",
-      },
+      universities: [
+        {
+          name: "RIT Dubai",
+          image: "/images/universities/rit.webp",
+        },
+        {
+          name: "American University in Dubai",
+          image: "/images/universities/aud.webp",
+        },
+      ],
+    },
+    {
+      country: "Canada",
+      flag: "ca",
+      description: "Canadian higher education opportunities in Dubai.",
+
+      universities: [
+        {
+          name: "Canadian University Dubai",
+          image: "/images/universities/cud.webp",
+        },
+      ],
     },
 
     {
-      reason: {
-        icon: "MapPinned",
-        title: "Weak Travel Itinerary",
-        description:
-          "An unclear travel purpose or incomplete itinerary may raise additional questions.",
-      },
+      country: "Germany",
+      flag: "de",
+      description:
+        "German universities offering internationally recognised programs in Dubai.",
 
-      solution: {
-        icon: "Route",
-        title: "Travel Planning Support",
-        description:
-          "We help prepare a clear travel itinerary with supporting documents where required.",
-      },
-    },
-
-    {
-      reason: {
-        icon: "FolderX",
-        title: "Missing Supporting Documents",
-        description:
-          "Hotel bookings, employment proof, invitation letters, or other documents may be required.",
-      },
-
-      solution: {
-        icon: "Files",
-        title: "Country-Specific Checklist",
-        description:
-          "Receive a personalized checklist based on your destination before applying.",
-      },
-    },
-
-    {
-      reason: {
-        icon: "ClockAlert",
-        title: "Late Application",
-        description:
-          "Applying too close to your travel date can result in unnecessary delays.",
-      },
-
-      solution: {
-        icon: "CalendarClock",
-        title: "Application Timeline Guidance",
-        description:
-          "We recommend the ideal time to apply based on your destination and travel plans.",
-      },
+      universities: [
+        {
+          name: "University of Europe for Applied Sciences",
+          image: "/images/universities/ue.webp",
+        },
+      ],
     },
   ],
-
-  cta: {
-    title: "Don't Leave Your Visa to Chance",
-
-    description:
-      "Professional guidance helps you avoid common mistakes and submit a stronger visa application.",
-
-    points: [
-      "Expert Document Review",
-      "Country-Specific Checklist",
-      "End-to-End Visa Support",
-    ],
-  },
 };
 
 export const faqsData: FAQType[] = [
   {
-  question: "What does the ₹36,000 package include?",
-
-  paragraphs: [
-    "The ₹36,000 package includes professional guidance and assistance for up to three selected tourist visa destinations. Our experienced team supports you throughout the application process and helps you prepare your application with confidence.",
-    "Since every applicant and destination is different, the exact level of assistance may vary based on your travel plans and visa requirements. Contact our team to discuss your profile and learn what's included for your selected destinations."
-  ],
-
-},
-  {
-    question: "How do I apply for a tourist visa?",
+    question: "Can international students work while studying in Dubai?",
 
     paragraphs: [
-      "The application process generally starts with choosing your destination, preparing the required documents, completing the visa application, and attending biometrics or an interview if required by the destination country.",
-      "Our team guides you through every step of the process, helping you prepare your application accurately and submit the required documents with confidence.",
+      "Eligible students may have opportunities to work part-time while studying, subject to UAE regulations, employer requirements, and their visa conditions.",
+      "Work eligibility and permitted hours may vary based on current regulations and each student's individual circumstances.",
     ],
   },
 
   {
-    question: "What documents are generally required for a tourist visa?",
+    question:
+      "Can I continue my studies in another country after studying in Dubai?",
 
     paragraphs: [
-      "The required documents vary by country, but most tourist visa applications typically require the following:",
+      "Some students may have opportunities to continue their studies internationally after studying in Dubai.",
+      "Opportunities depend on university admissions, academic performance, credit recognition (where applicable), and destination-country requirements. Our counsellors can assess your individual profile and discuss available options.",
+    ],
+  },
+
+  {
+    question: "Can students transfer after one year of studying in Dubai?",
+
+    paragraphs: [
+      "Some universities may offer study progression pathways or transfer opportunities after one year of study, depending on the student's academic performance and the receiving university's admission policies.",
+      "Eligibility also depends on credit recognition (where applicable) and destination-country requirements. Speak with our counsellors to understand the options available for your academic profile.",
+    ],
+  },
+
+  {
+    question: "What are the admission requirements to study in Dubai?",
+
+    paragraphs: [
+      "Admission requirements vary depending on the university and program you choose.",
+      "Most institutions generally require academic transcripts, a valid passport, English language proficiency (where applicable), and other supporting documents requested by the university.",
+    ],
+  },
+
+  {
+    question: "What programs can I study in Dubai?",
+
+    paragraphs: [
+      "Dubai offers a wide range of undergraduate, postgraduate, diploma, foundation, and professional programs across multiple fields.",
     ],
 
     list: [
-      "Valid Passport",
-      "Recent Passport-size Photographs",
-      "Completed Visa Application Form",
-      "Financial Proof or Bank Statements",
-      "Travel Itinerary",
-      "Hotel Booking or Accommodation Details (where applicable)",
-      "Return Flight Reservation (where applicable)",
-      "Employment, Business or Student Proof (where applicable)",
-    ],
-
-      custom: (
-       <>
-    {["Our experts provide a country-specific checklist before you apply to help ensure nothing important is missed.", ].map((item, index) => (
-      <div key={index}  className="mt-5">{item}</div>
-    ))}
-  </>
-    ),
-  },
-
-  {
-    question: "How long does tourist visa processing usually take?",
-
-    paragraphs: [
-      "Visa processing times vary depending on the destination country, embassy workload, seasonal demand, and the completeness of your application.",
-      "We recommend applying well in advance of your intended travel date to allow sufficient processing time.",
+      "Business & Management",
+      "Computer Science & Information Technology",
+      "Engineering",
+      "Artificial Intelligence",
+      "Hospitality & Tourism",
+      "Healthcare",
+      "Architecture & Design",
+      "Finance & Accounting",
+      "Media & Communication",
+      "Many other specialized programs",
     ],
   },
 
   {
-    question: "Can I apply for a tourist visa without any travel history?",
+    question: "Are there internationally recognized universities in Dubai?",
 
     paragraphs: [
-      "Yes. Many first-time international travelers successfully receive tourist visas every year.",
-      "Approval depends on meeting the destination country's eligibility requirements and submitting a complete, well-prepared application.",
+      "Yes. Dubai is home to several internationally recognized universities and international branch campuses offering globally respected qualifications across a wide range of disciplines.",
     ],
   },
 
   {
-    question: "How much financial proof or bank balance is required?",
+    question: "How much does it cost to study in Dubai?",
 
     paragraphs: [
-      "Financial requirements differ from one country to another and may also depend on your travel duration, itinerary, and personal circumstances.",
-      "Our team explains the financial documentation required for your chosen destination before you submit your application.",
+      "Tuition fees vary depending on the university, course, and duration of study.",
+      "Our counsellors can help you compare universities and recommend options based on your academic goals and budget.",
     ],
   },
 
   {
-    question: "Can someone else sponsor my trip?",
+    question: "How long does the student visa process usually take?",
 
     paragraphs: [
-      "Yes. Many countries allow tourist visa applicants to receive financial sponsorship from eligible family members or sponsors.",
-      "Additional supporting documents may be required depending on the destination country's immigration guidelines.",
+      "Processing times vary depending on the university, application completeness, and the relevant authorities.",
+      "Applying well before your intended intake is recommended to allow sufficient processing time.",
     ],
   },
 
   {
-    question: "Does receiving a tourist visa guarantee entry into the country?",
+    question:
+      "I have previous visa refusals. Can I still apply to study in Dubai?",
 
     paragraphs: [
-      "No. A valid tourist visa allows you to travel to the destination, but the final decision regarding entry is made by the immigration authorities at the port of entry.",
-      "Travelers should always carry the necessary supporting documents when arriving at their destination.",
+      "Yes. Previous visa refusals do not automatically prevent you from applying to study in Dubai.",
+      "Every application is assessed individually based on university admission requirements and the relevant immigration regulations.",
     ],
   },
 
   {
-    question: "Can a tourist visa be extended?",
+    question: "What assistance do your counsellors provide?",
 
     paragraphs: [
-      "Visa extension policies vary by country. Some destinations may allow extensions under specific circumstances, while others may not permit extensions at all.",
-      "We recommend following the immigration rules of your destination and applying for any extension only if permitted by local authorities.",
-    ],
-  },
-
-  {
-    question: "What assistance do you provide during the tourist visa process?",
-
-    paragraphs: [
-      "Our experienced visa consultants assist you throughout the application process to help reduce common mistakes and improve document quality.",
+      "Our experienced education counsellors assist students throughout the admission and student visa process.",
     ],
 
     list: [
-      "Document Checklist",
-      "Application Form Guidance",
-      "Document Review",
-      "Financial Documentation Guidance",
-      "Appointment Assistance (where applicable)",
-      "Interview Preparation (where applicable)",
-      "End-to-End Application Support",
+      "University Selection",
+      "Course Selection",
+      "Admission Guidance",
+      "Application Assistance",
+      "Documentation Support",
+      "Student Visa Guidance",
+      "Pre-Departure Assistance",
+      "Personalized Counselling",
     ],
   },
 
   {
-    question: "Do you guarantee tourist visa approval?",
+    question: "Do you guarantee university admission or student visa approval?",
 
     paragraphs: [
-      "No. No individual, consultant, or agency can legally guarantee visa approval.",
-      "Visa decisions are made solely by the relevant embassy, consulate, or immigration authority based on their own assessment of each application.",
+      "No. No consultant or agency can legally guarantee university admission or student visa approval.",
+      "Admissions are decided by the respective universities, while student visa decisions are made by the relevant government authorities.",
     ],
 
     custom: (
-       <>
-    {["Our role is to help you prepare the strongest possible application by reviewing your documents carefully and guiding you throughout the process.",
-    ].map((item, index) => (
-      <div key={index}  className="mt-5">{item}</div>
-    ))}
-  </>
+      <>
+        {[
+          "Our role is to guide you throughout the application process, review your documents carefully, and help you prepare the strongest possible application.",
+        ].map((item, index) => (
+          <div key={index} className="mt-5">
+            {item}
+          </div>
+        ))}
+      </>
     ),
   },
 
   {
-    question: "Can I apply again if my tourist visa application is refused?",
+    question:
+      "Is studying in Dubai more affordable than other popular study destinations?",
 
     paragraphs: [
-      "Yes. In many cases, applicants may reapply after addressing the reasons that contributed to the previous refusal.",
-      "Our consultants can review your previous application, identify potential issues, and help you prepare a stronger application before reapplying.",
+      "For many students, Dubai offers competitive tuition fees and living costs compared with some traditional international study destinations.",
+      "The overall cost depends on your university, program, accommodation, lifestyle, and personal circumstances.",
+    ],
+  },
+
+  {
+    question: "Which countries may students explore after studying in Dubai?",
+
+    paragraphs: [
+      "Some students explore opportunities to continue their studies in countries such as the United Kingdom, Canada, Germany, Australia, Spain, Malta, and others.",
+      "International study progression opportunities depend on university admissions, academic performance, credit recognition (where applicable), and destination-country requirements.",
     ],
   },
 ];
 
-export const footerData:FooterType = {
+export const footerData: FooterType = {
   badge: "Start Your Journey Today",
-  heading: <>Ready For Your Next
-  <span className=" text-red-600">{" "} International Trip?
- </span>
-  </>,
-  description: "Join thousands of happy travelers who trusted our experts for a smooth tourist visa application process.",
-  smallText:"Apply on WhatsApp",
+  heading: (
+    <>
+      Ready to Begin Your
+      <span className="text-red-600"> Study in Dubai?</span>
+    </>
+  ),
+  description:
+    "Get personalized guidance on university selection, admissions, student visas, scholarships, and international study progression opportunities.",
+  smallText: "Apply on WhatsApp",
   largeText: " Rs 36,000",
-  leftIcon:"MessageCircle",
+  leftIcon: "MessageCircle",
   rightIcon: "ArrowRight",
-  buttonBelowText:"Available on WhatsApp • Fast response • Expert assistance",
+  buttonBelowText: "Available on WhatsApp • Fast response • Expert assistance",
 
   quickLinks: [
     { linkText: "Success Stories", link: "#stories" },
@@ -918,10 +996,10 @@ export const footerData:FooterType = {
     { linkText: "Why Visa Get Rejected", link: "#rejection" },
     { linkText: "FAQ", link: "#faq" },
   ],
-  services:[
+  services: [
     "Application Processing",
     "Document Preparation",
     "Interview Preparation",
     "Dedicated Personal Counselor",
-  ]
+  ],
 };

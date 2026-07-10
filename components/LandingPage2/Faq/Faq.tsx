@@ -28,7 +28,7 @@ export default function FAQSection({data}:{data:FAQType[]}) {
             <span className=" text-red-600"> Questions</span>
           </h2>
 
-          <p className="mt-6 max-w-2xl text-lg text-slate-600">
+          <p className="mt-6 max-w-7xl text-lg text-slate-600">
             Everything you need to know before starting your visa journey. We’ve
             answered the most common questions to help you get started.
           </p>

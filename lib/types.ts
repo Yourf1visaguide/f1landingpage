@@ -194,3 +194,56 @@ export interface SuccessStoryType {
   info:SuccessStoryInfoType[]
 
 }
+
+
+
+export interface StudyTransferFromDubaiCountryType {
+  name: string;
+  flag: string;
+  x:number;
+  y:number;
+
+}
+
+export interface StudyTransferFromDubaiType {
+  badge: string;
+  title: ReactNode;
+  description: string;
+
+  center: {
+    title: string;
+    subtitle: string;
+    flag: string;
+  };
+
+  destinations: StudyTransferFromDubaiCountryType[];
+
+  buttonText: string;
+  note: string;
+}
+
+
+
+
+export interface InternationalUniversity {
+  name: string;
+  city?: string;
+  image: string;
+}
+
+export interface InternationalUniversityCountry {
+  country: string;
+  flag: string;
+  description: string;
+  universities: InternationalUniversity[];
+}
+
+export interface InternationalUniversityType {
+  title:ReactNode;
+  description:string;
+  badgeText:string;
+  buttonText:string;
+  countries:InternationalUniversityCountry[]
+  whyChoose:string;
+  WhyChooseDescription:string;
+}

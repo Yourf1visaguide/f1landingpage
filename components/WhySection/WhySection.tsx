@@ -2,47 +2,16 @@
 
 import { WhySection as WhySectionType } from "@/lib/types";
 import { motion } from "framer-motion";
-import {
-  Globe,
-  Building2,
-  BadgeCheck,
-  BriefcaseBusiness,
-  IdCard,
-  Rocket,
-  ArrowUpRight,
-  MessageCircle,
-  SendHorizonal,
-  ShieldCheck,
-  Clock3,
-  FileCheck,
-  Headset,
-  PlaneTakeoff,
-  MessageCircleMore,
-  Globe2,
-} from "lucide-react";
+
 import Badge from "../Badge";
 import RedButton from "../Red-Buttons";
+import { icons } from "@/lib/icons";
 
 
 
 export default function WhySection({title, description, features, badge}:WhySectionType) {
 
-  const icons = {
-   globe: Globe,
-  building2: Building2,
-  badgeCheck: BadgeCheck,
-  briefcaseBusiness: BriefcaseBusiness,
-  idCard: IdCard,
-  rocket: Rocket,
-  shieldCheck:ShieldCheck,
-  clock3:Clock3,
-  fileCheck:FileCheck,
-  headset:Headset,
-  planeTakeoff:PlaneTakeoff,
-  messageCircleMore: MessageCircleMore,
-  
-
-};
+ 
   return (
     <section className="bg-zinc-50 py-24" id="whyNetherlands">
       <div className="mx-auto max-w-7xl px-6">
@@ -61,7 +30,7 @@ export default function WhySection({title, description, features, badge}:WhySect
            
           </h2>
 
-          <p className="mt-6 text-lg text-zinc-600 max-w-3xl mx-auto">
+          <p className="mt-6 text-lg text-zinc-600 max-w-4xl mx-auto">
             {description}
           </p>
         </motion.div>
@@ -103,7 +72,7 @@ export default function WhySection({title, description, features, badge}:WhySect
                   <Icon className="h-7 w-7 text-red-600" />
                 </div>
 
-                <h3 className="mt-4 text-2xl font-bold text-zinc-950">
+                <h3 className="mt-4 sm:text-xl text-lg font-bold text-zinc-950">
                   {feature.title}
                 </h3>
 

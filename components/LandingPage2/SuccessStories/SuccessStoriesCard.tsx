@@ -111,7 +111,9 @@ export default function SuccessStoriesCard({
     [item],
   );
 
-  const stepsColors = ["red-200", "red-500", "red-700"];
+  const bgColors = ["bg-zinc-400", "bg-zinc-500", "bg-zinc-900"];
+  const borderColors = ["border-zinc-400", "border-zinc-500", "border-zinc-900"];
+  const textColors = ["text-zinc-400", "text-zinc-500", "text-zinc-900"];
 
   const icon = [School, File, PlaneTakeoff];
   return (
@@ -134,6 +136,7 @@ export default function SuccessStoriesCard({
           const isLast = i === steps.length - 1;
           return (
             <div
+      
               key={`${item.id}-step-${i}`}
               className="flex gap-x-3"
               role="listitem"
@@ -145,7 +148,7 @@ export default function SuccessStoriesCard({
                   variants={stepVariants}
                   initial="hidden"
                   animate={animState}
-                  className={`absolute top-2 w-7 h-7 rounded-full flex items-center justify-center text-[12px] font-medium flex-shrink-0 z-10 bg-${stepsColors[i]} ${i === 0 ? "text-red-800" : "text-white"}`}
+                  className={`absolute top-2 w-7 h-7 rounded-full flex items-center justify-center text-[12px] font-medium flex-shrink-0 z-10 ${bgColors[i]} `}
                   aria-hidden="true"
                 >
                   {i + 1}
@@ -155,22 +158,27 @@ export default function SuccessStoriesCard({
                   custom={i} // variants={lineVariants}
                   initial="hidden"
                   animate={animState}
-                  className={`absolute w-10  left-1 top-5 h-0.5 border-b-2 border-${stepsColors[i]} origin-top`}
+                  className={`absolute w-10  left-1 top-5 h-0.5 border-b-2 ${borderColors[i]} origin-top`}
                   aria-hidden="true"
                 />
 
-                {/* {!isLast && (
+                
+                {!isLast && (
                   <>
                     <motion.div
                       custom={i} // variants={lineVariants}
                       initial="hidden"
                       animate={animState}
-                      className={`absolute w-0.5  left-3.5 top-20 h-12 border-l border-red-600 origin-top`}
+                      className={`absolute w-0.5  left-[13px] top-20 h-48 border-l-2 ${borderColors[i]} origin-top`}
                       aria-hidden="true"
                     />
-                    <ArrowDown className={`absolute size-4 left-1.5 top-32 text-red-600 `} />
+                    <ArrowDown className={`absolute size-4 left-1.5 top-28 ${textColors[i]} `} />
+                    <ArrowDown className={`absolute size-4 left-1.5 top-40 ${textColors[i]} `} />
+                    <ArrowDown className={`absolute size-4 left-1.5 top-52 ${textColors[i]} `} />
+                    <ArrowDown className={`absolute size-4 left-1.5 top-65 ${textColors[i]} `} />
+
                   </>
-                )} */}
+                )}
               </div>
 
               {/* Right: label + document image */}
@@ -179,21 +187,21 @@ export default function SuccessStoriesCard({
                 variants={docVariants}
                 initial="hidden"
                 animate={animState}
-                className={` relative z-50 bg-white rounded-lg flex-1  mb-6 shadow-[0px_0px_6px_rgba(0,0,0,0.25)] p-4 pt-2 border-${stepsColors[i]}  border-l-8`}
+                className={` relative z-50 bg-white rounded-lg flex-1  mb-6 shadow-[0px_0px_6px_rgba(0,0,0,0.25)] p-4 pt-2 border-l-8 ${borderColors[i]} `}
               >
                 <div className="flex gap-x-1.5 mb-3 items-center ">
-                  <div className="bg-red-100 p-1 size-7 rounded-full ">
+                  {/* <div className="bg-red-100 p-1 size-7 rounded-full ">
                     <Icon
                       className={`size-5  ${i === 0 ? "text-red-300" : `text-${stepsColors[i]}`}`}
                     />
-                  </div>
+                  </div> */}
                   <h6 className="text-sm text-zinc-600 font-semibold ">
                     {step.label}
                   </h6>
                 </div>
 
                 {/* Document image frame */}
-                <div className="relative h-72 shadow-sm border border-zinc-200 rounded-md overflow-hidden ">
+                <div className="relative h-72 shdow-sm border border-zinc-200 rounded-md overflow-hidden ">
                   {step.image ? (
                     <Image
                       src={step.image}

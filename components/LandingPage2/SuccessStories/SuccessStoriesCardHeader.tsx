@@ -74,7 +74,7 @@ function SuccessStoriesCardHeader({item, getInitials}:{item: SuccessStoryInfoTyp
 
       <div className="flex flex-row items-start justify-start gap-x-4 mt-4">
 
-        <div className="relative size-20 overflow-hidden rounded-full ">
+        <div className="relative size-20 border border-zinc-200 overflow-hidden rounded-full ">
           <Image
             src={item.profileImage}
             alt={item.studentName}

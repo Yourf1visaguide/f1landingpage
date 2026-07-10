@@ -77,39 +77,39 @@ export const testimonialsPage = {
 export const whySection:WhySectionType = {
   features:[
   {
-    icon: "globe",
+    icon: "Globe",
     title: "Schengen Zone Access",
     description:
       "Travel freely across 26+ European countries on a single student visa. Live, explore & experience all of Europe from Amsterdam.",
     large: true,
   },
   {
-    icon: "building2",
+    icon: "Building2",
     title: "Study in Amsterdam",
     description:
       "One of Europe's most vibrant, multicultural & globally ranked cities. World-class universities. World-class life.",
     large: true,
   },
   {
-    icon: "badgeCheck",
+    icon: "BadgeCheck",
     title: "Highest Visa Approval Ratio",
     description:
       "While other countries are rejecting Indian students, Netherlands has the best visa ratio right now. Your approval is our guarantee.",
   },
   {
-    icon: "briefcaseBusiness",
+    icon: "BriefcaseBusiness",
     title: "Work 16–20 Hrs/Week Legally",
     description:
       "Earn up to ₹1.5–₹2 Lakh per month working part-time. Cover your living expenses and save money while studying in Europe.",
   },
   {
-    icon: "idCard",
+    icon: "IdCard",
     title: "TRC of Europe in 90 Days",
     description:
       "Receive your Temporary Residence Card within 90 days of arrival. Your official European identity — fast tracked.",
   },
   {
-    icon: "rocket",
+    icon: "Rocket",
     title: "Move Anywhere After 90 Days",
     description:
       "With TRC in hand, explore, work, or even relocate to any Schengen country after just 90 days. Germany, France, Spain — your choice.",
