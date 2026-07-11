@@ -73,80 +73,7 @@ export const successStoryData: SuccessStoryType = {
   description:
     "See how students started their educational journey in Dubai and successfully continued their studies at universities in other countries, subject to university admissions and destination-country requirements.",
   badge: "Success Stories",
-  info: [
-    {
-      id: "1",
-      studentName: "Rajwinder",
-      profileImage: "/images/dubai/students/stu1.jpg",
-      fromCountry: "Dubai",
-      toCountry: "United Kingdom",
-      university: "Ravensbourne University",
-      program: "MSc Business Management",
-      shortDescription:
-        "Started studies in Dubai and later continued higher education in the United Kingdom.",
-      featured: true,
-      step1: "Started Studies in Dubai",
-      step2: "Received Admission Offer",
-      step3: "Continued Studies in the UK",
-      image1: "/images/dubai/students/student-1.png",
-      image2: "/images/dubai/students/transfer.png",
-      image3: "/images/dubai/students/visa.png",
-    },
-    {
-      id: "2",
-      studentName: "Rajwinder",
-      profileImage: "/images/dubai/students/stu1.jpg",
-      fromCountry: "Dubai",
-      toCountry: "Malta",
-      university: "Ravensbourne University",
-      program: "MSc Business Management",
-      shortDescription:
-        "Started studies in Dubai and later continued higher education in the United Kingdom.",
-      featured: true,
-      step1: "Started Studies in Dubai",
-      step2: "Received Admission Offer",
-      step3: "Continued Studies in the UK",
-      image1: "/images/dubai/students/student-1.png",
-      image2: "/images/dubai/students/transfer.png",
-      image3: "/images/dubai/students/visa.png",
-    },
-    {
-      id: "3",
-      studentName: "Rajwinder",
-      profileImage: "/images/dubai/students/stu1.jpg",
-      fromCountry: "Dubai",
-      toCountry: "Spain",
-      university: "Ravensbourne University",
-      program: "MSc Business Management",
-      shortDescription:
-        "Started studies in Dubai and later continued higher education in the United Kingdom.",
-      featured: true,
-      step1: "Started Studies in Dubai",
-      step2: "Received Admission Offer",
-      step3: "Continued Studies in the UK",
-      image1: "/images/dubai/students/student-1.png",
-      image2: "/images/dubai/students/transfer.png",
-      image3: "/images/dubai/students/visa.png",
-    },
-    {
-      id: "4",
-      studentName: "Rajwinder",
-      profileImage: "/images/dubai/students/stu1.jpg",
-      fromCountry: "Dubai",
-      toCountry: "Germany",
-      university: "Ravensbourne University",
-      program: "MSc Business Management",
-      shortDescription:
-        "Started studies in Dubai and later continued higher education in the United Kingdom.",
-      featured: true,
-      step1: "Started Studies in Dubai",
-      step2: "Received Admission Offer",
-      step3: "Continued Studies in the UK",
-      image1: "/images/dubai/students/student-1.png",
-      image2: "/images/dubai/students/transfer.png",
-      image3: "/images/dubai/students/visa.png",
-    },
-  ],
+  
 };
 
 export const touristDestinationData: TouristDestinationCategory[] = [
@@ -476,18 +403,28 @@ export const studyTransferFromDubai: StudyTransferFromDubaiType = {
     </>
   ),
 
-  description:
-    "Dubai provide opportunities for students to continue their academic journey internationally in other countries. Progression opportunities vary based on university admissions, academic performance, credit recognition (where applicable), and destination-country requirements.",
+  description: (
+    <>
+      Dubai offers opportunities for students to{" "}
+      <strong> begin their studies in Dubai </strong> and,{" "}
+      <strong>
+        continue their education in another country from the second year
+      </strong>{" "}
+      onward.
+    </>
+  ),
+  note: "Progression opportunities vary based on university admissions, academic performance, credit recognition (where applicable), and destination-country requirements. Speak with our counsellors to understand your eligibility and available options. ",
 
   center: {
-    title: "Study in Dubai",
-    subtitle: "Your Starting Point",
+    title: "Study In Dubai",
+    subtitle: "Study In Dubai",
+    subtitle2: "Transfer To Your Dream Country and Move There.",
     flag: "ae",
   },
 
   destinations: [
     {
-      name: "United Kingdom",
+      name: "UK",
       flag: "gb",
       x: 20,
       y: 22,
@@ -508,31 +445,29 @@ export const studyTransferFromDubai: StudyTransferFromDubaiType = {
       name: "Australia",
       flag: "au",
       x: 10,
-      y: 72,
+      y: 82,
     },
     {
       name: "Spain",
       flag: "es",
       x: 35,
-      y: 80,
+      y: 90,
     },
     {
       name: "Malta",
       flag: "mt",
       x: 60,
-      y: 80,
+      y: 90,
     },
     {
       name: "USA",
       flag: "us",
       x: 85,
-      y: 72,
+      y: 82,
     },
   ],
 
   buttonText: "Get Personalized Guidance",
-
-  note: "Progression opportunities depend on university admissions, academic performance, credit recognition (where applicable), and destination-country requirements.",
 };
 
 export const costAndRequirementData: CostAndRequirementType = {
@@ -718,102 +653,178 @@ export const internationalUniversityData: InternationalUniversityType = {
       Study at
       <span className="text-red-600"> International Universities</span>
       <br />
-      Without Leaving Dubai
+      In Dubai
     </>
   ),
-  description: "",
-  buttonText: "",
+  description:
+    "Study at internationally recognised universities in Dubai while benefiting from competitive tuition fees and lower living costs compared with some traditional study destinations. Dubai offers students access to globally recognised degrees, and some may also have opportunities to continue their studies internationally",
+  buttonText: "Chat With Counsellors",
   badgeText: "International Universities",
   whyChoose: "Why Students Choose International Universities in Dubai",
   WhyChooseDescription:
     "International branch campuses in Dubai allow students to study at globally recognised institutions while remaining in the UAE. Tuition fees, available scholarships, and overall study costs vary by university and program. Some students may also explore international study progression opportunities, depending on university admissions, academic performance, credit recognition (where applicable), and destination-country requirements.",
-  countries: [
-    {
-      country: "United Kingdom",
-      flag: "gb",
-      description: "Leading UK universities with campuses in Dubai.",
 
-      universities: [
-        {
-          name: "University of Birmingham Dubai",
-          image: "/images/universities/birmingham.webp",
-        },
-        {
-          name: "Heriot-Watt University Dubai",
-          image: "/images/universities/heriot.webp",
-        },
-        {
-          name: "Middlesex University Dubai",
-          image: "/images/universities/middlesex.webp",
-        },
-      ],
-    },
+  universities: [
+  {
+    name: "University of Birmingham",
+    image: "/images/dubai/universities/birmingham.jpg",
+    country: "UK",
+    flag: "gb",
+    description: "Study at a globally recognised British university in Dubai.",
+    featured: "Top Ranked",
+    programs: [
+      "Business",
+      "Computer Science",
+      "Engineering",
+      "Psychology",
+      "Education",
+    ],
+  },
 
-    {
-      country: "Australia",
-      flag: "au",
-      description:
-        "Australian universities offering internationally recognised degrees.",
+  {
+    name: "University of Wollongong",
+    image: "/images/dubai/universities/uow.jpg",
+    country: "Australia",
+    flag: "au",
+    description: "Australian education with a long-established Dubai campus.",
+    featured: "Popular Choice",
+    programs: [
+      "Business",
+      "Computer Science",
+      "Engineering",
+      "Information Technology",
+      "Media",
+    ],
+  },
 
-      universities: [
-        {
-          name: "University of Wollongong in Dubai",
-          image: "/images/universities/uow.webp",
-        },
-        {
-          name: "Curtin University Dubai",
-          image: "/images/universities/curtin.webp",
-        },
-        {
-          name: "Murdoch University Dubai",
-          image: "/images/universities/murdoch.webp",
-        },
-      ],
-    },
+  {
+    name: "Rochester Institute of Technology Dubai",
+    image: "/images/dubai/universities/rit.jpg",
+    country: "USA",
+    flag: "us",
+    description: "Technology-focused American university in Dubai.",
+    featured: "Career Focused",
+    programs: [
+      "Computer Science",
+      "Cyber Security",
+      "Engineering",
+      "Business",
+      "Data Analytics",
+    ],
+  },
 
-    {
-      country: "United States",
-      flag: "us",
-      description: "American-style education in Dubai.",
+  {
+    name: "Heriot-Watt University",
+    image: "/images/dubai/universities/heriot.jpg",
+    country: "UK",
+    flag: "gb",
+    description: "Leading British university with strong industry connections.",
+    featured: "Industry Focused",
+    programs: [
+      "Engineering",
+      "Computer Science",
+      "Business",
+      "Architecture",
+      "Data Science",
+    ],
+  },
 
-      universities: [
-        {
-          name: "RIT Dubai",
-          image: "/images/universities/rit.webp",
-        },
-        {
-          name: "American University in Dubai",
-          image: "/images/universities/aud.webp",
-        },
-      ],
-    },
-    {
-      country: "Canada",
-      flag: "ca",
-      description: "Canadian higher education opportunities in Dubai.",
+  {
+    name: "Curtin University",
+    image: "/images/dubai/universities/curtin.jpg",
+    country: "Australia",
+    flag: "au",
+    description: "Australian university offering career-oriented programs.",
+    featured: "Global Recognition",
+    programs: [
+      "Business",
+      "Engineering",
+      "Information Technology",
+      "Health Sciences",
+      "Design",
+    ],
+  },
 
-      universities: [
-        {
-          name: "Canadian University Dubai",
-          image: "/images/universities/cud.webp",
-        },
-      ],
-    },
+  {
+    name: "American University in Dubai",
+    image: "/images/dubai/universities/aud.jpg",
+    country: "USA",
+    flag: "us",
+    description: "American-style education with a vibrant Dubai campus.",
+    featured: "Student Favorite",
+    programs: [
+      "Architecture",
+      "Business",
+      "Communication",
+      "Engineering",
+      "Interior Design",
+    ],
+  },
 
-    {
-      country: "Germany",
-      flag: "de",
-      description:
-        "German universities offering internationally recognised programs in Dubai.",
+  {
+    name: "Middlesex University",
+    image: "/images/dubai/universities/middlesex.jpg",
+    country: "UK",
+    flag: "gb",
+    description: "British university offering diverse undergraduate and postgraduate programs.",
+    featured: "Popular Choice",
+    programs: [
+      "Business",
+      "Law",
+      "Psychology",
+      "Computer Science",
+      "Media",
+    ],
+  },
 
-      universities: [
-        {
-          name: "University of Europe for Applied Sciences",
-          image: "/images/universities/ue.webp",
-        },
-      ],
-    },
-  ],
+  {
+    name: "Murdoch University",
+    image: "/images/dubai/universities/murdoch.jpg",
+    country: "Australia",
+    flag: "au",
+    description: "Australian university known for student-focused learning.",
+    featured: "Career Ready",
+    programs: [
+      "Business",
+      "Psychology",
+      "Computer Science",
+      "Education",
+      "Communication",
+    ],
+  },
+
+  {
+    name: "Canadian University Dubai",
+    image: "/images/dubai/universities/cud.jpg",
+    country: "Canada",
+    flag: "ca",
+    description: "Canadian higher education with pathways to international opportunities.",
+    featured: "Global Pathway",
+    programs: [
+      "Business",
+      "Architecture",
+      "Engineering",
+      "Communication",
+      "Computer Science",
+    ],
+  },
+
+  {
+    name: "University of Europe for Applied Sciences",
+    image: "/images/dubai/universities/ue.jpg",
+    country: "Germany",
+    flag: "de",
+    description: "German university focused on innovation and applied learning.",
+    featured: "Innovation Focus",
+    programs: [
+      "Business",
+      "Data Science",
+      "Software Engineering",
+      "UX Design",
+      "Digital Media",
+    ],
+  },
+],
 };
 
 export const faqsData: FAQType[] = [

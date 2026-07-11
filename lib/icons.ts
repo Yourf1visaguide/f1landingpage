@@ -52,7 +52,8 @@ import {
   MessageCircleMore,
   Languages,
   FolderCheck,
-  Globe2
+  Globe2,
+  Check
 } from "lucide-react";
 
 export const icons = {
@@ -108,7 +109,8 @@ export const icons = {
     "MessageCircleMore": MessageCircleMore,
     "Languages":Languages,
     "FolderCheck":FolderCheck,
-    "Globe2":Globe2
+    "Globe2":Globe2,
+    "Check":Check
 
   }
 

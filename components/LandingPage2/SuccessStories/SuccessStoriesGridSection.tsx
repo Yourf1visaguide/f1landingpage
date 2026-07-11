@@ -6,7 +6,7 @@
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
-import { SuccessStoryType } from "@/lib/types";
+import { SuccessStoryInfoType } from "@/lib/types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, FreeMode } from "swiper/modules";
 import SuccessStoriesCTAButton from "./SuccessStoriesCTAButton";
@@ -19,7 +19,7 @@ export const SuccessStoriesGridSection = ({
   error,
   loading,
 }: {
-  data: SuccessStoryType;
+  data: SuccessStoryInfoType[];
   error: string | null;
   loading: boolean;
 }) => {
@@ -88,7 +88,7 @@ export const SuccessStoriesGridSection = ({
             },
           }}
         >
-          {data.info.map((t) => (
+          {data.map((t) => (
             <SwiperSlide key={t.id} className="">
               <SuccessStoriesCard item={t} />
             </SwiperSlide>

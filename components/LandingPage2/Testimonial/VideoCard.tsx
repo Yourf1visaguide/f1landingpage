@@ -21,7 +21,7 @@ const isYouTube = isYouTubeVideo(data.videoUrl);
 
 const posterSrc = isYouTube ? getYouTubeThumbnail(data.videoUrl) : null;
 
-console.log(`https://res.cloudinary.com/dkno1wygy/image/upload/f_auto,q_auto/${data.videoUrl}`);
+
   return (
     <div className="group bg-white rounded-md border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col h-full">
       {/* Video / Poster Area - Increased height to aspect-[4/5] for modern vertical feel */}

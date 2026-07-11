@@ -4,14 +4,8 @@ import Image from "next/image";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef, useMemo } from "react";
 import {
-  ArrowBigDownDash,
   ArrowDown,
-  ArrowDownLeft,
-  ArrowDownRight,
-  ArrowRight,
-  BadgeCheck,
   File,
-  Plane,
   PlaneTakeoff,
   School,
 } from "lucide-react";
@@ -104,9 +98,9 @@ export default function SuccessStoriesCard({
 
   const steps = useMemo(
     () => [
-      { label: item.step1, image: item.image1 },
-      { label: item.step2, image: item.image2 },
-      { label: item.step3, image: item.image3 },
+      { label: item.step1, image: `https://res.cloudinary.com/dkno1wygy/image/upload/f_auto,q_auto/${item.image1}` },
+      { label: item.step2, image: `https://res.cloudinary.com/dkno1wygy/image/upload/f_auto,q_auto/${item.image2}` },
+      { label: item.step3, image: `https://res.cloudinary.com/dkno1wygy/image/upload/f_auto,q_auto/${item.image3}` },
     ],
     [item],
   );
@@ -178,7 +172,19 @@ export default function SuccessStoriesCard({
                     <ArrowDown className={`absolute size-4 left-1.5 top-65 ${textColors[i]} `} />
 
                   </>
+                  
                 )}
+                {
+                    isLast && (
+                      <motion.div
+                      custom={i} // variants={lineVariants}
+                      initial="hidden"
+                      animate={animState}
+                      className={`absolute w-0.5  left-[13px] top-20 h-48 border-l-2 ${borderColors[i]} origin-top`}
+                      aria-hidden="true"
+                    />
+                    )
+                  }
               </div>
 
               {/* Right: label + document image */}

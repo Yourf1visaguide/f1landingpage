@@ -177,7 +177,6 @@ export type SuccessStoryInfoType = {
   toCountry: string;
   university: string;
   program: string;
-  shortDescription: string;
   featured?: boolean;
   step1:string;
   step2:string;
@@ -191,7 +190,6 @@ export interface SuccessStoryType {
   title:ReactNode;
   description:string;
   badge:string;
-  info:SuccessStoryInfoType[]
 
 }
 
@@ -208,11 +206,12 @@ export interface StudyTransferFromDubaiCountryType {
 export interface StudyTransferFromDubaiType {
   badge: string;
   title: ReactNode;
-  description: string;
+  description: ReactNode;
 
   center: {
     title: string;
     subtitle: string;
+    subtitle2: string;
     flag: string;
   };
 
@@ -225,25 +224,25 @@ export interface StudyTransferFromDubaiType {
 
 
 
-export interface InternationalUniversity {
+export interface InternationalUniversityArrayType {
   name: string;
   city?: string;
   image: string;
-}
-
-export interface InternationalUniversityCountry {
   country: string;
   flag: string;
   description: string;
-  universities: InternationalUniversity[];
+  programs:string[],
+  featured:string;
 }
+
+
 
 export interface InternationalUniversityType {
   title:ReactNode;
   description:string;
   badgeText:string;
   buttonText:string;
-  countries:InternationalUniversityCountry[]
+  universities:InternationalUniversityArrayType[]
   whyChoose:string;
   WhyChooseDescription:string;
 }

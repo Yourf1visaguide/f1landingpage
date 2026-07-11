@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode, useEffect, useState } from "react";
-import {  SuccessStoryType, Testimonial } from "@/lib/types";
+import {  SuccessStoryInfoType, SuccessStoryType, Testimonial } from "@/lib/types";
 import { SuccessStoriesGridSection } from "./SuccessStoriesGridSection";
 import { successStoryData } from "@/data/dubai";
 import Badge from "@/components/Badge";
@@ -12,7 +12,7 @@ import Badge from "@/components/Badge";
 export default function SuccessStoriesPage({
   data, sheet
 }: {data:SuccessStoryType; sheet:string;}) {
-  const [testimonialsData, setTestimonialsData] = useState<Testimonial[]>([]);
+  const [testimonialsData, setTestimonialsData] = useState<SuccessStoryInfoType[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -35,37 +35,30 @@ export default function SuccessStoriesPage({
 
         const json = JSON.parse(text.substring(start, end + 1));
 
-        const data: Testimonial[] = await json.table.rows
+        const data: SuccessStoryInfoType[] = await json.table.rows
           .map((row: any) => ({
             id: Number(row.c[0]?.v ?? 0),
-            tagColor: "bg-red-50 text-red-800 border-red-300",
-            description: String(row.c[1]?.v ?? ""),
-            name: String(row.c[2]?.v ?? ""),
-            visa: String(row.c[3]?.v ?? ""),
-            location: String(row.c[4]?.v ?? ""),
-            initials: String(row.c[5]?.v ?? ""),
-            priority: Boolean(row.c[6]?.v ?? false),
-            videoUrl: String(row.c[7]?.v ?? "").trim(),
-            tag: String(
-              row.c[8]?.v?.trim() && row.c[8]?.v?.trim() !== "-"
-                ? row.c[8].v.trim()
-                : "Study Visa",
-            ),
-            type: String(row.c[9]?.v?.toLowerCase()),
+            studentName: String(row.c[1]?.v ?? ""),
+            profileImage: String(row.c[2]?.v ?? ""),
+            fromCountry: String(row.c[3]?.v ?? ""),
+            toCountry: String(row.c[4]?.v ?? ""),
+            university: String(row.c[5]?.v ?? ""),
+            program: String(row.c[6]?.v ?? ""),
+            step1: String(row.c[7]?.v ?? "").trim(),
+            image1: String(row.c[8]?.v ?? "").trim(),
+            step2: String(row.c[9]?.v ?? "").trim(),
+            image2: String(row.c[10]?.v ?? "").trim(),
+            step3: String(row.c[11]?.v ?? "").trim(),
+            image3: String(row.c[12]?.v ?? "").trim(),
+            
           }))
           .filter((item: Testimonial) => item.id > 0)
           .sort((a: Testimonial, b: Testimonial) => {
-            // Featured first
-            if (a.priority !== b.priority) {
-              return a.priority ? -1 : 1;
-            }
-
-            // Then by ID
             return a.id - b.id;
           });
         setTestimonialsData(data);
       } catch (error) {
-        setError("Unable to load testimonials.");
+        setError("Unable to load Success Stories.");
         if (process.env.NODE_ENV === "development") {
           console.error("[TESTIMONIALS_ERROR_FETCHING_SHEET]", error);
         }
@@ -92,7 +85,7 @@ export default function SuccessStoriesPage({
           </p>
         </div>
         <SuccessStoriesGridSection
-          data={successStoryData}
+          data={testimonialsData}
           loading={loading}
           error={error}
         />

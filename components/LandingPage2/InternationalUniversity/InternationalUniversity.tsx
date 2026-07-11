@@ -1,53 +1,91 @@
+"use client";
 import Badge from "@/components/Badge";
 
-
-import InternationalUniversityCountry from "./InternationalUniversityCountry";
 import { InternationalUniversityType } from "@/lib/types";
 
-export default function InternationalUniversity({data}:{data:InternationalUniversityType}) {
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay, FreeMode } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/free-mode";
+import InternationalUniversityCard from "./InternationalUniversityCard";
+
+export default function InternationalUniversity({
+  data,
+}: {
+  data: InternationalUniversityType;
+}) {
   return (
     <section
       id="international-universities"
       className="relative overflow-hidden bg-slate-50 py-20"
     >
-      <div className="mx-auto max-w-7xl px-4">
-
+      <div className="mx-auto max-w-7xl px-4 py-8">
         {/* Header */}
 
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-5xl text-center">
+          <Badge text={data.badgeText} color="red" isLive />
 
-          <Badge
-            text={data.badgeText}
-            color="red"
-            isLive
-          />
-
-          <h2 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 lg:text-5xl">
+          <h2 className="mt-6 max-w-4xl mx-auto text-4xl/tight font-bold tracking-tight text-slate-900 md:text-5xl/tight">
             {data.title}
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-600">
             {data.description}
           </p>
-
         </div>
 
         {/* Countries */}
 
-        <div className="mt-20 space-y-20">
+        <div className="mt-12 ">
+          <Swiper
+          className="testimonial-slider"
+          modules={[Navigation, Autoplay, FreeMode]}
+          navigation
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          loop={true}
+          grabCursor={true}
+          simulateTouch={true}
+          touchRatio={1.5}
+          touchAngle={45}
+          threshold={5}
+          longSwipes={true}
+          longSwipesRatio={0.2}
+          longSwipesMs={200}
+          freeMode={{
+            enabled: false,
+            momentum: true,
+            momentumRatio: 0.8,
+          }}
+          speed={300}
+          spaceBetween={24}
+          slidesPerView={1.2}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+            },
 
-          {data.countries.map((country) => (
-            <InternationalUniversityCountry
-              key={country.country}
-              item={country}
-            />
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
+        >
+          {data.universities.map((university) => (
+            <SwiperSlide key={university.name}>
+              <InternationalUniversityCard item={university} />
+            </SwiperSlide>
           ))}
-
+        </Swiper>
         </div>
 
         {/* Bottom Information */}
 
-        <div className="mt-20 rounded-3xl border border-red-100 bg-white p-8 lg:p-10">
+        {/* <div className="mt-20 rounded-3xl border border-red-100 bg-white p-8 lg:p-10">
 
           <div className="">
 
@@ -61,8 +99,7 @@ export default function InternationalUniversity({data}:{data:InternationalUniver
 
           </div>
 
-        </div>
-
+        </div> */}
       </div>
     </section>
   );

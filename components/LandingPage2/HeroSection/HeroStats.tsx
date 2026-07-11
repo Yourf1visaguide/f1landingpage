@@ -84,7 +84,7 @@ export default function HeroStats() {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-wrap gap-8 lg:gap-12 pt-8 border-t border-zinc-500"
+      className="flex flex-col min-[412px]:flex-row items-center min-[412px]:items-start  flex-wrap gap-8 lg:gap-12 pt-8 border-t border-zinc-500"
     >
       {stats.map((stat, index) => (
         <div key={stat.label} className="stat-item">
