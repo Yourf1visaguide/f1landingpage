@@ -20,7 +20,7 @@ export const heroSection: {
   heading: ReactNode;
   description: ReactNode;
 } = {
-  image: "/netherland/3a14a1a6-85f3-4731-a95b-01132be9fe6e.png",
+  image: "/netherland/3a14a1a6-85f3-4731-a95b-01132be9fe6e.jpg",
   imageClass: "md:object-right object-[65%_center]",
   heading: (
     <>
@@ -386,4 +386,67 @@ export const footerData:FooterType = {
     "Interview Preparation",
     "Dedicated Personal Counselor",
   ]
+};
+
+
+
+export const seo = {
+  title:
+    "Study in Netherlands from India | Netherlands Study Visa Consultants in Jalandhar",
+
+  description:
+    "Study in the Netherlands from Jalandhar with expert admission and visa guidance. Get support for top Dutch universities, student visa applications, scholarships, part-time work opportunities, and complete documentation.",
+
+  keywords: [
+    "Study in Netherlands",
+    "Study in Netherlands from India",
+    "Study in Europe",
+    "Study Abroad Netherlands",
+    "Netherlands Study Visa",
+    "Netherlands Student Visa",
+    "Dutch Universities",
+    "Universities in Netherlands",
+    "Masters in Netherlands",
+    "Bachelors in Netherlands",
+    "Netherlands MVV",
+    "Netherlands Residence Permit",
+    "Schengen Student Visa",
+    "Study Abroad Consultants",
+    "Study Visa Consultants",
+    "Study Visa Consultants Jalandhar",
+    "Study Visa Consultants Punjab",
+    "Netherlands Study Visa Consultants",
+    "Netherlands Study Visa Consultants Jalandhar",
+    "Overseas Education Consultants Punjab",
+    "Indian Students Netherlands",
+    "Work While Studying Netherlands",
+    "Affordable Study in Europe",
+    "Study Abroad Jalandhar",
+    "Your F1 Visa Guide",
+  ],
+
+  slug: "netherlands",
+
+  image: "/images/seo/netherlands.jpg",
+
+  canonical: "/netherlands",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title:
+      "Study in Netherlands from India | Netherlands Study Visa Consultants in Jalandhar",
+
+    description:
+      "Begin your study abroad journey in the Netherlands with complete admission and visa assistance from Jalandhar.",
+
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+  },
 };

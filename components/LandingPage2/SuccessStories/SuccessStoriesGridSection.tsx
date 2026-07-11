@@ -88,9 +88,9 @@ export const SuccessStoriesGridSection = ({
             },
           }}
         >
-          {data.map((t) => (
+          {data.map((t, index) => (
             <SwiperSlide key={t.id} className="">
-              <SuccessStoriesCard item={t} />
+              <SuccessStoriesCard item={t} indexValue={index} />
             </SwiperSlide>
           ))}
         </Swiper>

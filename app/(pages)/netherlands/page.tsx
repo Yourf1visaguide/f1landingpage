@@ -15,9 +15,14 @@ import {
   heroSection, 
   testimonialsPage, 
   VisaTimelineData, 
-  whySection 
+  whySection,
+  seo
 } from "@/data/netherland";
 import { navLinksData } from "@/data/navlinks";
+
+import { createMetadata } from "@/lib/seo";
+
+export const metadata = createMetadata(seo);
 
 export default function LandingPage() {
   

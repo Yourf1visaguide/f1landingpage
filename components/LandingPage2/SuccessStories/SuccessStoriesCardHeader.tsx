@@ -2,7 +2,6 @@ import {
   ArrowRight,
   BookOpen,
   GraduationCap,
-  MapPinned,
   Plane,
 } from "lucide-react";
 
@@ -15,9 +14,11 @@ import { formatCountryWithThe } from "@/lib/countires-with-the";
 function SuccessStoriesCardHeader({
   item,
   getInitials,
+  indexValue
 }: {
   item: SuccessStoryInfoType;
   getInitials: (name: string) => string;
+  indexValue:number;
 }) {
   const fromCountry = flags[item.fromCountry.toLocaleLowerCase()];
   const toCountry = flags[item.toCountry.toLocaleLowerCase()];
@@ -31,6 +32,7 @@ function SuccessStoriesCardHeader({
               src={`https://flagcdn.com/w80/${fromCountry}.png`}
               fill
               objectFit="cover"
+              priority={indexValue < 3 }
               className="rounded-full object-cover border border-zinc-200"
               alt={item.fromCountry.toUpperCase()}
             />
@@ -81,6 +83,10 @@ function SuccessStoriesCardHeader({
             src={`https://res.cloudinary.com/dkno1wygy/image/upload/f_auto,q_auto/${item.profileImage}`}
             alt={item.studentName}
             fill
+            
+          priority={false}
+          blurDataURL="/images/blur.jpg"
+          fetchPriority="low"
             className="object-cover"
           />
         </div>

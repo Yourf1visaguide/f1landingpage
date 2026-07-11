@@ -838,3 +838,61 @@ export const footerData:FooterType = {
     "Dedicated Personal Counselor",
   ]
 };
+
+export const seo = {
+  title:
+    "Tourist Visa Consultants in Jalandhar | Apply for 15+ Countries | Your F1 Visa Guide",
+
+  description:
+    "Apply for tourist visas to 15+ countries with expert visa consultants in Jalandhar. Get complete documentation support, application guidance, and professional assistance for your chosen travel destinations.",
+
+  keywords: [
+    // Primary
+    "Tourist Visa",
+    "Tourist Visa from India",
+    "Tourist Visa Consultants",
+    "Tourist Visa Consultants Jalandhar",
+    "Tourist Visa Punjab",
+    "Travel Visa",
+    "Visit Visa",
+
+    // Destinations
+    "USA Tourist Visa",
+    "Canada Tourist Visa",
+    "UK Tourist Visa",
+    "Australia Tourist Visa",
+    "New Zealand Tourist Visa",
+    "Schengen Tourist Visa",
+    "Dubai Tourist Visa",
+    "Singapore Tourist Visa",
+    "Japan Tourist Visa",
+    "Thailand Tourist Visa",
+    "Vietnam Tourist Visa",
+    "Turkey Tourist Visa",
+    "Russia Tourist Visa",
+    "Netherlands Tourist Visa",
+    "France Tourist Visa",
+    "Germany Tourist Visa",
+    "Spain Tourist Visa",
+    "Switzerland Tourist Visa",
+    "Cyprus Tourist Visa",
+
+    // Services
+    "Tourist Visa Documentation",
+    "Tourist Visa Application",
+    "Visa Consultants Punjab",
+    "Travel Consultants Jalandhar",
+    "International Travel Visa",
+    "Holiday Visa",
+    "Visa Assistance",
+
+    // Brand & Local SEO
+    "Your F1 Visa Guide",
+    "Immigration Consultants Jalandhar",
+    "Study and Tourist Visa Consultants Punjab",
+  ],
+
+  slug: "tourist-visa",
+
+  image: "/images/seo/tourist-visa.jpg",
+};

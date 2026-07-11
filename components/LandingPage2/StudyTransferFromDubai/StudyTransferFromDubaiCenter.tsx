@@ -27,13 +27,18 @@ export default function StudyTransferFromDubaiCenter({
               src={`https://flagcdn.com/w80/${flag}.png`}
               alt="Dubai"
               fill
+              priority={false}
+              blurDataURL="/images/blur.jpg"
+              fetchPriority="low"
               className="object-fill object-left"
             />
           </div>
-      <div className="text-base text-nowrap sm:text-lg font-bold text-zinc-700  rounded-base text-left p-0">
-        <h5 className="text-sm font-semibold uppercase tracking-widest text-red-600">1 Year</h5>
-        {title}
-      </div>
+          <div className="text-base text-nowrap sm:text-lg font-bold text-zinc-700  rounded-base text-left p-0">
+            <h5 className="text-sm font-semibold uppercase tracking-widest text-red-600">
+              1 Year
+            </h5>
+            {title}
+          </div>
         </div>
       </div>
     </>

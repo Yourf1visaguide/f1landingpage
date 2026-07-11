@@ -1000,11 +1000,11 @@ export const footerData: FooterType = {
 
   quickLinks: [
     { linkText: "Success Stories", link: "#stories" },
-    { linkText: "Choose Destination", link: "#destination" },
-    { linkText: "Step-by-Step Process", link: "#process" },
+    { linkText: "Why Choose Dubai", link: "#whyNetherlands" },
+    { linkText: "Study Transfer Options", link: "#StudyTransfer" },
+    { linkText: "Universities", link: "#international-universities" },
     { linkText: "Requirements & Cost", link: "#requirements" },
-    { linkText: "Why Choose Us", link: "#whyNetherlands" },
-    { linkText: "Why Visa Get Rejected", link: "#rejection" },
+    { linkText: "Step-by-Step Process", link: "#process" },
     { linkText: "FAQ", link: "#faq" },
   ],
   services: [
@@ -1012,5 +1012,32 @@ export const footerData: FooterType = {
     "Document Preparation",
     "Interview Preparation",
     "Dedicated Personal Counselor",
+  ],
+};
+
+
+
+// data/dubai.ts
+
+export const seo = {
+  title:
+    "Study in Dubai from India | Student Visa Consultants in Jalandhar",
+
+  description:
+    "Study at internationally recognised universities in Dubai with expert admission guidance, visa assistance, scholarships, and affordable tuition. Trusted study visa consultants in Jalandhar.",
+
+  slug: "dubai",
+
+  image: "/images/seo/dubai-bg-hero-section.jpg",
+
+  keywords: [
+    "Study in Dubai",
+    "Dubai Student Visa",
+    "Study Visa Dubai",
+    "Study Abroad Dubai",
+    "Dubai Universities",
+    "Student Visa Consultants Jalandhar",
+    "Study Visa Punjab",
+    "Study in UAE",
   ],
 };

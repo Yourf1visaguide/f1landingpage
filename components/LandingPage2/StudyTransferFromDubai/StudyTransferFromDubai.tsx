@@ -24,7 +24,7 @@ export default function StudyTransferFromDubai({
   data,
 }: StudyTransferFromDubaiProps) {
   return (
-    <section className="py-24 px-4 lg:px-6 max-w-7xl mx-auto bg-white border border-white border-t ">
+    <section className="py-24 px-4 lg:px-6 max-w-7xl mx-auto bg-white border border-white border-t " id="StudyTransfer">
         {/* Heading */}
 
         <div className="mx-auto text-center">

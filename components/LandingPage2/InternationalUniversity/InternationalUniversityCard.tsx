@@ -27,6 +27,10 @@ export default function InternationalUniversityCard({
           src={item.image}
           alt={item.name}
           fill
+          priority={false}
+          fetchPriority="low"
+          placeholder="blur"
+          blurDataURL="/images/blur.jpg"
           className=" object-cover transition-transform duration-700 group-hover:scale-105 "
         />
 

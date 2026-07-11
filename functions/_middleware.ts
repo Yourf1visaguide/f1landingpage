@@ -8,6 +8,9 @@ export async function onRequest(context: any): Promise<Response> {
     'netherlands.yourf1visaguide.com': '/netherlands',
     'usa.yourf1visaguide.com': '/usa',
     'touristvisas.yourf1visaguide.com': '/tourist-visa',
+    'dubai.yourf1visaguide.com': '/dubai',
+    'yourf1visaguide.com': '/usa',
+
   };
 
   const basePath = routeMap[hostname];

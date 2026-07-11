@@ -1,4 +1,3 @@
-
 import HeroSection from "@/components/LandingPage2/HeroSection/HeroSection";
 import Navbar from "@/components/LandingPage2/Navbar/Navbar";
 import HowThisWork from "@/components/LandingPage2/VisaTimeline/VisaTimeline";
@@ -19,11 +18,16 @@ import {
   heroSection,
   VisaTimelineData,
   whySection,
+  seo
 } from "@/data/dubai";
 import { navLinksData } from "@/data/navlinks";
 import SuccessStoriesPage from "@/components/LandingPage2/SuccessStories/SuccessStories";
 import StudyTransferFromDubai from "@/components/LandingPage2/StudyTransferFromDubai/StudyTransferFromDubai";
 import InternationalUniversity from "@/components/LandingPage2/InternationalUniversity/InternationalUniversity";
+
+import { createMetadata } from "@/lib/seo";
+
+export const metadata = createMetadata(seo);
 
 function TouristVisa() {
   return (
@@ -38,7 +42,9 @@ function TouristVisa() {
       />
       <SuccessStoriesPage
         data={successStoryData}
-        sheet={process.env.NEXT_PUBLIC_DUBAISUCCESSSTORIES_GOOGLE_SHEET_ID?? ""}
+        sheet={
+          process.env.NEXT_PUBLIC_DUBAISUCCESSSTORIES_GOOGLE_SHEET_ID ?? ""
+        }
       />
 
       <WhySection

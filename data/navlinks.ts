@@ -11,5 +11,9 @@ export const navLinksData = [
     name: "Tourist Visa",
     href: "https://touristvisas.yourf1visaguide.com",
   },
+  {
+    name: "Dubai",
+    href: "https://dubai.yourf1visaguide.com",
+  },
 ];
   

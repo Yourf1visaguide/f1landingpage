@@ -1,4 +1,5 @@
 import RedButton from "@/components/Red-Buttons"
+import { handleWhatsappClick } from "@/function/handleWhatsapp"
 import { ArrowRight } from "lucide-react"
 import React from 'react'
 
@@ -21,6 +22,7 @@ function SuccessStoriesCTAButton() {
             <RedButton
               text="Book Free Consultation"
               className="py-3"
+              onClick={handleWhatsappClick}
               icon={<ArrowRight className="size-5" />}
             />
           </div>

@@ -1,4 +1,4 @@
-import { costAndRequirementData, faqsData, footerData, heroSection, visaProcessData, VisaTimelineUsaData, seo } from "@/data/usa";
+import { costAndRequirementData, faqsData, footerData, heroSection, visaProcessData, VisaTimelineUsaData } from "@/data/usa";
 import Navbar from "@/components/LandingPage2/Navbar/Navbar";
 import HeroSection from "@/components/LandingPage2/HeroSection/HeroSection";
 import PreparationSection from "@/components/LandingPage2/Prepration/Prepration";
@@ -8,9 +8,7 @@ import ProcessSection from "@/components/LandingPage2/VisaProcess/VisaProcess";
 import FAQSection from "@/components/LandingPage2/Faq/Faq";
 import Footer from "@/components/LandingPage2/Footer/footer";
 import { navLinksData } from "@/data/navlinks";
-import { createMetadata } from "@/lib/seo";
 
-export const metadata = createMetadata(seo);
 
 export default function LandingPage() {
   

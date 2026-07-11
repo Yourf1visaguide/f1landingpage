@@ -21,6 +21,9 @@ export default function StudyTransferFromDubaiCard({
           src={`https://flagcdn.com/w160/${item.flag}.png`}
           alt={item.name}
           fill
+          priority={false}
+          blurDataURL="/images/blur.jpg"
+          fetchPriority="low"
           className="rounded-full object-cover"
         />
       </div>

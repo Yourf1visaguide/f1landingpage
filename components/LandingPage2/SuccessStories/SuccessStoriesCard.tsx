@@ -86,8 +86,10 @@ const lineVariants = {
 // ─── Component ─────────────────────────────────────────────────────────────
 export default function SuccessStoriesCard({
   item,
+  indexValue
 }: {
   item: SuccessStoryInfoType;
+  indexValue:number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
@@ -121,7 +123,7 @@ export default function SuccessStoriesCard({
       "
     >
       {/* ── Header: avatar + name + route + badge ─────────────────── */}
-      <SuccessStoriesCardHeader item={item} getInitials={getInitials} />
+      <SuccessStoriesCardHeader item={item} getInitials={getInitials} indexValue={indexValue} />
 
       {/* ── Timeline body ──────────────────────────────────────────── */}
       <div className="px-4 pt-6 " role="list" aria-label="Journey steps">
@@ -213,7 +215,10 @@ export default function SuccessStoriesCard({
                       src={step.image}
                       alt={step.label}
                       fill
+                      priority={indexValue < 3 }
                       draggable={false}
+                      blurDataURL="/images/blur.jpg"
+                      placeholder="blur"
                       className="object-contain object-top  "
                     />
                   ) : (

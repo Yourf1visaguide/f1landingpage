@@ -282,3 +282,62 @@ export const footerData: FooterType = {
     "Visa Pods",
   ],
 };
+
+
+
+export const seo = {
+  title:
+  "Study in USA from India | F-1 Visa & University Admission Consultants in Jalandhar",
+
+  description:
+    "Study in the USA with expert admission and F-1 visa guidance from Jalandhar. Get assistance with university selection, I-20, DS-160, SEVIS, scholarships, visa interview preparation, and complete application support.",
+
+  keywords: [
+    // Primary
+    "Study in USA",
+    "Study in USA from India",
+    "USA Study Visa",
+    "USA Student Visa",
+    "F1 Visa",
+    "F-1 Visa",
+    "Study Abroad USA",
+
+    // University & Admissions
+    "USA Universities",
+    "Top Universities in USA",
+    "Study in America",
+    "Masters in USA",
+    "Bachelors in USA",
+    "Community Colleges USA",
+
+    // Visa Process
+    "I-20",
+    "DS-160",
+    "SEVIS Fee",
+    "USA Visa Interview",
+    "F1 Visa Interview",
+    "USA Visa Documentation",
+
+    // Student Life
+    "Scholarships in USA",
+    "Study and Work in USA",
+    "CPT",
+    "OPT",
+    "STEM OPT",
+
+    // Local SEO
+    "USA Study Visa Consultants",
+    "USA Study Visa Consultants Jalandhar",
+    "USA Study Visa Consultants Punjab",
+    "Study Abroad Consultants Jalandhar",
+    "Study Visa Consultants Punjab",
+    "Overseas Education Consultants Jalandhar",
+
+    // Brand
+    "Your F1 Visa Guide",
+  ],
+
+  slug: "usa",
+
+  image: "/images/seo/usa.jpg",
+};
