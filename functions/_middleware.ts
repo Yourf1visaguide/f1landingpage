@@ -10,6 +10,7 @@ export async function onRequest(context: any): Promise<Response> {
     'touristvisas.yourf1visaguide.com': '/tourist-visa',
     'dubai.yourf1visaguide.com': '/dubai',
     'yourf1visaguide.com': '/usa',
+    'www.yourf1visaguide.com': '/usa',
 
   };
 
