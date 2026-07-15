@@ -45,7 +45,7 @@ export default function TouristCard({
       <div
         className={` relative h-[500px]  overflow-hidden rounded-lg border transition-all duration-500 ${
           selected
-            ? ` border-red-500 shadow-[0_20px_50px_rgba(220,38,38,.28)] `
+            ? ` border-green-500 shadow-[0_20px_50px_rgba(220,38,38,.28)] `
             : `
                 border-white/10 hover:border-red-200 hover:shadow-2xl `
         } `}
@@ -71,7 +71,7 @@ export default function TouristCard({
         {/* Selected Badge */}
 
         <div
-          className={` absolute right-3 top-3 z-20 flex items-center gap-2 rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-500 ${
+          className={` absolute right-3 top-3 z-20 flex items-center gap-2 rounded-full bg-green-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-500 ${
             selected
               ? "translate-y-0 opacity-100 scale-100"
               : "-translate-y-3 opacity-0 scale-75"
@@ -90,7 +90,7 @@ export default function TouristCard({
         {/* Bottom Status */}
 
         <div
-          className={` absolute bottom-0 left-0 right-0 overflow-hidden border-t border-white/10 backdrop-blur-xl transition-all duration-500 ${selected ? "bg-red-600" : "bg-black/45 group-hover:bg-black/60"} `}
+          className={` absolute bottom-0 left-0 right-0 overflow-hidden border-t border-white/10 backdrop-blur-xl transition-all duration-500 ${selected ? "bg-green-600" : "bg-black/45 group-hover:bg-black/60"} `}
         >
           <div className=" flex items-center justify-center px-6 py-4 ">
             {selected ? (

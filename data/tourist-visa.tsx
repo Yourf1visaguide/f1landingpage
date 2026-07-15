@@ -64,7 +64,9 @@ export const touristDestinationBasicData = {
     </>
   ),
   description:
-    "Select your preferred destinations and let our visa experts guide you through the complete application process.",
+    <>
+     Select your preferred destinations and let our visa experts guide you through the complete application process. <br /><span className="bg-red-100 text-red-700 px-2"> Apply for Your Dream Destination. Add Two More at No Extra Service Fee.</span>
+    </>,
   buttonText: "Continue with these 3 countries ",
 };
 

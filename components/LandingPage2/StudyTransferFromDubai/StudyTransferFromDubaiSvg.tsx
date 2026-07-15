@@ -12,8 +12,8 @@ interface StudyTransferFromDubaiSvgProps {
   className?: string;
 }
 
-const SVG_WIDTH = 600;
-const SVG_HEIGHT = 500;
+const SVG_WIDTH = 500;
+const SVG_HEIGHT = 300;
 
 const CENTER_X = SVG_WIDTH / 2;
 const CENTER_Y = SVG_HEIGHT / 2;
@@ -31,7 +31,7 @@ export default function StudyTransferFromDubaiSvg({
       const length = path.getTotalLength();
 
       gsap.set(path, {
-        strokeDasharray: `${length * 0.90} ${length}`,
+        strokeDasharray: `${length * 0.80} ${length}`,
         strokeDashoffset: length,
       });
 
@@ -83,7 +83,7 @@ export default function StudyTransferFromDubaiSvg({
           const finalY = endY - (dy / distance) * radius;
 
           const controlX =
-            (CENTER_X + finalX) / 2 + dx * 0.12;
+            (CENTER_X + finalX) / 2 + dx * 0.05;
 
           const controlY =
             (CENTER_Y + finalY) / 2 + dy * 0.12;

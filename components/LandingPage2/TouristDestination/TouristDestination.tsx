@@ -54,6 +54,7 @@ export default function TouristDestination() {
           <p className="mx-auto mt-6 max-w-5xl text-lg text-zinc-600">
             {touristDestinationBasicData.description}
           </p>
+
         </div>
 
         {/* Progress */}
