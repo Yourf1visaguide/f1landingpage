@@ -28,7 +28,7 @@ export default function StudyTransferFromDubaiCard({
         />
       </div>
 
-      <h3 className="max-w-10 min-[360px]:max-w-20 sm:max-w-32 text-wrap text-center max-[260px]:text-[12px] text-sm font-semibold text-zinc-800">
+      <h3 className="max-w-10 min-[360px]:max-w-20 sm:max-w-32 text-wrap text-center max-[260px]:text-[12px] text-sm font-semibold text-zinc-800 ">
         2nd Year In {item.name}
       </h3>
     </div>
