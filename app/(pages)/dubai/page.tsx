@@ -50,7 +50,7 @@ function TouristVisa() {
       />
 
       <TestimonialsPage
-            sheet={process.env.NEXT_PUBLIC_DUBAI_SINGLE_iMAGE_VIDEO_GOOGLE_SHEET_ID ?? ""}
+            sheet={process.env.NEXT_PUBLIC_DUBAI_SINGLE_IMAGE_VIDEO_GOOGLE_SHEET_ID ?? ""}
             title={testimonialsPage.title}
             description={testimonialsPage.description}
           />
