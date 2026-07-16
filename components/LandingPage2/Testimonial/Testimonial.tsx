@@ -89,7 +89,7 @@ export default function TestimonialsPage({
             {title}
           </h2>
 
-          <p className="text-lg text-slate-600 mx-auto">
+          <p className="text-lg text-slate-600 mx-auto max-w-5xl">
             {description}
           </p>
         </div>
