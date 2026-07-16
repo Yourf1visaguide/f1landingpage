@@ -9,6 +9,7 @@ import {
   internationalUniversityData,
   studyTransferFromDubai,
   successStoryData,
+  testimonialsPage,
 } from "@/data/dubai";
 import PreparationSection from "@/components/LandingPage2/Prepration/Prepration";
 
@@ -26,6 +27,7 @@ import StudyTransferFromDubai from "@/components/LandingPage2/StudyTransferFromD
 import InternationalUniversity from "@/components/LandingPage2/InternationalUniversity/InternationalUniversity";
 
 import { createMetadata } from "@/lib/seo";
+import TestimonialsPage from "@/components/LandingPage2/Testimonial/Testimonial";
 
 export const metadata = createMetadata(seo);
 
@@ -46,6 +48,12 @@ function TouristVisa() {
           process.env.NEXT_PUBLIC_DUBAISUCCESSSTORIES_GOOGLE_SHEET_ID ?? ""
         }
       />
+
+      <TestimonialsPage
+            sheet={process.env.NEXT_PUBLIC_DUBAI_SINGLE_iMAGE_VIDEO_GOOGLE_SHEET_ID ?? ""}
+            title={testimonialsPage.title}
+            description={testimonialsPage.description}
+          />
 
       <WhySection
         title={whySection.title}

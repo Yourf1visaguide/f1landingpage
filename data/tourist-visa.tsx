@@ -65,7 +65,7 @@ export const touristDestinationBasicData = {
   ),
   description:
     <>
-     Select your preferred destinations and let our visa experts guide you through the complete application process. <br /><span className="bg-red-100 text-red-700 px-2"> Apply for Your Dream Destination. Add Two More at No Extra Service Fee.</span>
+     Select your preferred destinations and let our visa experts guide you through the complete application process. <br /><span className="bg-red-100 text-2xl text-red-700 px-2 mt-1"> Buy 1, Get 2 Free</span>
     </>,
   buttonText: "Continue with these 3 countries ",
 };
@@ -75,6 +75,7 @@ export const touristDestinationData: TouristDestinationCategory[] = [
     mainTitle: "Choose Your First Destination.",
     description:
       "Select one of our most popular English-speaking destinations with world-famous attractions and unforgettable travel experiences.",
+      
     titleColor: "text-red-600",
     countries: [
       {

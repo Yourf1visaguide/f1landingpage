@@ -4,40 +4,36 @@ import { Play, Star } from "lucide-react";
 
 import { Testimonial } from "@/lib/types";
 
-
 // --- Video Card Component (Universal & Optimized) ---
 const VideoCard = ({ data }: { data: Testimonial }) => {
   // --- Utilities ---
   const isYouTubeVideo = (url: string) => {
-  return /^[a-zA-Z0-9_-]{11}$/.test(url);
-};
+    return /^[a-zA-Z0-9_-]{11}$/.test(url);
+  };
 
-const getYouTubeThumbnail = (id: string) => {
-  return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
-};
-const [isPlaying, setIsPlaying] = useState(false);
+  const getYouTubeThumbnail = (id: string) => {
+    return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+  };
+  const [isPlaying, setIsPlaying] = useState(false);
 
-const isYouTube = isYouTubeVideo(data.videoUrl);
+  const isYouTube = isYouTubeVideo(data.videoUrl);
 
-const posterSrc = isYouTube ? getYouTubeThumbnail(data.videoUrl) : null;
-
+  const posterSrc = isYouTube ? getYouTubeThumbnail(data.videoUrl) : null;
 
   return (
     <div className="group bg-white rounded-md border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col h-full">
       {/* Video / Poster Area - Increased height to aspect-[4/5] for modern vertical feel */}
       <div className="relative aspect-[4/5] bg-slate-900 overflow-hidden border-2 ">
-        {
-          data.type === "image"
-          ?
+        {data.type === "image" ? (
           <Image
-                src={`https://res.cloudinary.com/dkno1wygy/image/upload/f_auto,q_auto/${data.videoUrl}`}
-                alt={`Testimonial by ${data.name}`}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105 bg-zinc-600 "
-                loading="lazy"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              />
-          :!isPlaying ? (
+            src={`https://res.cloudinary.com/dkno1wygy/image/upload/f_auto,q_auto/${data.videoUrl}`}
+            alt={`Testimonial by ${data.name}`}
+            fill
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-105 bg-white "
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          />
+        ) : !isPlaying ? (
           <>
             {posterSrc ? (
               <Image
@@ -90,8 +86,7 @@ const posterSrc = isYouTube ? getYouTubeThumbnail(data.videoUrl) : null;
             controls
             playsInline
           />
-        )
-        }
+        )}
       </div>
 
       {/* Content Area */}

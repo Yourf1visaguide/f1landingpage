@@ -64,6 +64,7 @@ export const touristDestinationBasicData = {
   buttonText: "Continue with these 3 countries ",
 };
 
+
 export const successStoryData: SuccessStoryType = {
   title: (
     <>
@@ -333,12 +334,14 @@ export const touristDestinationData: TouristDestinationCategory[] = [
 export const testimonialsPage = {
   title: (
     <>
-      Real Students. <span className="text-[#DC2626]">Real Results.</span>
+      Real Students. <span className="text-[#DC2626]">Real Dubai Stories.</span>
     </>
   ),
   description:
-    "Join hundreds of Indian students already living their European dream.",
+    "See how students successfully received their Dubai study visa and started their academic journey at internationally recognised universities in Dubai.",
 };
+
+
 export const whySection: WhySectionType = {
   features: [
     {
