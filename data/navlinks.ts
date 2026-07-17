@@ -12,7 +12,7 @@ export const navLinksData = [
     href: "https://touristvisas.yourf1visaguide.com",
   },
   {
-    name: "Dubai",
+    name: "Dubai Study Visa",
     href: "https://dubai.yourf1visaguide.com",
   },
 ];
