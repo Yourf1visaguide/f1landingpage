@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Play, Star } from "lucide-react";
 
 import { Testimonial } from "@/lib/types";
+import VideoCardDescriptionWithSeeMore from "./VideoCardDescriptionWithSeeMore";
 
 // --- Video Card Component (Universal & Optimized) ---
 const VideoCard = ({ data }: { data: Testimonial }) => {
@@ -15,10 +16,11 @@ const VideoCard = ({ data }: { data: Testimonial }) => {
     return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
   };
   const [isPlaying, setIsPlaying] = useState(false);
-
+  
   const isYouTube = isYouTubeVideo(data.videoUrl);
-
   const posterSrc = isYouTube ? getYouTubeThumbnail(data.videoUrl) : null;
+
+  
 
   return (
     <div className="group bg-white rounded-md border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col h-full">
@@ -107,9 +109,7 @@ const VideoCard = ({ data }: { data: Testimonial }) => {
           ))}
         </div>
 
-        <p className="text-slate-600 text-sm leading-relaxed mb-3 flex-grow min-h-24  ">
-          {data.description}
-        </p>
+       <VideoCardDescriptionWithSeeMore description={data.description} />
 
         <div className="flex items-start gap-3 border-t border-slate-200 pt-3 min-h-[68px] ">
           <div className="w-10 h-10 rounded-full bg-[#0B1120] text-white flex items-center justify-center font-bold text-sm">

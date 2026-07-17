@@ -121,7 +121,7 @@ function HowThisWork({steps, title, description, badge}:VisaTimelineType) {
   useEffect(() => {
   const timer = setTimeout(() => {
     ScrollTrigger.refresh();
-  }, 1500);
+  }, 3000);
 
   return () => clearTimeout(timer);
 }, []);
