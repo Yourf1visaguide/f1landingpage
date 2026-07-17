@@ -10,7 +10,7 @@ function VideoCardDescriptionWithSeeMore({
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <p className="mb-3 flex-grow text-sm leading-relaxed text-slate-600 min-h-32">
+    <p className="mb-3 flex-grow text-sm leading-relaxed text-slate-600 min-h-48">
       {expanded ? description : description.slice(0, 190)}
 
       {!expanded && description.length > 190 && (
