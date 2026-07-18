@@ -41,7 +41,6 @@ export default function JourneySummary({ selectedDestinations }: Props) {
           {completed ? (
             <div className="md:flex md:flex-row md:gap-8  items-center justify-between ">
               {selectedDestinations.map((country, index) => {
-                console.log("url",`https://flagcdn.com/w80/${country!.flag}.png`);
               return (
                 <div key={country!.id} className="flex flex-col items-center my-8 w-full">
                   <div className=" flex items-center gap-4 rounded-2xl border border-zinc-200 bg-zinc-50 px-8 py-5 w-full  ">

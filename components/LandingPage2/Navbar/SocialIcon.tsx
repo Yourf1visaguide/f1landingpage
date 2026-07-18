@@ -1,7 +1,6 @@
 import { phone } from "@/function/handleWhatsapp";
 import {  MessageCircle } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 
 function SocialIcon({customClassName}:{customClassName:string}) {
   return (
@@ -18,7 +17,7 @@ function SocialIcon({customClassName}:{customClassName:string}) {
         />
       </Link>
       <Link
-        href="https://instagram.com/yourf1visaguide/"
+        href="https://www.instagram.com/your_visaguide/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Follow us on Instagram"

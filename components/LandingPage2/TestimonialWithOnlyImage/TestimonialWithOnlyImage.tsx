@@ -5,16 +5,16 @@ import { Testimonial } from "@/lib/types";
 
 // --- Main Export ---
 
-interface TestimonialsProps {
+interface TestimonialsWithOnlyImageProps {
   sheet: string;
   title: ReactNode;
   description: string;
 }
-export default function TestimonialsPage({
+export default function TestimonialsWithOnlyImagePage({
   sheet,
   title,
   description,
-}: TestimonialsProps) {
+}: TestimonialsWithOnlyImageProps) {
   const [testimonialsData, setTestimonialsData] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);

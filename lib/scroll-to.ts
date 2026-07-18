@@ -3,7 +3,6 @@ export const customScrollTo = (id: string) => {
 
   const element = document.getElementById(id);
   if (!element) return;
-  console.log(element);
 
   element.scrollIntoView({
     behavior: "smooth",

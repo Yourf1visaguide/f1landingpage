@@ -28,6 +28,7 @@ import InternationalUniversity from "@/components/LandingPage2/InternationalUniv
 
 import { createMetadata } from "@/lib/seo";
 import TestimonialsPage from "@/components/LandingPage2/Testimonial/Testimonial";
+import TestimonialsWithOnlyImagePage from "@/components/LandingPage2/TestimonialWithOnlyImage/TestimonialWithOnlyImage";
 
 export const metadata = createMetadata(seo);
 
@@ -49,7 +50,7 @@ function TouristVisa() {
         }
       />
 
-      <TestimonialsPage
+      <TestimonialsWithOnlyImagePage
             sheet={process.env.NEXT_PUBLIC_DUBAI_SINGLE_IMAGE_VIDEO_GOOGLE_SHEET_ID ?? ""}
             title={testimonialsPage.title}
             description={testimonialsPage.description}
