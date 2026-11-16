@@ -48,7 +48,6 @@ export default function VisaStamp({ country, index, idSuffix }: VisaStampProps) 
   const common = {
     fill: "none",
     stroke: "currentColor",
-    style: { filter: "url(#pj-ink)" },
   } as const;
 
   if (shape === "circle") {

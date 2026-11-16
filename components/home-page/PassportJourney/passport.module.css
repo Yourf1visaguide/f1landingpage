@@ -1,3 +1,200 @@
+/* 3D passport. Drawn in a fixed 230 x 330 px page and scaled by GSAP from outside. */
+.pp {
+  /* Passport colours live here, so the component does not depend on globals.css */
+  --pj-cover: #16222e;
+  --pj-cover-deep: #0c141d;
+  --pj-gold: #d8b335;
+  --pj-paper: #f6efe1;
+  --pj-paper-line: #dccfb4;
+  --pj-paper-ink: #8c8168;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  z-index: 3;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+.intro {
+  position: absolute;
+  left: 00;
+  top: 0;
+}
+.float {
+  position: absolute;
+  left: 0;
+  top: 0;
+  perspective: 1800px;
+  animation: bob 7s ease-in-out infinite;
+}
+@keyframes bob {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.book {
+  --w: 200px;
+  --h: 300px;
+  --open: 0;
+  --tx: 0deg;
+  --ty: 0deg;
+  --tz: 0deg;
+  position: absolute;
+  left: calc(var(--w) / -2);
+  top: calc(var(--h) / -2);
+  width: var(--w);
+  height: var(--h);
+  transform-style: preserve-3d;
+  transform: rotateX(var(--tx)) rotateY(var(--ty)) rotateZ(var(--tz));
+}
+.shadow {
+  position: absolute;
+  left: calc(var(--w) * -0.1);
+  top: calc(var(--h) - 6px);
+  width: calc(var(--w) * (1.2 + var(--open)));
+  height: 40px;
+  transform: translateX(calc(var(--w) * -0.5 * var(--open)));
+  background: radial-gradient(closest-side, rgb(30 20 10 / 0.3), transparent);
+}
+.shift {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: translateX(calc(var(--w) * 0.5 * var(--open)));
+}
+/* The right page sits well behind the cover. With only 1-2px Chrome mis-sorts the
+   layers near the spine and the page shows through the cover as it starts to open. */
+.base {
+  position: absolute;
+  inset: 0;
+  transform: translateZ(-14px);
+}
+.cover {
+  position: absolute;
+  inset: 0;
+  top: 3;
+  transform-origin: 0 60%;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--open) * -180deg));
+  background: radial-gradient(closest-side, rgb(30 20 10 / 0.3), transparent);
+}
+.face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* GSAP swaps which side of the cover is painted half-way through opening
+   (backface-visibility alone lets the cover art bleed through in Chrome). */
+.back {
+  visibility: hidden;
+}
+
+/* Cover: deep navy leatherette with gold print */
+.front {
+  border-radius: 5px 12px 12px 5px;
+  background:
+    radial-gradient(120% 90% at 30% 12%, rgb(255 255 255 / 0.08), transparent 55%),
+    repeating-linear-gradient(115deg, rgb(255 255 255 / 0.03) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(25deg, rgb(0 0 0 / 0.08) 0 1px, transparent 1px 3px),
+    linear-gradient(150deg, var(--pj-cover), var(--pj-cover-deep));
+  box-shadow:
+    inset 7px 0 10px -5px rgb(0 0 0 / 0.6),
+    inset 0 0 0 1px rgb(255 255 255 / 0.06),
+    0 24px 40px -18px rgb(10 14 20 / 0.55);
+  color: var(--pj-gold);
+}
+.art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.art text {
+  fill: currentColor;
+}
+.latin {
+  font-family: var(--font-hero-editorial), Georgia, serif;
+  font-weight: 600;
+}
+.hindi {
+  font-family: var(--font-hero-deva), "Noto Sans Devanagari", sans-serif;
+  font-weight: 600;
+}
+
+/* Inside pages: a navy cover board with the paper inset into it. The navy edge is real
+   geometry (not a box-shadow), so it never disappears while the cover turns. */
+.page {
+  background: var(--pj-cover-deep);
+}
+.paper {
+  position: absolute;
+  inset: 4px;
+  overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 120%, transparent 0 9px, color-mix(in srgb, var(--pj-paper-line) 45%, transparent) 9px 10px),
+    linear-gradient(180deg, color-mix(in srgb, var(--pj-paper) 92%, #fff), var(--pj-paper));
+}
+.paper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.pageR {
+  position: absolute;
+  inset: 0;
+  border-radius: 2px 8px 8px 2px;
+}
+.pageR .paper {
+  border-radius: 1px 5px 5px 1px;
+}
+.pageR .paper::after {
+  background: linear-gradient(90deg, rgb(0 0 0 / 0.22), transparent 14%);
+}
+.back {
+  transform: rotateY(180deg);
+}
+.pageL {
+  border-radius: 8px 2px 2px 8px;
+}
+.pageL .paper {
+  border-radius: 5px 1px 1px 5px;
+  color: var(--pj-cover-deep);
+}
+.pageL .paper::after {
+  background: linear-gradient(270deg, rgb(0 0 0 / 0.22), transparent 14%);
+}
+.label {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font: 600 8px/1 var(--font-geist-mono), ui-monospace, monospace;
+  letter-spacing: 0.28em;
+  color: var(--pj-paper-ink);
+}
+
+/* Stamps: all stacked in the middle of the right page; GSAP shows one at a time */
+.stamp {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 170px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity;
+  color: #ba0009;
+}
+.stamp text {
+  font-family: var(--font-hero-body), sans-serif;
+}
+
 /* Worn rubber-stamp ink: a baked noise texture as an alpha mask (cheap on every browser) */
 .ink {
   -webkit-mask-image: url("/textures/stamp-ink.png");
@@ -48,5 +245,11 @@
 @keyframes pj-loader-ring {
   to {
     stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float {
+    animation: none;
   }
 }
