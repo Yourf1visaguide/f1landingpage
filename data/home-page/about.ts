@@ -31,7 +31,7 @@ export const promises = [
 /** Numbers count up when they scroll into view. `value` is the final number. */
 export const aboutStats = [
   { value: 94, suffix: "%", label: "Approval rate" },
-  { value: "5,000", suffix: "+", label: "Happy clients" },
+  { value: 5000 , suffix: "+", label: "Happy clients" },
   { value: 15, suffix: "+", label: "Countries served" },
     { value: countries.filter((c) => c.kind !== "tourist").length, suffix: "", label: "Study destinations" },
 ] as const;
