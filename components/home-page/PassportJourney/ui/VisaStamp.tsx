@@ -1,5 +1,6 @@
 import type { Country } from "@/data/journey";
 import { FONT_DISPLAY } from "./tokens";
+import styles from "../passport.module.css";
 
 /**
  * A rubber-stamp drawing generated from the country data, so a new country
@@ -52,7 +53,7 @@ export default function VisaStamp({ country, index, idSuffix }: VisaStampProps) 
 
   if (shape === "circle") {
     return (
-      <svg viewBox="0 0 170 170" style={{ color: ink }} className="block w-full overflow-visible [&_text]:fill-current">
+      <svg viewBox="0 0 170 170" style={{ color: ink }} className={`${styles.ink} block w-full overflow-visible [&_text]:fill-current`}>
         <g {...common}>
           <circle cx="85" cy="85" r="80" strokeWidth="4" />
           <circle cx="85" cy="85" r="72" strokeWidth="1.2" />
@@ -92,7 +93,7 @@ export default function VisaStamp({ country, index, idSuffix }: VisaStampProps) 
         </>
       );
     return (
-      <svg viewBox="0 0 220 140" style={{ color: ink }} className="block w-full overflow-visible [&_text]:fill-current">
+      <svg viewBox="0 0 220 140" style={{ color: ink }} className={`${styles.ink} block w-full overflow-visible [&_text]:fill-current`}>
         <g {...common}>
           {frame}
           <PlaneMark x={110} y={33} size={22} />
@@ -120,7 +121,7 @@ export default function VisaStamp({ country, index, idSuffix }: VisaStampProps) 
 
   // oval (the default, closest to the mockup)
   return (
-    <svg viewBox="0 0 230 150" style={{ color: ink }} className="block w-full overflow-visible [&_text]:fill-current">
+    <svg viewBox="0 0 230 150" style={{ color: ink }} className={`${styles.ink} block w-full overflow-visible [&_text]:fill-current`}>
       <g {...common}>
         <path d="M30 18C80 2 150 2 200 18c24 8 28 106 0 114-50 16-120 16-170 0C2 124 6 26 30 18Z" strokeWidth="4" />
         <path d="M36 27C82 13 148 13 194 27c18 7 20 89 0 96-46 14-112 14-158 0-20-7-18-89 0-96Z" strokeWidth="1.2" />

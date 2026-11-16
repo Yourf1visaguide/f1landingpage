@@ -149,25 +149,6 @@ function TitlePage() {
 export default function Passport() {
   return (
     <div className={styles.pp} data-pp aria-hidden="true">
-      <svg width="0" height="0" className="absolute" focusable="false">
-        <filter id="pj-ink" x="-5%" y="-5%" width="110%" height="110%">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency=".85"
-            numOctaves="2"
-            seed="4"
-            result="n"
-          />
-          <feColorMatrix
-            in="n"
-            type="matrix"
-            values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2.4 0 0 0 2"
-            result="m"
-          />
-          <feComposite in="SourceGraphic" in2="m" operator="in" />
-        </filter>
-      </svg>
-
       <div className={styles.intro} data-pp-intro>
         <div className={styles.float}>
           <div className={styles.book} data-book style={HERO_POSE}>
@@ -178,12 +159,7 @@ export default function Passport() {
                   <div className={styles.paper}>
                     <span className={styles.label}>VISA / VISAS</span>
                     {countries.map((c, i) => (
-                      <div
-                        key={c.id}
-                        className={styles.stamp}
-                        data-stamp={i}
-                        data-rot={TILTS[i % TILTS.length]}
-                      >
+                      <div key={c.id} className={styles.stamp} data-stamp={i} data-rot={TILTS[i % TILTS.length]}>
                         <VisaStamp country={c} index={i} />
                       </div>
                     ))}
@@ -191,16 +167,10 @@ export default function Passport() {
                 </div>
               </div>
               <div className={styles.cover}>
-                <div
-                  className={`${styles.face} ${styles.front}`}
-                  data-face="front"
-                >
+                <div className={`${styles.face} ${styles.front}`} data-face="front">
                   <CoverArt />
                 </div>
-                <div
-                  className={`${styles.face} ${styles.back} ${styles.page} ${styles.pageL}`}
-                  data-face="back"
-                >
+                <div className={`${styles.face} ${styles.back} ${styles.page} ${styles.pageL}`} data-face="back">
                   <div className={styles.paper}>
                     <TitlePage />
                   </div>

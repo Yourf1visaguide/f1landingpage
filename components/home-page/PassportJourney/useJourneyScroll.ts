@@ -86,7 +86,7 @@ export function useJourneyScroll(storyRef: RefObject<HTMLDivElement | null>, sta
 
       /* ---------- starting state (matches the hero) ---------- */
       gsap.set(pp, { x: g.hero.x, y: g.hero.y, scale: g.sHero });
-      gsap.set(qa("[data-stamp]"), { xPercent: -50, yPercent: -50, opacity: 0 });
+      gsap.set(qa("[data-stamp]"), { xPercent: -50, yPercent: -50, autoAlpha: 0 });
 
       const tl = gsap.timeline({
         defaults: { ease: "none" },
@@ -94,7 +94,7 @@ export function useJourneyScroll(storyRef: RefObject<HTMLDivElement | null>, sta
           trigger: story,
           start: "top top",
           end: "bottom bottom",
-          scrub: reduce ? true : 0.8,
+          scrub: reduce ? true : ScrollTrigger.isTouch === 1 ? 0.3 : 0.8,
           invalidateOnRefresh: true,
           onRefreshInit: measure,
         },
@@ -124,8 +124,8 @@ export function useJourneyScroll(storyRef: RefObject<HTMLDivElement | null>, sta
         if (s) {
           tl.fromTo(
             s,
-            { opacity: 0, scale: 1.8, rotation: rot + 14 },
-            { opacity: 0.95, scale: 1, rotation: rot, ease: "back.out(2.2)", duration: 0.28 },
+            { autoAlpha: 0, scale: 1.8, rotation: rot + 14 },
+            { autoAlpha: 0.95, scale: 1, rotation: rot, ease: "back.out(2.2)", duration: 0.28 },
             at,
           );
         }
@@ -135,7 +135,7 @@ export function useJourneyScroll(storyRef: RefObject<HTMLDivElement | null>, sta
           continue;
         }
         const prevStamp = stamp(i - 1);
-        if (prevStamp) tl.to(prevStamp, { opacity: 0, scale: 0.9, duration: 0.18 }, at - 0.12);
+         if (prevStamp) tl.to(prevStamp, { autoAlpha: 0, scale: 0.9, duration: 0.18 }, at - 0.12);
         tl.to([block(i - 1), num(i - 1)], { autoAlpha: 0, y: -14, duration: 0.22 }, at - 0.15);
         tl.fromTo([block(i), num(i)], { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 0.28 }, at + 0.05);
         const prevImg = img(i - 1);

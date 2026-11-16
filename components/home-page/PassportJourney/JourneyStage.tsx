@@ -3,7 +3,8 @@
 import { useCallback, useRef } from "react";
 import { countries, type NavTarget } from "@/data/journey";
 import { handleWhatsappClickWithMessage } from "@/function/handleWhatsapp";
-import { storyHeightSvh, UNIT_SVH } from "./timeline";
+import { storyHeight, timelineFor } from "./timeline";
+import styles from "./passport.module.css";
 import { scrollToJourney } from "./scrollToJourney";
 import { useJourneyIntro } from "./useJourneyIntro";
 import { useJourneyScroll } from "./useJourneyScroll";
@@ -30,14 +31,18 @@ export default function JourneyStage() {
     document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
-  const nextStep = useCallback(() => {
-    window.scrollBy({ top: (window.innerHeight * UNIT_SVH) / 100, behavior: "smooth" });
+   const nextStep = useCallback(() => {
+    // One timeline unit of scrolling (its length differs between phones and desktop).
+    const story = storyRef.current;
+    if (!story) return;
+    const unit = (story.offsetHeight - window.innerHeight) / timelineFor(countries.length).total;
+    window.scrollBy({ top: unit, behavior: "smooth" });
   }, []);
 
   return (
     <div className="pj relative bg-primary text-secondary">
       <Preloader />
-      <div ref={storyRef} data-journey-story className="relative" style={{ height: `${storyHeightSvh(countries.length)}svh` }}>
+      <div ref={storyRef} data-journey-story className={`${styles.story} relative`} style={{ height: storyHeight(countries.length) }}>
         <div ref={stageRef} className="sticky top-0 h-svh overflow-hidden bg-primary">
           <JourneyNav onGo={goTo} />
           <HeroSection onGo={goTo} />

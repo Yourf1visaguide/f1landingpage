@@ -89,7 +89,7 @@ export default function StoriesClient({ initial }: { initial: Story[] }) {
         </div>
       )}
 
-      {/* <div className="mx-auto mt-12 max-w-[1500px] px-4 sm:px-8 lg:mt-16 lg:px-14">
+      <div className="mx-auto mt-12 max-w-[1500px] px-4 sm:px-8 lg:mt-16 lg:px-14">
         <p aria-live="polite" className="sr-only">
           {status === "loading" && empty ? "Loading stories" : `${featured ? rest.length + 1 : rest.length} stories shown in ${storiesCopy.filters[filter]}`}
         </p>
@@ -106,7 +106,7 @@ export default function StoriesClient({ initial }: { initial: Story[] }) {
             </button>
           </div>
         ) : (
-           <div
+          <div
             data-inview={inView}
             className={`${styles.grid} grid grid-flow-row-dense grid-cols-1 gap-5 [--notch:var(--color-secondary,#141414)] sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4`}
           >
@@ -151,7 +151,7 @@ export default function StoriesClient({ initial }: { initial: Story[] }) {
         </div>
       </div>
 
-      <StoryDialog story={open} onClose={close} /> */}
+      <StoryDialog story={open} onClose={close} />
     </section>
   );
 }

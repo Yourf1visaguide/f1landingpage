@@ -45,7 +45,7 @@ export const heroCopy = {
 export const loaderCopy = {
   label: "Preparing your journey",
   /** Whole loader, in seconds, however many countries there are. */
-  totalSeconds: 4,
+  totalSeconds: 3,
 };
 
 export interface Country {

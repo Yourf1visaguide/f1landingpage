@@ -1,7 +1,13 @@
-// Scroll timeline in "units". One unit is one step of scrolling (UNIT_SVH of the screen height).
+// Scroll timeline in "units". One unit is one step of scrolling: --pj-unit of the screen height
+// (55svh on phones/tablets, 85svh on desktop; see .story in passport.module.css).
 // Everything is derived from the number of countries, so adding a country just adds one unit.
 
-export const UNIT_SVH = 85;
+/** Loader timing. Whole length is loaderCopy.totalSeconds; `exit` is the fly-into-hero part. */
+export const LOADER = {
+  exit: 0.9,
+  /** How many destination names cycle in the circle (passport.module.css keyframes assume 5). */
+  names: 5,
+} as const;
 
 export const PHASE = {
   zoom: 1, // hero text fades out, circle + passport grow 1.5x into the centre
@@ -22,7 +28,7 @@ export function timelineFor(countryCount: number) {
   return { zoomAt, openAt, countriesAt, closeAt, stepsAt, total };
 }
 
-/** Height of the scroll container, in svh. */
-export function storyHeightSvh(countryCount: number) {
-  return Math.round(timelineFor(countryCount).total * UNIT_SVH + 100);
+/** Height of the scroll container: one --pj-unit per timeline unit, plus the pinned screen. */
+export function storyHeight(countryCount: number) {
+  return `calc(${timelineFor(countryCount).total} * var(--pj-unit) + 100svh)`;
 }

@@ -14,17 +14,17 @@ export interface StorySource {
 
 export const STORY_SOURCES: StorySource[] = [
   {
-    sheetId: process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID || "1YMjbiu9ks8tLHBtPXKXozlAU-WYATQNQoe-MQo84dc8",
+    sheetId: process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID ?? "",
     category: "study",
     defaultVisa: "USA Study Visa",
   },
   {
-    sheetId: process.env.NEXT_PUBLIC_NETHERLANDS_GOOGLE_SHEET_ID || "1vCTk_uC6f9ia6-XWiRYGKtQcCRenAg32w8TT-RWySrc",
+    sheetId: process.env.NEXT_PUBLIC_NETHERLANDS_GOOGLE_SHEET_ID ?? "",
     category: "study",
     defaultVisa: "Netherlands Study Visa",
   },
   {
-    sheetId: process.env.NEXT_PUBLIC_TOURISTVISA_GOOGLE_SHEET_ID || "1HZUGSiyPny2F3vlD0H3hNmXWL6RmOxAC0jcoIGsgnvI",
+    sheetId: process.env.NEXT_PUBLIC_TOURISTVISA_GOOGLE_SHEET_ID  ?? "",
     category: "tourist",
     defaultVisa: "Tourist Visa",
   },

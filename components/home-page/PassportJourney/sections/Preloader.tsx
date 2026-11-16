@@ -1,23 +1,24 @@
+import type { CSSProperties } from "react";
 import { countries, loaderCopy } from "@/data/journey";
 import { FONT_DISPLAY } from "@/components/home-page/PassportJourney/ui/tokens";
+import { LOADER } from "../timeline";
+import styles from "../passport.module.css";
 
 /**
- * Runs before paint. If the loader was already shown this session (or motion is reduced)
- * it adds a <style> to <head> that hides it. It does not touch any element React renders,
- * so hydration stays clean on reload.
+ * Runs before paint. Records when the loader appeared (so the JavaScript exit lines up with
+ * the CSS animation) and hides the loader for visitors who prefer reduced motion.
+ * It does not touch any element React renders, so hydration stays clean.
  */
-/**
- * Runs before paint. If the visitor prefers reduced motion it adds a <style> to <head>
- * that hides the loader. It does not touch any element React renders, so hydration stays clean.
- */
-/**
- * Runs before paint. If the visitor prefers reduced motion it adds a <style> to <head>
- * that hides the loader. It does not touch any element React renders, so hydration stays clean.
- */
-const SKIP_SCRIPT = `try{if(matchMedia('(prefers-reduced-motion: reduce)').matches){var s=document.createElement('style');s.textContent='[data-loader]{display:none!important}';document.head.appendChild(s)}}catch(e){}`;
+const SKIP_SCRIPT = `window.__pjLoaderStart=performance.now();try{if(matchMedia('(prefers-reduced-motion: reduce)').matches){var s=document.createElement('style');s.textContent='[data-loader]{display:none!important}';document.head.appendChild(s)}}catch(e){}`;
+
+const names = countries.slice(0, LOADER.names);
+const fill = loaderCopy.totalSeconds - LOADER.exit;
+const per = fill / LOADER.names;
+
 /**
  * Scene 0. A large circle with destination names changing inside it.
- * The circle then flies into the hero circle (handled in useJourneyIntro).
+ * Names and ring are CSS animations, so they move from the first paint even on slow
+ * connections. The circle then flies into the hero circle (useJourneyIntro).
  */
 export default function Preloader() {
   return (
@@ -30,7 +31,8 @@ export default function Preloader() {
         data-loader
         role="status"
         aria-label={loaderCopy.label}
-        className="fixed inset-0 z-[70] flex flex-col items-center justify-center gap-8 "
+        className="fixed inset-0 z-[70] flex flex-col items-center justify-center gap-8"
+        style={{ "--pj-fill": `${fill}s`, "--pj-cycle": `${per * LOADER.names}s` } as CSSProperties}
       >
         <div data-loader-bg className="absolute inset-0 bg-primary" />
         <div data-loader-circle className="relative grid aspect-square w-[min(352px,74vw)] place-items-center">
@@ -42,7 +44,7 @@ export default function Preloader() {
               cy="50"
               r="48"
               fill="none"
-              className="stroke-accent"
+              className={`${styles.loaderRing} stroke-accent`}
               strokeWidth="0.7"
               strokeLinecap="round"
               pathLength={1}
@@ -51,12 +53,12 @@ export default function Preloader() {
               transform="rotate(-90 50 50)"
             />
           </svg>
-          <div className="grid" aria-hidden="true">
-            {countries.map((c, i) => (
+          <div data-loader-names className="grid" aria-hidden="true">
+            {names.map((c, i) => (
               <span
                 key={c.id}
-                data-loader-name={i}
-                className={`${FONT_DISPLAY} col-start-1 row-start-1 text-center text-[clamp(28px,7vw,44px)] leading-none text-secondary opacity-0`}
+                className={`${FONT_DISPLAY} ${styles.loaderName} col-start-1 row-start-1 text-center text-[clamp(28px,7vw,44px)] leading-none text-secondary`}
+                style={{ "--pj-delay": `${i * per}s` } as CSSProperties}
               >
                 {c.name}
               </span>
