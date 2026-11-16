@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import PassportJourney from "@/components/home-page/PassportJourney/PassportJourney";
 import AboutSection from "@/components/home-page/AboutSection/AboutSection";
 import TestimonialsSection from "@/components/home-page/Testimonials/TestimonialsSection";
+import FaqSection from "@/components/home-page/faq/FaqSection";
+import FinaleSection from "@/components/home-page/Finale/FinaleSection";
 
 export const metadata: Metadata = {
   title: "Your Immigration Journey Starts Here | Your F1 Visa Guide",
@@ -13,7 +15,9 @@ export default function HomePage() {
   return (
     <PassportJourney>
       <TestimonialsSection />
-      <AboutSection />
+      {/* <FaqSection /> */}
+      {/* <AboutSection /> */}
+      {/* <FinaleSection /> */}
     </PassportJourney>
   );
 }

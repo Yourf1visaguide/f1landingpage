@@ -1,0 +1,66 @@
+/* Every selector starts with a local class (Turbopack CSS-module rule). */
+
+/* Dusk sky: cream at the top so it continues from the section above */
+.sky {
+  background: linear-gradient(180deg, #f7f3eb 0%, #f6dcc0 38%, #f2c29b 72%, #eeb184 100%);
+}
+
+/* Red/blue airmail border */
+.airmail {
+  background: repeating-linear-gradient(-45deg, #b91c1c 0 14px, #fbf7ee 14px 22px, #1f4e9c 22px 36px, #fbf7ee 36px 44px);
+}
+
+/* Barcode on the ticket stub */
+.barcode {
+  background: repeating-linear-gradient(90deg, #17202b 0 2px, transparent 2px 4px, #17202b 4px 5px, transparent 5px 9px, #17202b 9px 12px, transparent 12px 14px);
+}
+
+/* Half-circle cut-outs where the ticket tears */
+.notch::before,
+.notch::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--notch, #f2c29b);
+}
+.notch::before {
+  left: -13px;
+  top: -13px;
+}
+.notch::after {
+  left: -13px;
+  bottom: -13px;
+}
+
+/* Postage stamp: holes punched only in the 5px padding ring */
+.stamp {
+  padding: 5px;
+  background: #ffffff;
+  -webkit-mask:
+    radial-gradient(circle 3px, #0000 96%, #000) -5px -5px / 10px 10px,
+    linear-gradient(#000 0 0) content-box;
+  mask:
+    radial-gradient(circle 3px, #0000 96%, #000) -5px -5px / 10px 10px,
+    linear-gradient(#000 0 0) content-box;
+}
+
+/* Letter paper (plain, so the animated top and the footer below join without a seam) */
+.paper {
+  background-color: #fffdf7;
+}
+
+/* Phones/tablets: the stub sits under the ticket, so the cut-outs move to the ends of its top edge */
+@media (max-width: 1023px) {
+  .notch::before {
+    left: -13px;
+    top: -13px;
+  }
+  .notch::after {
+    left: auto;
+    right: -13px;
+    top: -13px;
+    bottom: auto;
+  }
+}

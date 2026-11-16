@@ -1,6 +1,7 @@
 import { Anton, Manrope, Noto_Sans_Devanagari, Playfair_Display } from "next/font/google";
 import JourneyStage from "./JourneyStage";
 import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 // Fonts are scoped to this section through CSS variables (see ui/tokens.ts).
 const display = Anton({ subsets: ["latin"], weight: "400", variable: "--font-hero-display", display: "swap" });
@@ -17,7 +18,7 @@ const deva = Noto_Sans_Devanagari({ subsets: ["devanagari"], weight: "600", vari
 /** Loader, hero, countries and steps: the whole scroll story. Drop it at the top of a page. */
 export default function PassportJourney({ children }: { children?: ReactNode }) {
   return (
-    <div className={`${display.variable} ${editorial.variable} ${body.variable} ${deva.variable}`}>
+    <div className={cn(display.variable, editorial.variable, body.variable, deva.variable)}>
       <JourneyStage />
       {children}
     </div>

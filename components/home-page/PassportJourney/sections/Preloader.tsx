@@ -6,8 +6,15 @@ import { FONT_DISPLAY } from "@/components/home-page/PassportJourney/ui/tokens";
  * it adds a <style> to <head> that hides it. It does not touch any element React renders,
  * so hydration stays clean on reload.
  */
-const SKIP_SCRIPT = `try{if(sessionStorage.getItem('pj-loader-seen')||matchMedia('(prefers-reduced-motion: reduce)').matches){var s=document.createElement('style');s.textContent='[data-loader]{display:none!important}';document.head.appendChild(s)}}catch(e){}`;
-
+/**
+ * Runs before paint. If the visitor prefers reduced motion it adds a <style> to <head>
+ * that hides the loader. It does not touch any element React renders, so hydration stays clean.
+ */
+/**
+ * Runs before paint. If the visitor prefers reduced motion it adds a <style> to <head>
+ * that hides the loader. It does not touch any element React renders, so hydration stays clean.
+ */
+const SKIP_SCRIPT = `try{if(matchMedia('(prefers-reduced-motion: reduce)').matches){var s=document.createElement('style');s.textContent='[data-loader]{display:none!important}';document.head.appendChild(s)}}catch(e){}`;
 /**
  * Scene 0. A large circle with destination names changing inside it.
  * The circle then flies into the hero circle (handled in useJourneyIntro).

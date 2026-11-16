@@ -36,17 +36,17 @@ export default function Navbar({ navLinks }: { navLinks: NavLinks[] }) {
   return (
     <>
       {/* ── Navbar ── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-100/90 backdrop-blur-md border-b border-zinc-200 shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/60 backdrop-blur-xs border-b border-zinc-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-14">
 
             {/* 1. Logo */}
             <Link href="/" className="flex-shrink-0" onClick={closeMenu}>
               <Image
                 src="/images/logo.png"
-                width={120}
-                height={40}
-                className="h-9 sm:h-10 w-auto"
+                width={100}
+                height={33.3333333}
+                className="h-7 sm:h-8 w-auto"
                 alt="Your F1 Visa Guide"
                 priority
               />

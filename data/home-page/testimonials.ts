@@ -34,8 +34,8 @@ export const STORY_SOURCES: StorySource[] = [
 export const CLOUDINARY_CLOUD = "dkno1wygy";
 
 export const storiesCopy = {
-  label: "05 — Student stories",
-  heading: "Real students.",
+  label: "04 — Success stories",
+  heading: "Real stories.",
   accent: "Real stamps.",
   intro:
     "Every story here is a student or traveller we worked with: first-time study visas, family trips and second chances after a refusal.",
@@ -48,4 +48,4 @@ export const storiesCopy = {
 };
 
 /** How many cards show before "Show more", and how many each click adds. */
-export const STORIES_PAGE_SIZE = 8;
+export const STORIES_PAGE_SIZE = 4;

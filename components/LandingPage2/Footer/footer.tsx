@@ -120,7 +120,7 @@ export default function Footer({data}:{data:FooterType}) {
 
             <div className="mt-5 space-y-5">
               <div>
-                <div className="text-3xl font-bold text-red-600">50,000+</div>
+                <div className="text-3xl font-bold text-red-600">5,000+</div>
 
                 <div className="text-white/70">Happy Clients</div>
               </div>

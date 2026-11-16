@@ -11,11 +11,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const SEEN_KEY = "pj-loader-seen";
 
 function shouldSkipLoader() {
-  try {
-    return Boolean(sessionStorage.getItem(SEEN_KEY)) || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  } catch {
-    return false;
-  }
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
 /**
@@ -72,11 +68,11 @@ export function useJourneyIntro(stageRef: RefObject<HTMLDivElement | null>) {
     const finish = () => {
       loader.style.display = "none";
       html.style.overflow = "";
-      try {
-        sessionStorage.setItem(SEEN_KEY, "1");
-      } catch {
-        /* storage blocked: the loader simply shows again next time */
-      }
+      // try {
+      //   sessionStorage.setItem(SEEN_KEY, "1");
+      // } catch {
+      //   /* storage blocked: the loader simply shows again next time */
+      // }
       ScrollTrigger.refresh();
     };
 

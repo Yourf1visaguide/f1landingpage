@@ -111,7 +111,7 @@ function HeroLeft({heading, description}:HeroLeftProps) {
     <div className="space-y-8 lg:col-span-8 z-30">
       <div ref={badgeRef}>
         <Badge
-          text="Over 50,000+ Success Stories"
+          text="Over 5,000+ Success Stories"
           isLive={true}
           color="red"
         />

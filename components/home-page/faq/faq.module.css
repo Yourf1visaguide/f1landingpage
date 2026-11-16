@@ -1,0 +1,138 @@
+/* Every selector starts with a local class (Turbopack CSS-module rule). */
+
+/* ---------- Answer paper: faint guilloche lines like a passport page ---------- */
+.paper {
+  background-color: #fbf7ee;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='24'%3E%3Cpath d='M0 12 Q15 2 30 12 T60 12 T90 12 T120 12' fill='none' stroke='%23b91c1c' stroke-opacity='.07'/%3E%3Cpath d='M0 12 Q15 22 30 12 T60 12 T90 12 T120 12' fill='none' stroke='%231b2a4a' stroke-opacity='.06'/%3E%3C/svg%3E");
+}
+
+/* ---------- Accordion: height animates with grid rows ---------- */
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.panel[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+.panelInner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* "Now answering" number glows like a queue display */
+.led {
+  text-shadow: 0 0 18px rgb(239 68 68 / 0.45);
+}
+
+/* ---------- Illustration ---------- */
+.bigMark {
+  transform-box: fill-box;
+  transform-origin: 50% 90%;
+  animation: bob 4.8s ease-in-out infinite;
+}
+.orbit {
+  transform-box: view-box;
+  transform-origin: 200px 215px;
+  animation: spin 26s linear infinite;
+}
+.floatA,
+.floatB,
+.floatC {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: rise 6s ease-in-out infinite;
+}
+.floatB {
+  animation-delay: -2s;
+}
+.floatC {
+  animation-delay: -4s;
+}
+.pointArm {
+  transform-box: view-box;
+  transform-origin: 203px 202px;
+  animation: point 4.8s ease-in-out infinite;
+}
+.head {
+  transform-box: view-box;
+  transform-origin: 180px 186px;
+  animation: think 4.8s ease-in-out infinite;
+}
+.pony {
+  transform-box: view-box;
+  transform-origin: 162px 150px;
+  animation: sway 4.8s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(4deg);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rise {
+  0% {
+    transform: translateY(14px) scale(0.85);
+    opacity: 0;
+  }
+  25%,
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-26px) scale(1);
+    opacity: 0;
+  }
+}
+@keyframes point {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-7deg);
+  }
+}
+@keyframes think {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+}
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    transition: none;
+  }
+  .bigMark,
+  .orbit,
+  .floatA,
+  .floatB,
+  .floatC,
+  .pointArm,
+  .head,
+  .pony {
+    animation: none;
+  }
+}

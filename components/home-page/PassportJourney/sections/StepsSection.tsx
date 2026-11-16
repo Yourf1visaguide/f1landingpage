@@ -1,12 +1,26 @@
-import { ArrowRight, ClipboardCheck, FileText, Plane, Stamp } from "lucide-react";
+import {
+  ArrowRight,
+  ClipboardCheck,
+  FileText,
+  Plane,
+  Stamp,
+} from "lucide-react";
 import { JOURNEY_IMAGES, steps, stepsCopy } from "@/data/journey";
-import { handleWhatsappClick, handleWhatsappClickWithMessage } from "@/function/handleWhatsapp";
+import {
+  handleWhatsappClick,
+  handleWhatsappClickWithMessage,
+} from "@/function/handleWhatsapp";
 import BrushUnderline from "../ui/BrushUnderline";
 import { FONT_BODY, FONT_DISPLAY, FONT_EDITORIAL } from "../ui/tokens";
 import RedButton from "@/components/Red-Buttons";
 import BlackButton from "@/components/BlackButton";
 
-const ICONS = { apply: FileText, file: ClipboardCheck, decision: Stamp, fly: Plane } as const;
+const ICONS = {
+  apply: FileText,
+  file: ClipboardCheck,
+  decision: Stamp,
+  fly: Plane,
+} as const;
 
 /* Route geometry in a 1000 x 560 box. Dots sit on the segment joins. */
 const VB_W = 1000;
@@ -45,20 +59,25 @@ export default function StepsSection({ onServices }: StepsSectionProps) {
       aria-labelledby="pj-steps-title"
       className={`invisible absolute flex justify-center inset-0 z-[1] opacity-0 ${FONT_BODY}`}
     >
-      <p className="absolute right-4 top-7 hidden font-mono text-[12px] font-semibold uppercase tracking-[0.3em] text-accent sm:right-8 sm:block lg:right-14 lg:top-9 lg:text-[14px]">
+      <p className="absolute right-4 top-16 hidden font-mono text-[12px] font-semibold uppercase tracking-[0.3em] text-accent sm:right-8 sm:block lg:right-14 lg:top-16 lg:text-[14px]">
         {stepsCopy.label}
       </p>
 
       {/* Phones and tablets: text on top, route fills the rest of the screen.
           Desktop and phones held sideways: two columns. Nothing grows past the screen height. */}
       <div className="grid h-full grid-rows-[auto_minmax(0,1fr)] gap-4 px-4 pb-6 pt-20 sm:gap-6 sm:px-8 sm:pt-24 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,1fr)] lg:grid-rows-1 lg:items-center lg:gap-x-[clamp(24px,3vw,56px)] lg:px-14 lg:pb-16 [@media(orientation:landscape)_and_(max-height:520px)]:grid-cols-2 [@media(orientation:landscape)_and_(max-height:520px)]:grid-rows-1 [@media(orientation:landscape)_and_(max-height:520px)]:items-center [@media(orientation:landscape)_and_(max-height:520px)]:pt-16">
-        <div data-steps-copy className="flex min-w-0 flex-col gap-3 sm:gap-4 lg:gap-7 ">
+        <div
+          data-steps-copy
+          className="flex min-w-0 flex-col gap-3 sm:gap-4 lg:gap-7 "
+        >
           <h2
             id="pj-steps-title"
             className={`${FONT_DISPLAY} whitespace-nowrap text-[clamp(42px,min(10vw,6.5svh),64px)] leading-[.92] text-secondary lg:text-[clamp(52px,min(5.3vw,11.5svh),116px)]`}
           >
             {stepsCopy.heading}
-            <span className={`${FONT_EDITORIAL} py-4 relative mt-1 block w-fit font-medium italic leading-none text-accent`}>
+            <span
+              className={`${FONT_EDITORIAL} py-4 relative mt-1 block w-fit font-medium italic leading-none text-accent`}
+            >
               {stepsCopy.accent}
               <BrushUnderline className="absolute -bottom-2 left-[30%] h-2.5 w-[40%] lg:-bottom-5 lg:h-4" />
             </span>
@@ -67,14 +86,18 @@ export default function StepsSection({ onServices }: StepsSectionProps) {
             {stepsCopy.body}
           </p>
           <div className="flex flex-wrap  gap-4 py-4 ">
-            <RedButton 
-            onClick={handleWhatsappClick}
-            className="w-full sm:w-auto flex justify-center sm:justify-start"
-            text={stepsCopy.primaryCta} icon={<ArrowRight className="size-6" />} />
-              {}
-              
-            <BlackButton 
-            className="w-full sm:w-auto" text={stepsCopy.secondaryCta} />
+            <RedButton
+              onClick={handleWhatsappClick}
+              className="w-full sm:w-auto flex justify-center sm:justify-start"
+              text={stepsCopy.primaryCta}
+              icon={<ArrowRight className="size-6" />}
+            />
+            {}
+
+            <BlackButton
+              className="w-full sm:w-auto"
+              text={stepsCopy.secondaryCta}
+            />
           </div>
         </div>
 
@@ -82,15 +105,28 @@ export default function StepsSection({ onServices }: StepsSectionProps) {
             so the SVG line, the dots and the labels always line up. On wide screens it
             leaves 7.5rem on the right for the last step's description. Label sizes follow the
             width of this box (container queries), not the screen, so they never collide. */}
-        <div className="relative grid min-h-0 place-items-center [container-type:size] lg:h-[min(72svh,620px)] [@media(orientation:landscape)_and_(max-height:520px)]:h-[70svh] overflow-hidden ">
+        <div className="relative grid min-h-0 place-items-center [container-type:size] lg:h-[min(72svh,620px)] [@media(orientation:landscape)_and_(max-height:520px)]:h-[70svh] overflow ">
           <div className="relative aspect-[1000/560] w-[min(100cqw,calc(100cqh*1000/560))] @min-[640px]:w-[min(calc(100cqw-7.5rem),calc(100cqh*1000/560))] @min-[640px]:justify-self-start  ">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-[-6%_-4%] scale-150 bg-contain bg-center bg-no-repeat opacity-20"
               style={{ backgroundImage: `url(${JOURNEY_IMAGES.worldMap})` }}
             />
-            <svg viewBox={`0 0 ${VB_W} ${VB_H}`} className="absolute inset-0 size-full overflow-visible" aria-hidden="true">
-              <path data-steps-lead d={LEAD_IN} fill="none" className="stroke-accent" strokeWidth="3" strokeDasharray="7 8" strokeLinecap="round" opacity="0" />
+            <svg
+              viewBox={`0 0 ${VB_W} ${VB_H}`}
+              className="absolute inset-0 size-full overflow-visible"
+              aria-hidden="true"
+            >
+              <path
+                data-steps-lead
+                d={LEAD_IN}
+                fill="none"
+                className="stroke-accent"
+                strokeWidth="3"
+                strokeDasharray="7 8"
+                strokeLinecap="round"
+                opacity="0"
+              />
               {SEGMENTS.map((d, i) => (
                 <path
                   key={d}
@@ -107,7 +143,9 @@ export default function StepsSection({ onServices }: StepsSectionProps) {
               ))}
               {/* GSAP fades/moves the outer group; the inner group pins the plane to the line end */}
               <g data-steps-plane opacity="0">
-                <g transform={`translate(${LINE_END[0]} ${LINE_END[1]}) rotate(${LINE_ANGLE.toFixed(1)}) translate(42 0) scale(1.3)`}>
+                <g
+                  transform={`translate(${LINE_END[0]} ${LINE_END[1]}) rotate(${LINE_ANGLE.toFixed(1)}) translate(42 0) scale(1.3)`}
+                >
                   <path d={PLANE_PATH} className="fill-accent" />
                 </g>
               </g>
@@ -118,7 +156,14 @@ export default function StepsSection({ onServices }: StepsSectionProps) {
                 const Icon = ICONS[s.icon];
                 const [x, y] = POINTS[i];
                 return (
-                  <li key={s.id} className="absolute" style={{ left: `${(x / VB_W) * 100}%`, top: `${(y / VB_H) * 100}%` }}>
+                  <li
+                    key={s.id}
+                    className="absolute"
+                    style={{
+                      left: `${(x / VB_W) * 100}%`,
+                      top: `${(y / VB_H) * 100}%`,
+                    }}
+                  >
                     {/* The passport lands on the first dot: [data-slot="step0"] */}
                     <span
                       data-step-dot={i}
@@ -126,18 +171,28 @@ export default function StepsSection({ onServices }: StepsSectionProps) {
                       className="absolute left-0 top-0 block size-3.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_0_4px_var(--color-primary),0_0_0_6px_color-mix(in_srgb,var(--color-accent)_35%,transparent),0_0_16px_4px_color-mix(in_srgb,var(--color-accent)_35%,transparent)] @min-[480px]:size-4 @min-[760px]:size-5"
                     />
                     {/* Label above the dot, description below-right of it (where the line never goes) */}
-                    <div data-step-label={i} className="absolute left-0 top-0 opacity-0">
+                    <div
+                      data-step-label={i}
+                      className="absolute left-0 top-0 opacity-0"
+                    >
                       <div
                         className={`absolute bottom-3 flex w-[86px] flex-col items-center gap-1 text-center @min-[480px]:bottom-5 @min-[480px]:w-[150px] @min-[760px]:gap-2 ${
-                          i === last ? "left-0 -translate-x-[80%]" : "left-0 -translate-x-1/2"
+                          i === last
+                            ? "left-0 -translate-x-[80%]"
+                            : "left-0 -translate-x-1/2"
                         }`}
                       >
-                        <Icon className="hidden size-6 text-accent @min-[480px]:block @min-[760px]:size-8" strokeWidth={1.5} aria-hidden="true" />
+                        <Icon
+                          className="hidden size-6 text-accent @min-[480px]:block @min-[760px]:size-8"
+                          strokeWidth={1.5}
+                          aria-hidden="true"
+                        />
                         <span className="font-mono text-[9px] font-bold uppercase leading-tight tracking-[0.12em] text-secondary @min-[480px]:text-[12px] @min-[480px]:tracking-[0.16em] @min-[760px]:text-[13px]">
-                          <span className="text-accent">{i + 1}.</span> {s.label}
+                          <span className="text-accent">{i + 1}.</span>{" "}
+                          {s.label}
                         </span>
                       </div>
-                      <p className=" hidden text-left text-[14px] leading-snug text-secondary/90  min-[640px]:absolute min-[640px]:block min-[640px]:left-3 min-[640px]:top-4 min-[1290px]w-32 min-[820px]:text-[15px]">
+                      <p className=" hidden text-left text-[14px] leading-snug text-secondary/90  min-[640px]:absolute min-[640px]:block min-[640px]:left-3 min-[640px]:top-4 min-[1290px]:w-32 min-[820px]:w-24  min-[820px]:text-[15px]">
                         {s.text}
                       </p>
                     </div>

@@ -1,9 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
-import { aboutCopy, aboutStats, OFFICE, promises } from "@/data/home-page/about";
-import { handleWhatsappClickWithMessage } from "@/function/handleWhatsapp";
+import { aboutCopy, aboutStats, promises } from "@/data/home-page/about";
 import BrushUnderline from "@/components/home-page/PassportJourney/ui/BrushUnderline";
 import { FONT_BODY, FONT_DISPLAY, FONT_EDITORIAL } from "@/components/home-page/PassportJourney/ui/tokens";
 import IdentityCard from "./IdentityCard";
@@ -22,7 +20,7 @@ export default function AboutSection() {
       ref={rootRef}
       id="about"
       aria-labelledby="about-title"
-      className={`relative overflow-hidden bg-primary px-4 py-20 text-secondary sm:px-8 sm:py-24 lg:px-14 lg:py-32 ${FONT_BODY}`}
+      className={`relative overflow-hidden bg-primary/50 px-4 py-20 text-secondary sm:px-8 sm:py-24 lg:px-14 lg:py-32 ${FONT_BODY}`}
     >
       <div className="mx-auto max-w-[1500px]">
         <p className="font-mono text-[12px] font-semibold uppercase tracking-[0.3em] text-accent lg:text-[14px]">{aboutCopy.label}</p>
@@ -94,55 +92,7 @@ export default function AboutSection() {
           ))}
         </dl>
 
-        {/* Office */}
-        <div data-about-reveal className="mt-16 grid gap-8 rounded-2xl border border-secondary/15 bg-white/40 p-6 sm:p-8 lg:mt-20 lg:p-10 xl:grid-cols-[minmax(0,1fr)_auto] xl:items-center">
-          <div className="grid gap-6 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
-            <div>
-              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">Visit our office</p>
-              <p className={`${FONT_DISPLAY} mt-2 text-[30px] leading-none sm:text-[36px]`}>Come say hello.</p>
-              <address className="mt-4 flex gap-3 text-[15px] not-italic leading-relaxed text-secondary/75">
-                <MapPin className="mt-1 size-5 shrink-0 text-accent" strokeWidth={1.8} aria-hidden="true" />
-                <span>
-                  {OFFICE.lines.map((l) => (
-                    <span key={l} className="block">
-                      {l}
-                    </span>
-                  ))}
-                </span>
-              </address>
-            </div>
-            <div className="flex flex-col justify-end gap-3 text-[15px] text-secondary/80">
-              <a href={OFFICE.phoneHref} className="inline-flex w-fit items-center gap-3 font-semibold hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary">
-                <Phone className="size-5 text-accent" strokeWidth={1.8} aria-hidden="true" />
-                {OFFICE.phoneDisplay}
-              </a>
-              <a href={`mailto:${OFFICE.email}`} className="inline-flex w-fit items-center gap-3 font-semibold hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary">
-                <Mail className="size-5 text-accent" strokeWidth={1.8} aria-hidden="true" />
-                {OFFICE.email}
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <button
-              type="button"
-              onClick={() => handleWhatsappClickWithMessage("Hi, I'd like to book a visit to your Jalandhar office.")}
-              className="inline-flex items-center gap-4 rounded-lg bg-accent py-3 pl-6 pr-3 text-[16px] font-bold text-white shadow-[0_10px_24px_rgb(185_28_28/0.18)] transition hover:-translate-y-0.5 hover:bg-[#991b1b] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
-            >
-              Book a visit
-              <span className="grid size-8 place-items-center rounded-full bg-white text-accent">
-                <ArrowRight size={16} strokeWidth={2.5} />
-              </span>
-            </button>
-            <a
-              href={OFFICE.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center rounded-lg border border-secondary/25 px-6 py-3 text-[16px] font-bold transition hover:border-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
-            >
-              Get directions
-            </a>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
