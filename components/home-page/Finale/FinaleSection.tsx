@@ -31,9 +31,9 @@ export default function FinaleSection() {
       <div ref={storyRef} className="relative h-[420svh] motion-reduce:h-auto">
         <div ref={stageRef} className="sticky top-0 h-svh overflow-hidden motion-reduce:static motion-reduce:h-auto">
           <SkyScene />
-          <div data-finale-desk aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[#efe4cf] opacity-0 motion-reduce:hidden" />
+          <div data-finale-desk aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[#efe4cf] opacity-0 motion-reduce:hidden " />
 
-          <div data-finale-ticket className="absolute inset-0 z-10 grid place-items-center px-4 sm:px-8 lg:px-14 motion-reduce:relative motion-reduce:py-28">
+          <div data-finale-ticket className="absolute inset-0  z-10 grid place-items-center px-4 sm:px-8 lg:px-14 motion-reduce:relative motion-reduce:py-28">
             <BoardingTicket />
           </div>
 
@@ -51,7 +51,7 @@ export default function FinaleSection() {
                   data-finale-letter
                   className={`${styles.paper} absolute inset-x-0 bottom-0 top-[34svh] z-[3] rounded-t-xl border-x border-t border-secondary/10 px-6 pt-6 sm:px-10 sm:pt-8 lg:px-14`}
                 >
-                  <LetterTop year={YEAR} headingId="contact-title" />
+                  {/* <LetterTop year={YEAR} headingId="contact-title" /> */}
                 </div>
                 <div data-finale-env className={`${ENVELOPE_BOX} z-[4]`}>
                   <EnvelopePocket />
@@ -62,7 +62,7 @@ export default function FinaleSection() {
         </div>
       </div>
 
-      <LetterFooter year={YEAR} />
+      {/* <LetterFooter year={YEAR} /> */}
     </section>
   );
 }

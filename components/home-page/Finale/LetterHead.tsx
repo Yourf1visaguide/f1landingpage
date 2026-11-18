@@ -7,14 +7,14 @@ const STAMP_INKS = ["#b91c1c", "#1f4e9c", "#1d7a55"];
 /** Top of the letter: airmail label, from/to lines, postage stamps and a postmark. Decorative. */
 export default function LetterHead({ year }: { year: number }) {
   return (
-    <div aria-hidden="true" className="flex items-start justify-between gap-6">
+    <div aria-hidden="true" className="flex items-start justify-between gap-6 ">
       <div className="min-w-0">
         <p className="inline-flex items-center gap-3 font-mono text-[10.5px] font-semibold uppercase tracking-[0.26em] text-[#1f4e9c]">
           <span className={`${styles.airmail} h-3 w-10 rounded-sm`} />
           {letterCopy.airmail}
         </p>
-        <p className="mt-4 text-[13.5px] text-secondary/60 sm:text-[14.5px]">{letterCopy.from}</p>
-        <p className="mt-1 text-[13.5px] text-secondary/60 sm:text-[14.5px]">{letterCopy.to}</p>
+        <p className="mt-4 text-[13.5px] text-secondary/60 sm:text-[14.5px]"><b>From:</b>{letterCopy.from}</p>
+        <p className="mt-1 text-[13.5px] text-secondary/60 sm:text-[14.5px]"><b>To: &nbsp; &nbsp; &nbsp;&nbsp;</b>{letterCopy.to}</p>
       </div>
       <div className="relative flex shrink-0 items-start gap-2 pr-2 pt-1">
         {letterStamps.map((c, i) => (

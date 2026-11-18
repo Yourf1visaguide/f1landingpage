@@ -50,8 +50,8 @@ export function useFinaleAnimation(storyRef: RefObject<HTMLElement | null>, stag
         const vh = (n: number) => () => (window.innerHeight * n) / 100;
         const flight = { t: 0 };
         const placePlane = () => {
-          const w = stage.clientWidth / 1000;
-          const h = stage.clientHeight / 600;
+          const w = (stage.clientWidth+150) / 1000;
+          const h = (stage.clientHeight) /600;
           const t = flight.t;
           const angle = Math.atan2(slope(t, P0.y, C.y, P2.y) * h, slope(t, P0.x, C.x, P2.x) * w);
           gsap.set(plane, {
@@ -82,8 +82,8 @@ export function useFinaleAnimation(storyRef: RefObject<HTMLElement | null>, stag
           .fromTo(cloudsMid, { xPercent: 0 }, { xPercent: -14, duration: 0.7 }, 0)
           .fromTo(cloudsFront, { xPercent: 0, yPercent: 0 }, { xPercent: -24, yPercent: 10, duration: 0.7 }, 0)
           // Boarding pass: small near the plane, then zooms to the centre
-          .fromTo(ticket, { scale: 0.16, y: vh(-18), autoAlpha: 0 }, { autoAlpha: 1, duration: 0.06 }, 0.06)
-          .to(ticket, { scale: 1, y: 0, duration: 0.32, ease: "power2.inOut" }, 0.1)
+          .fromTo(ticket, { scale: 0.0,  y: vh(-19), xPercent:-38, autoAlpha: 0 }, { autoAlpha: 1, duration: 0.06, delay:0.040,  }, 0.06)
+          .to(ticket, { scale: 1, y: 0, xPercent:0, duration: 0.32, ease: "power2.inOut" }, 0.1)
           // Hold, then the pass lifts away and the envelope arrives
           .to(ticket, { y: vh(-70), scale: 0.9, autoAlpha: 0, duration: 0.12, ease: "power2.in" }, 0.58)
           .to(desk, { opacity: 1, duration: 0.1 }, 0.6)

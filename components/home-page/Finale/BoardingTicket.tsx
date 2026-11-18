@@ -25,7 +25,7 @@ export default function BoardingTicket() {
           </p>
           <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.24em] text-accent">{ticketCopy.status}</p>
         </div>
-        <h2 id="finale-ticket-title" className={`${FONT_DISPLAY} mt-6 text-[clamp(38px,7vw,84px)] leading-[0.92] lg:mt-8`}>
+        <h2 id="finale-ticket-title" className={`${FONT_DISPLAY} mt-6 text-[clamp(38px,7vw,60px)] leading-[0.92] lg:mt-8`}>
           <span className="block">{ticketCopy.heading}</span>
           <span className={`${FONT_EDITORIAL} mt-1 block pb-[0.08em] text-[0.82em] font-medium italic leading-[1.05] text-accent`}>{ticketCopy.accent}</span>
         </h2>

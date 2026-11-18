@@ -11,7 +11,7 @@ export const ticketCopy = {
   accent: "Your destination is waiting.",
   fields: [
     { label: "From", value: "Jalandhar" },
-    { label: "To", value: "Your dream university" },
+    { label: "To", value: "Your dream destination" },
     { label: "Class", value: "1-to-1 counselling" },
   ],
   seat: "01A",
@@ -22,14 +22,14 @@ export const ticketCopy = {
 
 export const letterCopy = {
   airmail: "Par avion · By air mail",
-  from: "From: Your F1 Visa Guide, Jalandhar",
-  to: "To: You, wherever you dream of studying",
+  from: " Your F1 Visa Guide, Jalandhar",
+  to: "You, wherever you dream of going",
   label: "Visit our office",
   heading: "Come say",
   accent: "hello.",
   directions: "Get directions",
   pageTitle: "On this page",
-  visasTitle: "Visas",
+  visasTitle: "Our services",
   followTitle: "Follow",
   rights: "Your F1 Visa Guide. All rights reserved.",
   disclaimer: "Visa decisions are made only by embassies and immigration authorities.",
@@ -53,9 +53,9 @@ export const visaLinks = [
 ];
 
 export const socialLinks = [
-  { label: "Instagram", icon: "instagram", href: "https://www.instagram.com/your_visaguide/" },
-  { label: "WhatsApp", icon: "whatsapp", href: `https://wa.me/${phone}` },
+  { label: "Instagram", icon: "instagram", color:"pink", href: "https://www.instagram.com/your_visaguide/" },
+  { label: "WhatsApp", icon: "whatsapp", color:"green", href: `https://wa.me/${phone}` },
 ] as const;
 
 /** Countries shown as postage stamps on the letter (first three study countries). */
-export const letterStamps = countries.filter((c) => c.kind === "study").slice(0, 3);
+export const letterStamps = countries.filter((c) => c.kind === "study").slice(2, 5);

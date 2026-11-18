@@ -44,19 +44,19 @@ export default function LetterFooter({ year }: { year: number }) {
     // so this paper continues the same sheet. No overlap when the animation is off.
     <footer
       aria-label="Site footer"
-      className="relative z-30 mt-[min(0px,calc(360px-66svh))] bg-[#efe4cf] motion-reduce:mt-0"
+      className="relative z-30 mt-[min(0px,calc(300px-68svh))] bg-[#efe4cf] motion-reduce:mt-0 "
     >
       <div className="mx-auto max-w-[1200px] px-4 sm:px-8 lg:px-14">
         <div
-          className={`${styles.paper} relative border-x border-b border-secondary/10 px-6 pb-8 pt-6 shadow-[0_40px_60px_-40px_rgb(90_60_20/0.45)] motion-reduce:rounded-t-xl motion-reduce:border-t motion-reduce:pt-8 sm:px-10 lg:px-14`}
+          className={`${styles.paper} relative border-x border-b border-secondary/10 px-4 pb-8 pt-6 shadow-[0_40px_60px_-40px_rgb(90_60_20/0.45)] motion-reduce:rounded-t-xl motion-reduce:border-t motion-reduce:pt-8 sm:px-10 lg:px-14 `}
         >
           {/* Shown here only when the envelope animation is off; otherwise it is on the animated letter above. */}
-          <div className="hidden pb-8 motion-reduce:block">
+          <div className="hidden pb-8  motion-reduce:block">
             <LetterTop year={year} headingId="contact-title-static" />
           </div>
 
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-16">
-            <div className="min-w-0">
+          <div className="grid  gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-16">
+            <div className="min-w-0 ">
               <address className="flex flex-col gap-5 not-italic">
                 <a
                   data-finale-line
@@ -108,8 +108,12 @@ export default function LetterFooter({ year }: { year: number }) {
                 ))}
                 <p className={`${colTitle} mt-5`}>{letterCopy.followTitle}</p>
                 {socialLinks.map((s) => (
-                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                    {s.icon === "instagram" ? <InstagramIcon /> : <MessageCircle size={16} strokeWidth={1.8} aria-hidden="true" />}
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className={`${linkClass} flex items-center`}>
+                    {s.icon === "instagram" 
+                    ? <div className="text-pink-600"><InstagramIcon /></div> 
+                    : <div className="text-green-600">
+                      <MessageCircle size={16} strokeWidth={1.8} aria-hidden="true" />
+                      </div>}
                     {s.label}
                     <span className="sr-only"> (opens in a new tab)</span>
                   </a>
@@ -128,7 +132,7 @@ export default function LetterFooter({ year }: { year: number }) {
             <button
               type="button"
               onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" })}
-              className={`inline-flex w-fit items-center gap-2 rounded-full border border-secondary/25 px-4 py-2 text-[13.5px] font-semibold text-secondary transition hover:border-secondary ${focus}`}
+              className={`inline-flex w-fit items-center gap-2 rounded-full border border-secondary/25 px-4 py-2 text-[13.5px] font-semibold text-secondary transition hover:border-secondary cursor-pointer ${focus}`}
             >
               <ArrowUp size={15} aria-hidden="true" />
               {letterCopy.backToTop}
@@ -136,7 +140,7 @@ export default function LetterFooter({ year }: { year: number }) {
           </div>
         </div>
       </div>
-      <div aria-hidden="true" className={`${styles.airmail} mt-10 h-3`} />
+      {/* <div aria-hidden="true" className={`${styles.airmail} mt-10 h-3`} /> */}
     </footer>
   );
 }

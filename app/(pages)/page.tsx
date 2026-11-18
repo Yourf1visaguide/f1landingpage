@@ -16,8 +16,8 @@ export default function HomePage() {
     <PassportJourney>
       <TestimonialsSection />
       {/* <FaqSection /> */}
-      {/* <AboutSection /> */}
-      {/* <FinaleSection /> */}
+      <AboutSection />
+      <FinaleSection />
     </PassportJourney>
   );
 }

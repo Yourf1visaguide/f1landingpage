@@ -15,7 +15,7 @@ export function EnvelopeBack() {
 
 export function EnvelopeFlap() {
   return (
-    <svg data-finale-flap viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true" className="absolute inset-x-0 top-0 h-[62%] w-full overflow-visible">
+    <svg data-finale-flap viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true" className="absolute  inset-x-0 top-0 h-[62%] w-full overflow-visible ">
       <path d="M0 0H1000L500 400Z" fill={SHADE} stroke={EDGE} strokeWidth="2" vectorEffect="non-scaling-stroke" />
     </svg>
   );
@@ -23,7 +23,7 @@ export function EnvelopeFlap() {
 
 export function EnvelopePocket() {
   return (
-    <div aria-hidden="true" className="absolute inset-0">
+    <div aria-hidden="true" className="absolute inset-0 shadow-md ">
       <svg viewBox="0 0 1000 500" preserveAspectRatio="none" className="absolute inset-0 size-full">
         <path d="M0 110L500 330L1000 110V500H0Z" fill={PAPER} />
         <path d="M0 110L500 330L1000 110" fill="none" stroke={EDGE} strokeWidth="2" vectorEffect="non-scaling-stroke" />
