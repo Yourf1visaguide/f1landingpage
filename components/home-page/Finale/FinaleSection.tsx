@@ -51,7 +51,7 @@ export default function FinaleSection() {
                   data-finale-letter
                   className={`${styles.paper} absolute inset-x-0 bottom-0 top-[34svh] z-[3] rounded-t-xl border-x border-t border-secondary/10 px-6 pt-6 sm:px-10 sm:pt-8 lg:px-14`}
                 >
-                  {/* <LetterTop year={YEAR} headingId="contact-title" /> */}
+                  <LetterTop year={YEAR} headingId="contact-title" />
                 </div>
                 <div data-finale-env className={`${ENVELOPE_BOX} z-[4]`}>
                   <EnvelopePocket />
@@ -62,7 +62,7 @@ export default function FinaleSection() {
         </div>
       </div>
 
-      {/* <LetterFooter year={YEAR} /> */}
+      <LetterFooter year={YEAR} />
     </section>
   );
 }
