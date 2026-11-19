@@ -64,7 +64,8 @@ export default function CountriesSection({ onNext }: CountriesSectionProps) {
         </svg>
         {/* Departure point: sits on the phone/tablet route at (45%, 8%) */}
         <span className="absolute left-[45%] top-[8%] grid size-5 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-2 border-accent bg-primary lg:left-[38.5%] lg:top-[13%] lg:size-6">
-          <span className="size-2 rounded-full bg-accent lg:size-2.5" />
+          <span className="size-2 absolute top-1/2 right1/2  -translate-y-1/2 rounded-full bg-accent lg:size-2.5" />
+          <span className="size-6 bg-accent absolute top-1/2 right1/2  -translate-y-1/2 rounded-full  lg:size-2.5 animate-ping" />
         </span>
         <span className="absolute left-[2%] top-[40%] grid size-5 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-2 border-accent bg-primary lg:left-[7%] lg:top-[80%] lg:size-6 ">
           <span className="size-2 rounded-full bg-accent lg:size-2.5" />
