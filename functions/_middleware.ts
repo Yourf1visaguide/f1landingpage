@@ -25,10 +25,6 @@ const isSharedFile = (pathname: string) => pathname.startsWith("/_next/") || /\.
 export async function onRequest({ request, env, next }: Context): Promise<Response> {
   const url = new URL(request.url);
 
-  if (url.hostname === `www.${APEX}`) {
-    url.hostname = APEX;
-    return Response.redirect(url.toString(), 301);
-  }
 
   const basePath = SUBDOMAIN_PATHS[url.hostname];
   if (!basePath || isSharedFile(url.pathname)) return next();

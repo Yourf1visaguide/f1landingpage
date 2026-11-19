@@ -1,14 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { MessageCircle, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { SITE } from "@/data/journey";
 
 import NavbarButton from "./NavbarButton";
 import { NavLinks } from "@/lib/types";
-import { phone } from "@/function/handleWhatsapp";
 import SocialIcon from "./SocialIcon";
 import MobileMenuDropdown from "./MobileMenuDropdown";
 
@@ -42,7 +40,7 @@ export default function Navbar({ navLinks }: { navLinks: NavLinks[] }) {
           <div className="flex items-center justify-between h-14">
 
             {/* 1. Logo */}
-            <Link href={SITE.home} className="flex-shrink-0" onClick={closeMenu}>
+            <a href={SITE.home} className="flex-shrink-0" onClick={closeMenu}>
               <Image
                 src="/images/logo.png"
                 width={100}
@@ -51,7 +49,7 @@ export default function Navbar({ navLinks }: { navLinks: NavLinks[] }) {
                 alt="Your F1 Visa Guide"
                 priority
               />
-            </Link>
+            </a>
 
             {/* 2. Desktop Nav Links */}
             <div className="hidden lg:flex items-center space-x-8">
