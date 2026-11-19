@@ -15,12 +15,26 @@ const linkClass = `inline-flex w-fit items-center gap-1.5 text-[15.5px] text-sec
 type PageLink = (typeof pageLinks)[number];
 
 /** Instagram outline (lucide no longer ships brand icons). */
-function InstagramIcon() {
+// function InstagramIcon() {
+//   return (
+//     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} aria-hidden="true" className="size-4">
+//       <rect x="2" y="2" width="20" height="20" rx="5" />
+//       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+//       <path d="M17.5 6.5h.01" />
+//     </svg>
+//   );
+// }
+
+/** Facebook icon (path from simpleicons.org), in Facebook's brand blue. */
+export function FacebookIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} aria-hidden="true" className="size-4">
-      <rect x="2" y="2" width="20" height="20" rx="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <path d="M17.5 6.5h.01" />
+    <svg
+      viewBox="0 0 22 22"
+      fill="currentColor"
+      aria-hidden="true"
+      className="size-5 "
+    >
+      <path d="M13.5 21v-8.2h2.8l.42-3.25H13.5V7.48c0-.94.26-1.58 1.61-1.58h1.72V3a23 23 0 0 0-2.5-.13c-2.48 0-4.18 1.51-4.18 4.29v2.39H7.34v3.25h2.81V21h3.35Z" />
     </svg>
   );
 }
@@ -109,8 +123,8 @@ export default function LetterFooter({ year }: { year: number }) {
                 <p className={`${colTitle} mt-5`}>{letterCopy.followTitle}</p>
                 {socialLinks.map((s) => (
                   <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className={`${linkClass} flex items-center`}>
-                    {s.icon === "instagram" 
-                    ? <div className="text-pink-600"><InstagramIcon /></div> 
+                    {s.icon === "facebook" 
+                    ? <div className="text-blue-600"><FacebookIcon /></div> 
                     : <div className="text-green-600">
                       <MessageCircle size={16} strokeWidth={1.8} aria-hidden="true" />
                       </div>}

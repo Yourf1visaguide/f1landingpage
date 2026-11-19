@@ -1,3 +1,4 @@
+import { FacebookIcon } from "@/components/home-page/Finale/LetterFooter";
 import { phone } from "@/function/handleWhatsapp";
 import {  MessageCircle } from "lucide-react";
 import Link from "next/link";
@@ -17,12 +18,14 @@ function SocialIcon({customClassName}:{customClassName:string}) {
         />
       </Link>
       <Link
-        href="https://www.instagram.com/your_visaguide/"
+        href="https://www.facebook.com/yourf1visaguide/"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Follow us on Instagram"
-        className="text-pink-700 hover:text-pink-600 transition-all duration-200"
+        aria-label="Follow us on Facebook"
+        className="text-blue-600 hover:text-blue-700 transition-all duration-200"
       >
+        <FacebookIcon />
+{/*         
         <svg
           className="w-5 h-5"
           fill="none"
@@ -34,7 +37,7 @@ function SocialIcon({customClassName}:{customClassName:string}) {
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
           <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
           <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-        </svg>
+        </svg> */}
       </Link>
     </div>
   );

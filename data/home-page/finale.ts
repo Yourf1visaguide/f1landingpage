@@ -53,7 +53,7 @@ export const visaLinks = [
 ];
 
 export const socialLinks = [
-  { label: "Instagram", icon: "instagram", color:"pink", href: "https://www.instagram.com/your_visaguide/" },
+  { label: "Facebook", icon: "facebook", color:"pink", href: "https://www.facebook.com/yourf1visaguide/" },
   { label: "WhatsApp", icon: "whatsapp", color:"green", href: `https://wa.me/${phone}` },
 ] as const;
 
