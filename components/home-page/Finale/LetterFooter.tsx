@@ -32,7 +32,7 @@ export function FacebookIcon() {
       viewBox="0 0 22 22"
       fill="currentColor"
       aria-hidden="true"
-      className="size-5 "
+      className="size-5 p-0.5 border rounded-sm "
     >
       <path d="M13.5 21v-8.2h2.8l.42-3.25H13.5V7.48c0-.94.26-1.58 1.61-1.58h1.72V3a23 23 0 0 0-2.5-.13c-2.48 0-4.18 1.51-4.18 4.29v2.39H7.34v3.25h2.81V21h3.35Z" />
     </svg>
