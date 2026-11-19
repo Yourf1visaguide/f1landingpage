@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle, Menu, X } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
+import { SITE } from "@/data/journey";
 
 import NavbarButton from "./NavbarButton";
 import { NavLinks } from "@/lib/types";
@@ -41,7 +42,7 @@ export default function Navbar({ navLinks }: { navLinks: NavLinks[] }) {
           <div className="flex items-center justify-between h-14">
 
             {/* 1. Logo */}
-            <Link href="/" className="flex-shrink-0" onClick={closeMenu}>
+            <Link href={SITE.home} className="flex-shrink-0" onClick={closeMenu}>
               <Image
                 src="/images/logo.png"
                 width={100}

@@ -2,6 +2,7 @@
 // stamps, counter, progress dots and scroll length all update automatically.
 
 export const SITE = {
+   home: "https://yourf1visaguide.com",
   usa: "https://usa.yourf1visaguide.com",
   europe: "https://netherlands.yourf1visaguide.com",
   tourist: "https://touristvisas.yourf1visaguide.com",
