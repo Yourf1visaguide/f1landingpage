@@ -59,5 +59,5 @@ export const socialLinks = [
 
 /** Countries shown as postage stamps on the letter (first three study countries). */
 /** Countries shown as postage stamps on the letter. */
-const STAMP_IDS = ["usa", "germany", "netherlands"];
+const STAMP_IDS = ["netherlands", "usa", "dubai" ];
 export const letterStamps = STAMP_IDS.map((id) => countries.find((c) => c.id === id)).filter((c) => c !== undefined);
