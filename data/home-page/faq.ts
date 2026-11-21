@@ -15,7 +15,7 @@ export type HomeFaq = FAQType & {
 const studyCountries = countries.filter((c) => c.kind === "study").map((c) => c.name);
 
 export const faqCopy = {
-  label: "06 — Questions",
+  label: "05 — Questions",
   heading: "Your questions,",
   accent: "at the counter.",
   intro: "Straight answers from the counsellors who will handle your file.",

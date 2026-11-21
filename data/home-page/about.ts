@@ -13,7 +13,7 @@ export const OFFICE = {
 } as const;
 
 export const aboutCopy = {
-  label: "05 — About us",
+  label: "06 — About us",
   heading: "The team behind",
   accent: "your first stamp.",
   intro:

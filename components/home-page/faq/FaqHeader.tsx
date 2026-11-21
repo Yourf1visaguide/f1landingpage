@@ -16,8 +16,8 @@ const pad = (n: number) => String(n).padStart(2, "0");
  */
 export default function FaqHeader({ current, total }: FaqHeaderProps) {
   return (
-    <div className="bg-secondary/[0.06]">
-      <div className="mx-auto flex max-w-[1500px] flex-col gap-8 px-4 py-14 sm:px-8 sm:py-16 lg:flex-row lg:items-end lg:justify-between lg:px-14 lg:py-20">
+    <div className="">
+      <div className="mx-auto flex max-w-[1500px] flex-col gap-8 px-4 pt-14 sm:px-8 sm:pt-16 lg:flex-row lg:items-end lg:justify-between lg:px-14 lg:pt-20">
         <div className="min-w-0">
           <p className="flex items-center gap-3 font-mono text-[12px] font-semibold uppercase tracking-[0.3em] text-secondary/80 lg:text-[14px]">
             <span aria-hidden="true" className="h-0.5 w-8 bg-accent" />

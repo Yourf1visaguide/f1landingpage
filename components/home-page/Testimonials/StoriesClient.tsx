@@ -89,7 +89,7 @@ export default function StoriesClient({ initial }: { initial: Story[] }) {
         </div>
       )}
 
-      {/* <div className="mx-auto mt-12 max-w-[1500px] px-4 sm:px-8 lg:mt-16 lg:px-14">
+      <div className="mx-auto mt-12 max-w-[1500px] px-4 sm:px-8 lg:mt-16 lg:px-14">
         <p aria-live="polite" className="sr-only">
           {status === "loading" && empty ? "Loading stories" : `${featured ? rest.length + 1 : rest.length} stories shown in ${storiesCopy.filters[filter]}`}
         </p>
@@ -151,7 +151,7 @@ export default function StoriesClient({ initial }: { initial: Story[] }) {
         </div>
       </div>
 
-      <StoryDialog story={open} onClose={close} /> */}
+      <StoryDialog story={open} onClose={close} />
     </section>
   );
 }
